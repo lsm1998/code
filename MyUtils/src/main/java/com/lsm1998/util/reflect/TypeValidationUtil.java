@@ -14,25 +14,25 @@ public class TypeValidationUtil
 
     public static boolean isNumber(Class<?> c)
     {
-        if(c==byte.class||c==Byte.class)
+        if (c == byte.class || c == Byte.class)
         {
             return true;
-        }else if(c==short.class||c==Short.class)
+        } else if (c == short.class || c == Short.class)
         {
             return true;
-        }else if(c==int.class||c==Integer.class)
+        } else if (c == int.class || c == Integer.class)
         {
             return true;
-        }else if(c==long.class||c==Long.class)
+        } else if (c == long.class || c == Long.class)
         {
             return true;
-        }else if(c==float.class||c==Float.class)
+        } else if (c == float.class || c == Float.class)
         {
             return true;
-        }else if(c==double.class||c==Double.class)
+        } else if (c == double.class || c == Double.class)
         {
             return true;
-        }else
+        } else
         {
             return false;
         }
