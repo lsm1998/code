@@ -8,7 +8,7 @@ import java.util.function.Consumer;
  * @时间：2019/6/20-23:32
  * @作用：
  */
-public class MyLinkedList<E> extends MyAbstractSequentialList<E> implements MyList<E>, MyDeque<E>, MyCloneable, java.io.Serializable
+public class MyLinkedList<E> extends MyAbstractSequentialList<E> implements MyList<E>, MyDeque<E>, Cloneable, java.io.Serializable
 {
     // 当前链表大小
     transient int size = 0;

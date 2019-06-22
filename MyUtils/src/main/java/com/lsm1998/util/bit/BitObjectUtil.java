@@ -6,7 +6,7 @@ import java.util.Optional;
 /**
  * @作者：刘时明
  * @时间：2019/6/17-9:07
- * @作用：
+ * @作用：字节与对象转换工具类
  */
 public class BitObjectUtil
 {

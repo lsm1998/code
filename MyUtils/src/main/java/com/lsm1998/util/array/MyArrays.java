@@ -109,24 +109,44 @@ public class MyArrays
         return toString(DoubleStream.of(arr).boxed().toArray(Double[]::new));
     }
 
+    /**
+     * int数组冒泡排序
+     * @param arr
+     * @return
+     */
     public static int[] sortIntByBubble(int[] arr)
     {
         Number[] temp = sortByBubble(IntStream.of(arr).boxed().toArray(Integer[]::new));
         return Arrays.stream((Integer[]) temp).mapToInt(Integer::valueOf).toArray();
     }
 
+    /**
+     * long数组冒泡排序
+     * @param arr
+     * @return
+     */
     public static long[] sortLongByBubble(long[] arr)
     {
         Number[] temp = sortByBubble(LongStream.of(arr).boxed().toArray(Integer[]::new));
         return Arrays.stream((Long[]) temp).mapToLong(Long::valueOf).toArray();
     }
 
+    /**
+     * double数组冒泡排序
+     * @param arr
+     * @return
+     */
     public static double[] sortDoubleByBubble(double[] arr)
     {
         Number[] temp = sortByBubble(DoubleStream.of(arr).boxed().toArray(Double[]::new));
         return Arrays.stream((Double[]) temp).mapToDouble(Double::valueOf).toArray();
     }
 
+    /**
+     * 具体的排序方法
+     * @param arr
+     * @return
+     */
     private static Number[] sortByBubble(Comparable[] arr)
     {
         for (int i = 0; i < arr.length; i++)

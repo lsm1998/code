@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 /**
  * @作者：刘时明
  * @时间：2019/6/20-23:33
- * @作用：
+ * @作用：基本的List接口实现
  */
 public abstract class MyAbstractSequentialList<E> extends MyAbstractList<E>
 {

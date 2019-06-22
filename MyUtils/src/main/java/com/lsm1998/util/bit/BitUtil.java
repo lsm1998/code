@@ -9,6 +9,7 @@ public class BitUtil
 {
     /**
      * bytes => long
+     *
      * @param arr
      * @return
      */
@@ -30,6 +31,7 @@ public class BitUtil
 
     /**
      * long => bytes
+     *
      * @param val
      * @return
      */
@@ -49,6 +51,7 @@ public class BitUtil
 
     /**
      * bytes => int
+     *
      * @param arr
      * @return
      */
@@ -66,6 +69,7 @@ public class BitUtil
 
     /**
      * int => bytes
+     *
      * @param val
      * @return
      */
@@ -81,6 +85,7 @@ public class BitUtil
 
     /**
      * bytes => short
+     *
      * @param arr
      * @return
      */
@@ -92,6 +97,7 @@ public class BitUtil
 
     /**
      * short => bytes
+     *
      * @param val
      * @return
      */
@@ -101,5 +107,22 @@ public class BitUtil
         bytes[0] = (byte) (val >>> 8 & 0xff);
         bytes[1] = (byte) (val >>> 0 & 0xff);
         return bytes;
+    }
+
+    /**
+     * short[] => byte[]
+     *
+     * @param valArr
+     * @return
+     */
+    public static byte[] shortArrToByte(short[] valArr)
+    {
+        byte[] temp = new byte[valArr.length * 2];
+        for (int i = 0; i < valArr.length; i++)
+        {
+            short s = valArr[i];
+            shortToByte(s);
+        }
+        return null;
     }
 }
