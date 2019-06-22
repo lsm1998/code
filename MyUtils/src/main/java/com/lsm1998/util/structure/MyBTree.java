@@ -5,7 +5,7 @@ package com.lsm1998.util.structure;
  * @时间：2019/6/21-21:09
  * @作用：二叉树顶层接口
  */
-public interface MyBTree<E extends Comparable<? extends E>>
+public interface MyBTree<K extends Comparable<? extends K>, V>
 {
     /**
      * 二叉树大小
@@ -17,18 +17,18 @@ public interface MyBTree<E extends Comparable<? extends E>>
     /**
      * 插入节点
      *
-     * @param ele
+     * @param key
      * @return
      */
-    boolean insert(E ele);
+    boolean insert(K key, V value);
 
     /**
      * 删除节点
      *
-     * @param ele
+     * @param key
      * @return
      */
-    boolean remove(E ele);
+    boolean remove(K key);
 
     /**
      * 先序遍历
@@ -44,4 +44,12 @@ public interface MyBTree<E extends Comparable<? extends E>>
      * 后序遍历
      */
     void middleDisPlay();
+
+    /**
+     * 查找元素
+     *
+     * @param key
+     * @return
+     */
+    boolean contains(K key);
 }
