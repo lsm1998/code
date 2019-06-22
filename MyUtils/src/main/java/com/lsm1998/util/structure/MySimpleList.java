@@ -5,7 +5,7 @@ package com.lsm1998.util.structure;
  * @时间：2019/6/21-23:31
  * @作用：自定义简单List顶层接口
  */
-public interface MySimpleList<E>
+public interface MySimpleList<E> extends Iterable<E>
 {
     /**
      * 指定位置插入

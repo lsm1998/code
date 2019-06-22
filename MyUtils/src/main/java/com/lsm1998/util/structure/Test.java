@@ -1,6 +1,5 @@
 package com.lsm1998.util.structure;
 
-import com.lsm1998.util.reflect.ReflectUtil;
 
 /**
  * @作者：刘时明
@@ -9,24 +8,17 @@ import com.lsm1998.util.reflect.ReflectUtil;
  */
 public class Test
 {
-    private String hello;
-
-    public Test(String hello)
-    {
-        this.hello = hello;
-    }
-
     public static void main(String[] args)
     {
-        ReflectUtil reflect = ReflectUtil.of(Test.class, "世界");
-        reflect.call("say");
-        reflect.set("hello", "大千世界");
-        reflect.call("say");
-        // ReflectUtil.of(Test.class, "世界").call("say");
-    }
+        MySimpleDLinedList<Integer> list = new MySimpleDLinedList();
+        list.add(3);
+        list.add(5);
 
-    public void say()
-    {
-        System.out.println("你好，" + hello);
+        for (Integer i:list)
+        {
+            System.out.println(i);
+        }
+
+        System.out.println(list.indexOf(3));
     }
 }
