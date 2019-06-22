@@ -33,9 +33,11 @@ public class CountLineTask extends RecursiveTask<Integer>
         {
             if(end==size-1)
             {
-                return getCount(fileList.get(size-1));
+                return getCount(fileList.get(end-1));
+            }else
+            {
+                return getCount(fileList.get(start));
             }
-            return getCount(fileList.get(start));
         }else
         {
             int mid=(start+end)/2;
