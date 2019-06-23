@@ -11,6 +11,9 @@ import java.util.NoSuchElementException;
  */
 public abstract class MyAbstractList<E> extends MyAbstractCollection<E> implements MyList<E>
 {
+    // 记录List修改次数，作用于多线程下的遍历修改并发执行
+    protected transient int modCount = 0;
+
     protected MyAbstractList()
     {
     }
@@ -37,8 +40,6 @@ public abstract class MyAbstractList<E> extends MyAbstractCollection<E> implemen
     {
         throw new RuntimeException("不可以直接调用" + this.getClass().getName() + "的remove方法");
     }
-
-    protected transient int modCount = 0;
 
     protected void removeRange(int fromIndex, int toIndex)
     {

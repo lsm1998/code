@@ -294,17 +294,4 @@ public class MyLinkedBTree<K extends Comparable<? extends K>, V> implements MyBT
             this.right = right;
         }
     }
-
-    public static void main(String[] args)
-    {
-        MyLinkedBTree<Integer, String> bTree = new MyLinkedBTree();
-        bTree.insert(1, "你好");
-        bTree.insert(5, "你好5");
-        bTree.insert(6, "你好6");
-        bTree.insert(4, "你好4");
-        System.out.println("删除前Size="+bTree.size());
-        System.out.println(bTree.remove(5));
-        System.out.println("删除后Size="+bTree.size());
-        bTree.postDisPlay();
-    }
 }

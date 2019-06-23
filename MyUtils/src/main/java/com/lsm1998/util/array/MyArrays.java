@@ -1,5 +1,7 @@
 package com.lsm1998.util.array;
 
+import com.lsm1998.util.structure.MySimpleList;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.DoubleStream;
@@ -111,6 +113,7 @@ public class MyArrays
 
     /**
      * int数组冒泡排序
+     *
      * @param arr
      * @return
      */
@@ -122,6 +125,7 @@ public class MyArrays
 
     /**
      * long数组冒泡排序
+     *
      * @param arr
      * @return
      */
@@ -133,6 +137,7 @@ public class MyArrays
 
     /**
      * double数组冒泡排序
+     *
      * @param arr
      * @return
      */
@@ -144,6 +149,7 @@ public class MyArrays
 
     /**
      * 具体的排序方法
+     *
      * @param arr
      * @return
      */
@@ -162,5 +168,17 @@ public class MyArrays
             }
         }
         return (Number[]) arr;
+    }
+
+    public static <E> void swap(int i, int j, MySimpleList<E> list)
+    {
+        int size = list.size();
+        if (i < 0 || i >= size || j < 0 || j >= size)
+        {
+            throw new IllegalArgumentException("越界访问");
+        }
+        E temp = list.get(i);
+        list.set(i,list.get(j));
+        list.set(j,temp);
     }
 }

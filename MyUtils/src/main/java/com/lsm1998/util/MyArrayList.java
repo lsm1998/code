@@ -93,7 +93,6 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
     private void ensureExplicitCapacity(int minCapacity)
     {
         modCount++;
-        // overflow-conscious code
         if (minCapacity - elementData.length > 0)
             grow(minCapacity);
     }
@@ -102,20 +101,18 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
 
     private void grow(int minCapacity)
     {
-        // overflow-conscious code
         int oldCapacity = elementData.length;
         int newCapacity = oldCapacity + (oldCapacity >> 1);
         if (newCapacity - minCapacity < 0)
             newCapacity = minCapacity;
         if (newCapacity - MAX_ARRAY_SIZE > 0)
             newCapacity = hugeCapacity(minCapacity);
-        // minCapacity is usually close to size, so this is a win:
         elementData = Arrays.copyOf(elementData, newCapacity);
     }
 
     private static int hugeCapacity(int minCapacity)
     {
-        if (minCapacity < 0) // overflow
+        if (minCapacity < 0)
             throw new OutOfMemoryError();
         return (minCapacity > MAX_ARRAY_SIZE) ?
                 Integer.MAX_VALUE :
@@ -235,7 +232,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
         if (numMoved > 0)
             System.arraycopy(elementData, index + 1, elementData, index,
                     numMoved);
-        elementData[--size] = null; // clear to let GC do its work
+        elementData[--size] = null;
         return oldValue;
     }
 
@@ -268,13 +265,12 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
         if (numMoved > 0)
             System.arraycopy(elementData, index + 1, elementData, index,
                     numMoved);
-        elementData[--size] = null; // clear to let GC do its work
+        elementData[--size] = null;
     }
 
     public void clear()
     {
         modCount++;
-        // clear to let GC do its work
         for (int i = 0; i < size; i++)
             elementData[i] = null;
 
@@ -293,7 +289,6 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
         int numMoved = size - toIndex;
         System.arraycopy(elementData, toIndex, elementData, fromIndex,
                 numMoved);
-        // clear to let GC do its work
         int newSize = size - (toIndex - fromIndex);
         for (int i = newSize; i < size; i++)
         {
@@ -320,7 +315,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
         rangeCheckForAdd(index);
         Object[] a = c.toArray();
         int numNew = a.length;
-        ensureCapacityInternal(size + numNew);  // Increments modCount
+        ensureCapacityInternal(size + numNew);
         int numMoved = size - index;
         if (numMoved > 0)
             System.arraycopy(elementData, index, elementData, index + numNew,
@@ -334,7 +329,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
     {
         Object[] a = c.toArray();
         int numNew = a.length;
-        ensureCapacityInternal(size + numNew);  // Increments modCount
+        ensureCapacityInternal(size + numNew);
         System.arraycopy(a, 0, elementData, size, numNew);
         size += numNew;
         return numNew != 0;
@@ -422,7 +417,6 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
             {
                 consumer.accept((E) elementData[i++]);
             }
-            // update once at end of iteration to reduce heap write traffic
             cursor = i;
             lastRet = i - 1;
             checkForComodification();
@@ -681,7 +675,6 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
                     {
                         consumer.accept((E) elementData[offset + (i++)]);
                     }
-                    // update once at end of iteration to reduce heap write traffic
                     lastRet = cursor = i;
                     checkForComodification();
                 }
@@ -798,59 +791,23 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
 
     static final class MyArrayListSpliterator<E> implements Spliterator<E>
     {
-
-        /*
-         * If ArrayLists were immutable, or structurally immutable (no
-         * adds, removes, etc), we could implement their spliterators
-         * with Arrays.spliterator. Instead we detect as much
-         * interference during traversal as practical without
-         * sacrificing much performance. We rely primarily on
-         * modCounts. These are not guaranteed to detect concurrency
-         * violations, and are sometimes overly conservative about
-         * within-thread interference, but detect enough problems to
-         * be worthwhile in practice. To carry this out, we (1) lazily
-         * initialize fence and expectedModCount until the latest
-         * point that we need to commit to the state we are checking
-         * against; thus improving precision.  (This doesn't apply to
-         * SubLists, that create spliterators with current non-lazy
-         * values).  (2) We perform only a single
-         * ConcurrentModificationException check at the end of forEach
-         * (the most performance-sensitive method). When using forEach
-         * (as opposed to iterators), we can normally only detect
-         * interference after actions, not before. Further
-         * CME-triggering checks apply to all other possible
-         * violations of assumptions for example null or too-small
-         * elementData array given its size(), that could only have
-         * occurred due to interference.  This allows the inner loop
-         * of forEach to run without any further checks, and
-         * simplifies lambda-resolution. While this does entail a
-         * number of checks, note that in the common case of
-         * list.stream().forEach(a), no checks or other computation
-         * occur anywhere other than inside forEach itself.  The other
-         * less-often-used methods cannot take advantage of most of
-         * these streamlinings.
-         */
-
         private final MyArrayList<E> list;
-        private int index; // current index, modified on advance/split
-        private int fence; // -1 until used; then one past last index
-        private int expectedModCount; // initialized when fence set
+        private int index;
+        private int fence;
+        private int expectedModCount;
 
-        /**
-         * Create new spliterator covering the given  range
-         */
         MyArrayListSpliterator(MyArrayList<E> list, int origin, int fence,
                                int expectedModCount)
         {
-            this.list = list; // OK if null unless traversed
+            this.list = list;
             this.index = origin;
             this.fence = fence;
             this.expectedModCount = expectedModCount;
         }
 
         private int getFence()
-        { // initialize fence to size on first use
-            int hi; // (a specialized variant appears in method forEach)
+        {
+            int hi;
             MyArrayList<E> lst;
             if ((hi = fence) < 0)
             {
@@ -868,7 +825,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
         public MyArrayListSpliterator<E> trySplit()
         {
             int hi = getFence(), lo = index, mid = (lo + hi) >>> 1;
-            return (lo >= mid) ? null : // divide range in half unless too small
+            return (lo >= mid) ? null :
                     new MyArrayListSpliterator<E>(list, lo, index = mid,
                             expectedModCount);
         }
@@ -881,7 +838,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
             if (i < hi)
             {
                 index = i + 1;
-                @SuppressWarnings("unchecked") E e = (E) list.elementData[i];
+                E e = (E) list.elementData[i];
                 action.accept(e);
                 if (list.modCount != expectedModCount)
                     throw new ConcurrentModificationException();
@@ -892,7 +849,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
 
         public void forEachRemaining(Consumer<? super E> action)
         {
-            int i, hi, mc; // hoist accesses and checks from loop
+            int i, hi, mc;
             MyArrayList<E> lst;
             Object[] a;
             if (action == null)
@@ -909,7 +866,7 @@ public class MyArrayList<E> extends MyAbstractList<E> implements MyList<E>, MyRa
                 {
                     for (; i < hi; ++i)
                     {
-                        @SuppressWarnings("unchecked") E e = (E) a[i];
+                        E e = (E) a[i];
                         action.accept(e);
                     }
                     if (lst.modCount == mc)
