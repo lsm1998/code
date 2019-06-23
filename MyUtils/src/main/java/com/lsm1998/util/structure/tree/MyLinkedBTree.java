@@ -1,14 +1,20 @@
-package com.lsm1998.util.structure;
+package com.lsm1998.util.structure.tree;
 
 /**
  * @作者：刘时明
  * @时间：2019/6/22-14:53
  * @作用：基于链表实现的二叉树
  */
-public class MyLinkedBTree<K extends Comparable<? extends K>, V> implements MyBTree<K, V>
+public class MyLinkedBTree<K extends Comparable<? super K>, V> implements MyBTree<K, V>
 {
     private int size;
     private Node root;
+
+    @Override
+    public boolean isEmpty()
+    {
+        return size == 0;
+    }
 
     @Override
     public int size()
@@ -122,7 +128,7 @@ public class MyLinkedBTree<K extends Comparable<? extends K>, V> implements MyBT
         {
             if (node.left != null && node.right != null)
             {
-                Node<K,V> temp = getMin(node.right);
+                Node<K, V> temp = getMin(node.right);
                 size++;
                 remove(temp.key);
                 node.key = temp.key;
@@ -279,7 +285,7 @@ public class MyLinkedBTree<K extends Comparable<? extends K>, V> implements MyBT
         return null;
     }
 
-    private class Node<K extends Comparable<? extends K>, V>
+    private class Node<K extends Comparable<? super K>, V>
     {
         K key;
         V value;

@@ -1,6 +1,6 @@
 package com.lsm1998.util.array;
 
-import com.lsm1998.util.structure.MySimpleList;
+import com.lsm1998.util.structure.list.MySimpleList;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -113,10 +113,12 @@ public class MyArrays
 
     /**
      * int数组冒泡排序
+     * 新的方法见MySortUtil
      *
      * @param arr
      * @return
      */
+    @Deprecated
     public static int[] sortIntByBubble(int[] arr)
     {
         Number[] temp = sortByBubble(IntStream.of(arr).boxed().toArray(Integer[]::new));
@@ -125,10 +127,12 @@ public class MyArrays
 
     /**
      * long数组冒泡排序
+     * 新的方法见MySortUtil
      *
      * @param arr
      * @return
      */
+    @Deprecated
     public static long[] sortLongByBubble(long[] arr)
     {
         Number[] temp = sortByBubble(LongStream.of(arr).boxed().toArray(Integer[]::new));
@@ -137,10 +141,12 @@ public class MyArrays
 
     /**
      * double数组冒泡排序
+     * 新的方法见MySortUtil
      *
      * @param arr
      * @return
      */
+    @Deprecated
     public static double[] sortDoubleByBubble(double[] arr)
     {
         Number[] temp = sortByBubble(DoubleStream.of(arr).boxed().toArray(Double[]::new));
@@ -149,10 +155,12 @@ public class MyArrays
 
     /**
      * 具体的排序方法
+     * 新的方法见MySortUtil
      *
      * @param arr
      * @return
      */
+    @Deprecated
     private static Number[] sortByBubble(Comparable[] arr)
     {
         for (int i = 0; i < arr.length; i++)
@@ -169,6 +177,7 @@ public class MyArrays
         }
         return (Number[]) arr;
     }
+
 
     public static <E> void swap(int i, int j, MySimpleList<E> list)
     {

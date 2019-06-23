@@ -1,6 +1,7 @@
-package com.lsm1998.util.structure;
+package com.lsm1998.util.structure.queue;
 
 import com.lsm1998.util.array.MyArrays;
+import com.lsm1998.util.structure.list.MySimpleArrayList;
 
 /**
  * @作者：刘时明
@@ -116,5 +117,24 @@ public class MyMaxArrayHeap<E extends Comparable<? super E>>
             MyArrays.swap(index, temp, list);
             index = temp;
         }
+    }
+
+    /**
+     * 取出最大元素，同时新增新元素
+     *
+     * @param ele
+     */
+    public E replace(E ele)
+    {
+        E ret = getMax();
+        list.set(0, ele);
+        siftDown(0);
+        return ret;
+    }
+
+    @Override
+    public String toString()
+    {
+        return list.toString();
     }
 }

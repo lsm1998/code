@@ -1,4 +1,4 @@
-package com.lsm1998.util.structure;
+package com.lsm1998.util.structure.list;
 
 /**
  * @作者：刘时明

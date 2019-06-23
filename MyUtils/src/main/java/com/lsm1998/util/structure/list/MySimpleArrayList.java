@@ -1,4 +1,4 @@
-package com.lsm1998.util.structure;
+package com.lsm1998.util.structure.list;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -36,6 +36,12 @@ public class MySimpleArrayList<E> extends MyAbstractSimpleList<E>
         {
             elementData = new Object[capacity];
         }
+    }
+
+    public MySimpleArrayList(E[] arr)
+    {
+        elementData = arr;
+        size = arr.length;
     }
 
     @Override

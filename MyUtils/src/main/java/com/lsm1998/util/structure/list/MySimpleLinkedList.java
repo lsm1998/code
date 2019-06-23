@@ -1,4 +1,4 @@
-package com.lsm1998.util.structure;
+package com.lsm1998.util.structure.list;
 
 import java.util.Iterator;
 

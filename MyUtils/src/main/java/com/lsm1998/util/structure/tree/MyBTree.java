@@ -1,11 +1,11 @@
-package com.lsm1998.util.structure;
+package com.lsm1998.util.structure.tree;
 
 /**
  * @作者：刘时明
  * @时间：2019/6/21-21:09
  * @作用：二叉树顶层接口
  */
-public interface MyBTree<K extends Comparable<? extends K>, V>
+public interface MyBTree<K extends Comparable<? super K>, V>
 {
     /**
      * 二叉树大小
@@ -13,6 +13,13 @@ public interface MyBTree<K extends Comparable<? extends K>, V>
      * @return
      */
     int size();
+
+    /**
+     * 是否存在元素
+     *
+     * @return
+     */
+    boolean isEmpty();
 
     /**
      * 插入节点
