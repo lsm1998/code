@@ -5,13 +5,25 @@ package com.lsm1998.util.reflect;
  * @时间：2019/5/24-16:49
  * @作用：类型验证工具类
  */
-public class TypeValidationUtil
+public class TypeUtil
 {
+    /**
+     * 是否为数值类型
+     *
+     * @param o
+     * @return
+     */
     public static boolean isNumber(Object o)
     {
         return o instanceof Number;
     }
 
+    /**
+     * 是否为数值类型
+     *
+     * @param c
+     * @return
+     */
     public static boolean isNumber(Class<?> c)
     {
         if (c == byte.class || c == Byte.class)
@@ -35,6 +47,29 @@ public class TypeValidationUtil
         } else
         {
             return false;
+        }
+    }
+
+    /**
+     * 返回对应的类型数组
+     *
+     * @param values 参数数组
+     * @return
+     */
+    public static Class<?>[] types(Object... values)
+    {
+        if (values == null)
+        {
+            return new Class[0];
+        } else
+        {
+            Class<?>[] result = new Class[values.length];
+            for (int i = 0; i < values.length; ++i)
+            {
+                Object value = values[i];
+                result[i] = value != null ? value.getClass() : null;
+            }
+            return result;
         }
     }
 }

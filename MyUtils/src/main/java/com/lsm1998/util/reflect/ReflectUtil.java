@@ -103,33 +103,10 @@ public class ReflectUtil
         this.type = type;
         try
         {
-            this.target = type.getConstructor(types(args)).newInstance(args);
+            this.target = type.getConstructor(TypeUtil.types(args)).newInstance(args);
         } catch (Exception e)
         {
             e.printStackTrace();
-        }
-    }
-
-    /**
-     * 返回对应的类型数组
-     *
-     * @param values 参数数组
-     * @return
-     */
-    private static Class<?>[] types(Object... values)
-    {
-        if (values == null)
-        {
-            return new Class[0];
-        } else
-        {
-            Class<?>[] result = new Class[values.length];
-            for (int i = 0; i < values.length; ++i)
-            {
-                Object value = values[i];
-                result[i] = value != null ? value.getClass() : null;
-            }
-            return result;
         }
     }
 }
