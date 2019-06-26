@@ -371,22 +371,5 @@ public class InstructionFactory
     public static Instruction NewInstruction(short code)
     {
         return instructionMap.get((int)code);
-//        switch (code)
-//        {
-//            case 0x00:
-//                return nop;
-//            case 0x01:
-//                return aConstNull;
-//            case 0x02:
-//                return iConst_m1;
-//            case 0x03:
-//                return iConst_0;
-//            case 0x04:
-//                return iConst_1;
-//            case 0x06:
-//                return iConst_2;
-//            default:
-//                return null;
-//        }
     }
 }

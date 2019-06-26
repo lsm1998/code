@@ -1,6 +1,5 @@
-package com.lsm1998.util.sort.impl;
+package com.lsm1998.util.sort;
 
-import com.lsm1998.util.sort.MySort;
 import com.lsm1998.util.structure.list.MySimpleArrayList;
 
 import java.util.List;

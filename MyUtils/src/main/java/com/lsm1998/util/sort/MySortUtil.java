@@ -1,12 +1,7 @@
 package com.lsm1998.util.sort;
 
 import com.lsm1998.util.array.MyArrays;
-import com.lsm1998.util.sort.impl.BubbleSort;
-import com.lsm1998.util.sort.impl.InsertSort;
-import com.lsm1998.util.sort.impl.QuickSort;
-import com.lsm1998.util.sort.impl.SelectSort;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +15,7 @@ public class MySortUtil
     private static final BubbleSort bubble = BubbleSort.getInstance();
     private static final SelectSort select = SelectSort.getInstance();
     private static final InsertSort insert = InsertSort.getInstance();
+    private static final MergeSort merge = MergeSort.getInstance();
 
     public static int[] quickSort(int[] arr)
     {
@@ -51,6 +47,11 @@ public class MySortUtil
         return insert.sort(arr);
     }
 
+    public static int[] mergeSort(int[] arr)
+    {
+        return merge.sort(arr);
+    }
+
     public static <E extends Comparable<? super E>> void quickSort(List<E> list)
     {
         quick.sort(list);
@@ -59,6 +60,7 @@ public class MySortUtil
     public static void main(String[] args)
     {
         int[] arr = MyArrays.getIntArrayByRandom(0, 10, 10);
-        System.out.println(MyArrays.toString(insertSort(arr)));
+        System.out.println(MyArrays.toString(arr));
+        System.out.println(MyArrays.toString(mergeSort(arr)));
     }
 }
