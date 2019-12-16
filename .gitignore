@@ -2,3 +2,7 @@
 /.idea
 
 code.iml
+
+*.iml
+
+*/target
