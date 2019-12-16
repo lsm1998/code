@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+    <servlet-mapping>
+        <name>hello</name>
+        <url-pattern>/hello</url-pattern>
+        <class>com.github.nmyphp.mytomcat.servlet.HelloServlet</class>
+    </servlet-mapping>
+    <servlet-mapping>
+        <name>hello1</name>
+        <url-pattern>/hello1</url-pattern>
+        <class>com.github.nmyphp.mytomcat.servlet.HelloServlet1</class>
+    </servlet-mapping>
+</web-app>

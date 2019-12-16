@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/Tomcat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/ContentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/Dispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/ServletConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/ServletMapping.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/StatusCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/exception/UnkownContentTypeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/exception/UnkownMethodException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/servlet/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/util/ClassUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/util/ConfigUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/util/ExceptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/resources/WEB-INFO/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/resources/tomcat.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTomcat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTomcat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTomcat/src/main/java/com/lsm1998/tomcat/TomcatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/lsm1998/tomcat/TomcatApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyTomcat/target/classes/com/lsm1998/tomcat/TomcatApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyTomcat/target/classes/com/lsm1998/tomcat/TomcatApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,35 +80,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>add</find>
-      <find>class</find>
-      <find>longToInts</find>
-      <find>bytesToL</find>
-      <find>longToB</find>
-      <find>bytesToShort</find>
-      <find>@Column</find>
-      <find>Date</find>
-      <find>110</find>
-      <find>实收</find>
-      <find>总金额</find>
-      <find>医保刷卡</find>
-      <find>8080</find>
-      <find>outOfBoundsMsg</find>
-      <find>node</find>
-      <find>peekFirst</find>
-      <find>removeFirstOccurrence</find>
-      <find>removeLastOccurrence</find>
-      <find>listIterator</find>
-      <find>descendingIterator</find>
-      <find>spliterator</find>
-      <find>toString</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>String</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -112,7 +104,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyTomcat/src/main/java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -131,11 +123,11 @@
       <recent name="com.lsm1998.util.math" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\code\MyTomcat\src\main\java" />
+      <recent name="C:\Users\Admin\IdeaProjects\code\MyTomcat\src\main\resources\WEB-INFO" />
       <recent name="C:\Users\Admin\IdeaProjects\code" />
       <recent name="C:\Users\lsm\IdeaProjects\code\MyTomcat\src\main\resources\static\img" />
       <recent name="C:\Users\lsm\IdeaProjects\code\MyUtils\src\main\java\com\lsm1998\util\math" />
-      <recent name="C:\Users\lsm\IdeaProjects\code\Demo\src\main\java" />
-      <recent name="C:\Users\lsm\IdeaProjects\code\MyUtils\src\main\java\com\lsm1998\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -145,7 +137,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Tomcat">
+    <configuration name="Tomcat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.nmyphp.Tomcat" />
+      <module name="MyTomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.nmyphp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TomcatApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lsm1998.tomcat.TomcatApplication" />
       <module name="MyTomcat" />
@@ -161,6 +166,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tomcat" />
         <item itemvalue="Application.TomcatApplication" />
       </list>
     </recent_temporary>
@@ -230,7 +236,7 @@
       <workItem from="1561091543697" duration="668000" />
       <workItem from="1561105617285" duration="2766000" />
       <workItem from="1576463595746" duration="2602000" />
-      <workItem from="1576491992906" duration="79000" />
+      <workItem from="1576491992906" duration="781000" />
     </task>
     <task id="LOCAL-00001" summary="目录调整">
       <created>1576492043171</created>
@@ -239,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576492043171</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="git忽略">
+      <created>1576492095544</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576492095544</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,37 +261,42 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="个人Code合集" />
     <MESSAGE value="目录调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="目录调整" />
+    <MESSAGE value="git忽略" />
+    <option name="LAST_COMMIT_MESSAGE" value="git忽略" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576463608244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576463608244" />
-    <state x="-1576" y="107" key="CommitChangelistDialog2" timestamp="1576492040849">
+    <state x="-1576" y="107" key="CommitChangelistDialog2" timestamp="1576492094767">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1576" y="107" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492040849" />
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1576474997536">
+    <state x="-1576" y="107" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492094767" />
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1576492835434">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576474997536" />
-    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1576474997536">
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835434" />
+    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1576492835433">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576474997536" />
-    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1576474997536">
+    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835433" />
+    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1576492835433">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576474997536" />
-    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1576474997536">
+    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835433" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1576492835434">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576474997536" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835434" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1576463601559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576463601559" />
+    <state x="-1368" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576492101872">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492101872" />
     <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1576491992886">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
