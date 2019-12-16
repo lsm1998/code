@@ -17,6 +17,7 @@
         <module>ibatis</module>
         <module>spring</module>
         <module>log4j</module>
+        <module>call4j</module>
     </modules>
 
     <dependencies>
