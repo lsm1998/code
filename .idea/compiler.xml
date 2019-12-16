@@ -6,22 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MyUtils" />
         <module name="Demo" />
-        <module name="Courage" />
-        <module name="MySpringMVC" />
-        <module name="MySpring" />
         <module name="MyLog4j" />
-        <module name="MyJVM" />
         <module name="MyTomcat" />
-        <module name="MyIbatis" />
+        <module name="utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="alibaba" target="1.8" />
+      <module name="Courage" target="11" />
       <module name="demo" target="11" />
       <module name="dubbo" target="1.8" />
       <module name="ibatis" target="11" />
+      <module name="MyIbatis" target="11" />
+      <module name="MyJVM" target="11" />
+      <module name="MySpring" target="11" />
+      <module name="MySpringMVC" target="11" />
       <module name="web.main" target="1.8" />
       <module name="web.test" target="1.8" />
     </bytecodeTargetLevel>

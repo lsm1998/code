@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lsm1998.util</groupId>
-            <artifactId>MyUtils</artifactId>
+            <artifactId>utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -38,16 +38,16 @@ public class TomcatServer
                 {
                     os.write(str.getBytes());
                 }
-                File file = MyFiles.getFileByStatic("index.html");
-                os.write(MyFiles.getBytes(file));
-
+                //File file = MyFiles.getFileByStatic("index.html");
+                //os.write(MyFiles.getBytes(file));
+                String result="<h1>hello</h1>";
+                os.write(result.getBytes());
                 byte[] bytes = new byte[1024];
                 int len;
                 while ((len = is.read(bytes)) != -1)
                 {
                     System.out.println(new String(bytes, 0, len));
                 }
-
                 is.close();
                 os.close();
                 socket.close();
