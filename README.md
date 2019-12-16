@@ -1,9 +1,13 @@
 # code
 个人Code合集
 
-一些杂七杂八的、不好归类的Java代码
+旨在整合个人Java源码
  
-Demo --     基础JavaSE小案例  
-MyLog4j -- 自定义日志框架（未开始）  
-MyTomcat -- 自定义Tomcat（未开始）  
-MyUtils  -- 自定义综合工具包
+demo    --  基础JavaSE小案例  
+log4j   -- 自定义日志框架  
+tomcat  -- 自定义Tomcat  
+utils   -- 自定义综合工具包  
+ibatis  -- 自定义Mybatis  
+spring  -- 自定义Spring+SpringMVC  
+springboot -- 自定义SpringBoot  
+
