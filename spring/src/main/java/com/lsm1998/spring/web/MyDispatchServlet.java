@@ -45,10 +45,10 @@ public class MyDispatchServlet extends HttpServlet implements BaseServlet
     @Override
     public void loadOnStartup()
     {
-        System.out.println("MySpring开始加载");
-        System.out.println("init初始化配置");
-        MyAnnotationConfigApplicationContext context = new MyAnnotationConfigApplicationContext(clazz,properties);
-        System.out.println(context.getIoc());
-        System.out.println("IOC容器初始化完毕");
+//        System.out.println("MySpring开始加载");
+//        System.out.println("init初始化配置");
+//        MyAnnotationConfigApplicationContext context = new MyAnnotationConfigApplicationContext(clazz,properties);
+//        System.out.println(context.getIoc());
+//        System.out.println("IOC容器初始化完毕");
     }
 }

@@ -1,7 +1,8 @@
 package com.lsm1998.spring.context;
 
 import com.lsm1998.spring.aop.annotation.MyEnableAspectJAutoProxy;
-import com.lsm1998.springboot.annotation.MySpringBootApplication;
+import com.lsm1998.spring.beans.annotation.MyConfiguration;
+import com.lsm1998.spring.beans.annotation.MySpringBootApplication;
 
 import java.util.Collection;
 import java.util.Map;

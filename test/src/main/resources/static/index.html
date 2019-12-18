@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<h1>你好</h1>
+<div id="itany">
+    <ul>
+        <li v-for="items in users">{{items}}</li>
+    </ul>
+    <img src="../img/1.jpg">
+</div>
+<script>
+    window.onload = function () {
+        new Vue({
+            el: '#itany',
+            data: {
+               users:["lsm","xhjy"]
+            },
+            mounted: function () {
+
+            },
+            methods: {
+
+            }
+        });
+    }
+</script>
+</body>
+</html>

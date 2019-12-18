@@ -7,8 +7,6 @@ import com.lsm1998.spring.beans.factory.MyAbstractActionFactory;
 import com.lsm1998.spring.beans.factory.MyBeanFactory;
 import com.lsm1998.spring.web.annotation.MyController;
 import com.lsm1998.spring.web.method.MyHandlerMapping;
-import com.lsm1998.springboot.annotation.MySpringBootApplication;
-import com.lsm1998.springboot.autoconfigure.MybatisAutoConfigure;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -31,7 +29,7 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
     // 获取IOC容器的功能
     private MyBeanFactory beanFactory;
     // 代理对象容器
-    private Map<String, Object> porxyMap = new HashMap<>();
+    private Map<String, Object> proxyMap = new HashMap<>();
 
     static
     {
@@ -53,32 +51,22 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
     @Override
     protected void scanComponent(Class clazz, Properties properties)
     {
-        var bootApplication = (MySpringBootApplication) clazz.getAnnotation(MySpringBootApplication.class);
-        // 是否排除Mybatis依赖
-        Class[] classes = bootApplication.exclude();
-        boolean flag = true;
-        for (Class c : classes)
-        {
-            if (c == MybatisAutoConfigure.class)
-            {
-                flag = false;
-                break;
-            }
-        }
-        if (flag)
-        {
-            new MybatisAutoConfigure(beanMap, properties);
-        }
-
         MyComponentScan componentScan = (MyComponentScan) clazz.getDeclaredAnnotation(MyComponentScan.class);
-
         String classpath = "src" + SEPARATE + "main" + SEPARATE + "java";
         File file = new File(classpath);
         if (!file.exists())
         {
-            String path = this.getClass().getClassLoader().getResource(componentScan.value().replace(".", SEPARATE)).getPath();
-            File temp = new File(path);
-            loadComponent(temp, true);
+            if (componentScan != null)
+            {
+                String path = this.getClass().getClassLoader().getResource(componentScan.value().replace(".", SEPARATE)).getPath();
+                File temp = new File(path);
+                loadComponent(temp, true);
+            } else
+            {
+                classpath = MyActionApplicationContext.class.getClassLoader().getResource("").getPath();
+                classpath = classpath.substring(0, classpath.length() - 15) + "src" + SEPARATE + "main" + SEPARATE + "java";
+                loadComponent(new File(classpath),false);
+            }
         } else
         {
             loadComponent(file, false);
@@ -292,7 +280,7 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
         {
             e.printStackTrace();
         }
-        porxyMap.put(key, proxy);
+        proxyMap.put(key, proxy);
         System.out.println("一个组件的代理对象已经生成，proxy=" + proxy.getClass());
     }
 
@@ -314,7 +302,7 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
     private void autowiredProxy(Field f, Object bean)
     {
         Class<?> clazz = f.getType();
-        System.out.println(this.porxyMap);
+        System.out.println(this.proxyMap);
 
         String name = null;
         for (String key : beanMap.keySet())
@@ -339,10 +327,10 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
         {
             try
             {
-                if (this.porxyMap.containsKey(name))
+                if (this.proxyMap.containsKey(name))
                 {
                     f.setAccessible(true);
-                    f.set(bean, this.porxyMap.get(name));
+                    f.set(bean, this.proxyMap.get(name));
                 }
             } catch (Exception e)
             {

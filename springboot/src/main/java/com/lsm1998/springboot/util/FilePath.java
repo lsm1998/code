@@ -1,5 +1,7 @@
 package com.lsm1998.springboot.util;
 
+import com.lsm1998.springboot.MySpringApplication;
+
 import java.io.File;
 
 /**
@@ -11,6 +13,6 @@ public class FilePath
 {
     public static final String DIR = File.separator;
     public static final String RESOURCES_PATH = "src" + DIR + "main" + DIR + "resources" + DIR;
-    public static final String TEMPLATES_PATH = RESOURCES_PATH + "templates";
-    public static final String STATIC_PATH = RESOURCES_PATH + "static";
+    public static final String TEMPLATES_PATH = FilePath.class.getResource("/templates").getFile();
+    public static final String STATIC_PATH = FilePath.class.getResource("/static").getFile();
 }

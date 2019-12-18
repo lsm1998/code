@@ -1,0 +1,38 @@
+create table boot_cart(
+id bigint primary key auto_increment,user_id int(11) ,
+pets_id int(11) ,
+number int ,
+sum double ,
+index(user_id),
+index(pets_id)
+)character set utf8
+
+create table boot_order(
+id bigint primary key auto_increment,user_id int(11) ,
+pets_id int(11) ,
+number int ,
+sum double ,
+index(user_id),
+index(pets_id)
+)character set utf8
+
+create table boot_pets(
+id bigint primary key auto_increment,
+name varchar(255) ,
+type varchar(255) ,
+price double ,
+info varchar(255),
+img varchar(255)
+)character set utf8
+
+create table boot_user(
+id bigint primary key auto_increment,
+nickName varchar(255) ,
+userName varchar(55)  unique,
+passWord varchar(255) ,
+index(userName),
+index(passWord)
+)character set utf8
+
+insert into boot_pets(name,type,price,info,img) values('哈士奇','狗类','40.0','西伯利亚雪橇犬（俄语：Сибирский хаски，英语：Siberian husky），常见别名哈士奇，昵称为二哈。','../img/dog1.gif')
+insert into boot_pets(name,type,price,info,img) values('牧羊犬','狗类','80.0','牧羊犬是人们赋予专职放牧类犬的一个总称，不是一个单独品种，“家族庞大，犬丁兴旺”，其中包括“苏格兰牧羊犬”、“喜乐蒂牧羊犬”、“边境牧羊犬”等。','../img/dog2.gif')

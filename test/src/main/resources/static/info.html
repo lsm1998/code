@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>详情页面</title>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/axios.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+
+<body>
+<!--导航栏-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+    <div class="col-lg-4">
+        <img src="../img/logo-topbar.gif">
+    </div>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active"><a class="nav-link"
+                                           href="../main.html">back<span
+                    class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#">欢迎光临宠物商店</a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-xs-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-xs-2" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<!--产品列表-->
+<div class="container marketing my-5">
+    <div class="row" id="itany">
+        <div class="col-lg-4">
+            <h1>商品详情</h1>
+            <img class="rounded-circle" :src="data.img"
+                 alt="Generic placeholder image" width="140" height="140">
+            <h2>编号：{{data.id}}</h2>
+            <h2>名称：{{data.name}}</h2>
+            <h2>价格：{{data.price}}</h2>
+            <h2>介绍：{{data.info}}</h2>
+            <h2>种类：{{data.type}}</h2>
+            <p>
+                <a class="btn btn-primary" @click="add" role="button">加入购物车
+                    &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function GetQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            //search,查询？后面的参数，并匹配正则
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return -1;
+        }
+    </script>
+
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#itany',
+                data: {
+                    url: "../pets/info.do?id=" + GetQueryString("id"),
+                    data: {}
+                },
+                mounted: function () {
+                    this.get()
+                },
+                methods: {
+                    get() {
+                        let _this = this;
+                        axios.get(this.url).then(function (response) {
+                            if (response.data.code = 0) {
+                                _this.data.name = "发生错误"
+                                _this.data.info = "页面找不到了"
+                            } else {
+                                _this.data = response.data
+                            }
+                        })
+                    },
+                    add() {
+                        let params = new URLSearchParams();
+                        params.append('id', this.data.id);
+                        axios.post("../cart/save.do", params).then(function (response) {
+                            if (response.data.code == 0) {
+                                alert(response.data.error)
+                            } else if (response.data.code == 1) {
+                                alert(response.data.susses)
+                            }
+                        })
+                    }
+                }
+            });
+        }
+    </script>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

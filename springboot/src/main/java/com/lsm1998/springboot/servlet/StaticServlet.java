@@ -1,6 +1,7 @@
 package com.lsm1998.springboot.servlet;
 
 import com.lsm1998.spring.web.BaseServlet;
+import com.lsm1998.springboot.MySpringApplication;
 import com.lsm1998.springboot.util.FilePath;
 
 import javax.servlet.ServletException;
@@ -74,7 +75,7 @@ public class StaticServlet extends HttpServlet implements BaseServlet
             {
                 resp.setContentType("text/css; charset=utf-8");
                 resp.getWriter().println(new String(htmlMap.get(url)));
-            } else if (url.endsWith(".jpg")||url.endsWith(".gif")||url.endsWith(".jpeg")||url.endsWith(".png"))
+            } else if (url.endsWith(".jpg") || url.endsWith(".gif") || url.endsWith(".jpeg") || url.endsWith(".png"))
             {
                 resp.setContentType("image/jpeg; charset=utf-8");
                 BufferedOutputStream bos = new BufferedOutputStream(resp.getOutputStream());
@@ -92,7 +93,7 @@ public class StaticServlet extends HttpServlet implements BaseServlet
     public void loadOnStartup()
     {
         System.out.println("开始加载静态的资源");
-        File file = new File(FilePath.RESOURCES_PATH + "static");
+        File file = new File(FilePath.STATIC_PATH);
         File[] files = file.listFiles();
         for (File f : files)
         {
