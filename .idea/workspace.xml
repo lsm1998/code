@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/Tomcat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/ContentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/Dispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/HttpServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/ServletConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/ServletMapping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/StatusCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/exception/UnkownContentTypeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/exception/UnkownMethodException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/servlet/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/util/ClassUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/util/ConfigUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/github/nmyphp/mytomcat/util/ExceptionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/resources/WEB-INFO/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyTomcat/src/main/resources/tomcat.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyTomcat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyTomcat/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyTomcat/src/main/java/com/lsm1998/tomcat/TomcatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyTomcat/src/main/java/com/lsm1998/tomcat/TomcatApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyTomcat/target/classes/com/lsm1998/tomcat/TomcatApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyTomcat/target/classes/com/lsm1998/tomcat/TomcatApplication.class" afterDir="false" />
-    </list>
+    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,8 +64,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\repository" />
-        <option name="userSettingsFile" value="C:\MyApp\apache-maven-3.6.0\conf\settings.xml" />
+        <option name="localRepository" value="E:\jar-libs" />
+        <option name="userSettingsFile" value="E:\maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -101,6 +78,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -237,6 +215,7 @@
       <workItem from="1561105617285" duration="2766000" />
       <workItem from="1576463595746" duration="2602000" />
       <workItem from="1576491992906" duration="781000" />
+      <workItem from="1576682987475" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="目录调整">
       <created>1576492043171</created>
@@ -273,6 +252,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1576" y="107" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492094767" />
+    <state x="648" y="222" key="FileChooserDialogImpl" timestamp="1576683012156">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="648" y="222" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576683012156" />
     <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1576492835434">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -289,9 +272,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835434" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1576463601559">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="109" key="SettingsEditor" timestamp="1576683016049">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="369" y="109" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576683016049" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576463601559" />
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576492101872">
       <screen x="-1920" y="0" width="1920" height="1040" />

@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Demo" />
-        <module name="MyLog4j" />
-        <module name="MyTomcat" />
+        <module name="springboot" />
         <module name="utils" />
+        <module name="MyLog4j" />
+        <module name="tomcat" />
+        <module name="MyTomcat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,7 +19,6 @@
       <module name="Courage" target="11" />
       <module name="demo" target="11" />
       <module name="dubbo" target="1.8" />
-      <module name="ibatis" target="11" />
       <module name="MyIbatis" target="11" />
       <module name="MyJVM" target="11" />
       <module name="MySpring" target="11" />
