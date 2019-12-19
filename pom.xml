@@ -11,17 +11,16 @@
 
     <modules>
         <module>utils</module>
-        <module>tomcat</module>
         <module>demo</module>
-        <module>springboot</module>
-        <module>ibatis</module>
-        <module>spring</module>
-        <module>log4j</module>
-        <module>most</module>
         <module>test</module>
         <module>project</module>
         <module>project/box</module>
         <module>project/qq</module>
+        <module>framework</module>
+        <module>framework/ibatis</module>
+        <module>framework/springboot</module>
+        <module>framework/spring</module>
+        <module>framework/tomcat</module>
     </modules>
 
     <dependencies>

@@ -4,10 +4,7 @@
 旨在整合个人Java源码
  
 demo    --  基础JavaSE小案例  
-log4j   -- 自定义日志框架  
-tomcat  -- 自定义Tomcat  
+framework  -- 自定义框架  
+project  -- 项目  
 utils   -- 自定义综合工具包  
-ibatis  -- 自定义Mybatis  
-spring  -- 自定义Spring+SpringMVC  
-springboot -- 自定义SpringBoot  
-most  -- 自定义RPC远程调用框架
+test   -- 测试代码  

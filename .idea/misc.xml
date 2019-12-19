@@ -21,6 +21,9 @@
         <option value="$PROJECT_DIR$/MyJVM/pom.xml" />
         <option value="$PROJECT_DIR$/MySpring/pom.xml" />
         <option value="$PROJECT_DIR$/MySpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/box/pom.xml" />
+        <option value="$PROJECT_DIR$/log4j/pom.xml" />
+        <option value="$PROJECT_DIR$/most/pom.xml" />
       </set>
     </option>
   </component>
