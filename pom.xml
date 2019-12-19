@@ -19,7 +19,9 @@
         <module>log4j</module>
         <module>most</module>
         <module>test</module>
-        <module>qq</module>
+        <module>project</module>
+        <module>project/box</module>
+        <module>project/qq</module>
     </modules>
 
     <dependencies>

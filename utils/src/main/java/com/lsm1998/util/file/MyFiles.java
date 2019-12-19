@@ -83,6 +83,7 @@ public class MyFiles
 
     /**
      * 重载方法，说明见调用方法
+     *
      * @return
      */
     public static boolean copy(String source, String target)
@@ -110,17 +111,17 @@ public class MyFiles
                 {
                     try (FileInputStream fis = new FileInputStream(source);
                          FileOutputStream fos = new FileOutputStream(target);
-                         ByteChannel inChannel = fis.getChannel();
-                         ByteChannel outChannel = fos.getChannel())
+                         FileChannel inChannel = fis.getChannel();
+                         FileChannel outChannel = fos.getChannel())
                     {
-                        ByteBuffer buffer = ByteBuffer.allocate(MAX_READ_SIZE);
-
-                        while ((inChannel.read(buffer)) != -1)
-                        {
-                            buffer.flip();
-                            outChannel.write(buffer);
-                            buffer.clear();
-                        }
+                        outChannel.transferFrom(inChannel, 0, inChannel.size());
+//                        ByteBuffer buffer = ByteBuffer.allocate(MAX_READ_SIZE);
+//                        while ((inChannel.read(buffer)) != -1)
+//                        {
+//                            buffer.flip();
+//                            outChannel.write(buffer);
+//                            buffer.clear();
+//                        }
                         return true;
                     } catch (Exception e)
                     {
@@ -281,25 +282,26 @@ public class MyFiles
      */
     public static void writeStringToFile(String content, String fileName, boolean append)
     {
-        writeStringToFile(content, new File(fileName),append);
+        writeStringToFile(content, new File(fileName), append);
     }
 
     /**
      * 字符串写入文件
+     *
      * @param content 内容
-     * @param file 文件
-     * @param append 是否追加
+     * @param file    文件
+     * @param append  是否追加
      */
-    public static void writeStringToFile(String content, File file,boolean append)
+    public static void writeStringToFile(String content, File file, boolean append)
     {
         if (file.exists())
         {
             file.delete();
         }
-        try(FileWriter fw=new FileWriter(file,append))
+        try (FileWriter fw = new FileWriter(file, append))
         {
             fw.write(content);
-        }catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
         }
