@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/dubbo/pom.xml" />
         <option value="$PROJECT_DIR$/alibaba/pom.xml" />
         <option value="$PROJECT_DIR$/MyTomcat/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -20,7 +21,6 @@
         <option value="$PROJECT_DIR$/MyJVM/pom.xml" />
         <option value="$PROJECT_DIR$/MySpring/pom.xml" />
         <option value="$PROJECT_DIR$/MySpringMVC/pom.xml" />
-        <option value="$PROJECT_DIR$/demo/pom.xml" />
       </set>
     </option>
   </component>

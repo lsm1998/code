@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.lsm1998.util</groupId>
+            <groupId>com.lsm1998</groupId>
             <artifactId>utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

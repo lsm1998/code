@@ -16,15 +16,15 @@ public class Client
     public static void main(String[] args) throws Exception
     {
         Socket socket = new Socket("127.0.0.1", 8888);
-
-        MsgData<String> data=new MsgData<>();
-        data.msg="你好啊";
-
-        ObjectOutputStream oos=new ObjectOutputStream(socket.getOutputStream());
-        oos.writeObject(data);
-
-        ObjectInputStream ois=new ObjectInputStream(socket.getInputStream());
-        MsgData<String> result=(MsgData<String>)ois.readObject();
-        System.out.println("收到服务器消息："+result.msg);
+        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+        ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+        for (int i = 0; i < 10; i++)
+        {
+            MsgData<byte[]> data = new MsgData<>();
+            data.setData("你好啊".getBytes());
+            oos.writeObject(data);
+            MsgData<byte[]> result = (MsgData<byte[]>) ois.readObject();
+            System.out.println("收到服务器消息：" + new String(result.getData()));
+        }
     }
 }

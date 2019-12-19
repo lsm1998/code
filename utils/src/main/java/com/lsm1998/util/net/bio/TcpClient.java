@@ -20,11 +20,11 @@ public class TcpClient
 
     public TcpClient(String host, int port) throws IOException
     {
-        this.socket = new Socket(host,port);
+        this.socket = new Socket(host, port);
         try
         {
-            oos=new ObjectOutputStream(socket.getOutputStream());
-        }catch (Exception e)
+            oos = new ObjectOutputStream(socket.getOutputStream());
+        } catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -40,10 +40,15 @@ public class TcpClient
         try
         {
             oos.writeObject(data);
-        }catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
         }
+    }
+
+    public void exit() throws IOException
+    {
+        this.socket.close();
     }
 
     class TcpClientThread extends Thread
@@ -66,7 +71,7 @@ public class TcpClient
         @Override
         public void run()
         {
-            while (true)
+            while (true && !socket.isClosed())
             {
                 MsgData data = readData();
                 if (data != null)
@@ -80,10 +85,10 @@ public class TcpClient
         {
             try
             {
-                return (MsgData)ois.readObject();
-            }catch (Exception e)
+                return (MsgData) ois.readObject();
+            } catch (Exception e)
             {
-                e.printStackTrace();
+                System.out.println("socket已经关闭");
             }
             return null;
         }

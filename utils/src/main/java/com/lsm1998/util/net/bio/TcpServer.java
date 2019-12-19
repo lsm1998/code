@@ -69,7 +69,7 @@ public class TcpServer
                 MsgData data = readData();
                 if (data != null)
                 {
-                    handle.handle(data, oos, list);
+                    handle.handle(data, oos, list, socket);
                 }
             }
         }

@@ -14,5 +14,5 @@ import java.util.List;
 @FunctionalInterface
 public interface ServerHandle
 {
-    void handle(MsgData data, ObjectOutputStream oos, List<Socket> list);
+    void handle(MsgData data, ObjectOutputStream oos, List<Socket> list, Socket socket);
 }

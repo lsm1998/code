@@ -1,4 +1,4 @@
-package com.lsm1998.util.net;
+package demo.net.bio;
 
 import com.lsm1998.util.net.bean.MsgData;
 import com.lsm1998.util.net.bio.TcpServer;
@@ -15,20 +15,21 @@ public class ServerTest
     public static void main(String[] args) throws IOException
     {
         TcpServer server = new TcpServer("127.0.0.1", 8888);
-        server.start((data, oos, list) ->
+        server.start((data, oos, list, socket) ->
         {
-            System.out.println("服务端接受消息：" + data.msg);
+            System.out.println("服务端接受消息：" + new String((byte[]) data.getData()));
             MsgData result = new MsgData();
-            switch (data.code)
+            switch (data.getCode())
             {
                 case 0:
-                    result.msg = "hello";
+                    result.setData("hello".getBytes());
                     break;
                 case 1:
-                    result.msg = "你好";
+                    result.setData("你好".getBytes());
                     break;
                 case 2:
-                    result.msg = "回声：" + data.msg;
+                    String msg = "回声：" + new String((byte[]) data.getData());
+                    result.setData(msg.getBytes());
                     break;
             }
             try
@@ -36,7 +37,8 @@ public class ServerTest
                 oos.writeObject(result);
             } catch (IOException e)
             {
-                e.printStackTrace();
+                list.remove(socket);
+                System.out.println("客户端已经退出");
             }
         });
     }

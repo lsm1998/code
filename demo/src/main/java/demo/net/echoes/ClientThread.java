@@ -28,10 +28,11 @@ public class ClientThread extends Thread
             Object o = null;
             while ((o = ois.readObject()) != null)
             {
-                MsgData<String> data=(MsgData<String>)o;
-                System.out.println("收到客户端消息："+data.msg);
-                MsgData<String> result=new MsgData();
-                result.msg="回声："+data.msg;
+                MsgData<byte[]> data = (MsgData<byte[]>) o;
+                System.out.println("收到客户端消息：" + new String(data.getData()));
+                MsgData<byte[]> result = new MsgData<>();
+                String msg = "回声：" + new String(data.getData());
+                result.setData(msg.getBytes());
                 oos.writeObject(result);
             }
         } catch (Exception e)

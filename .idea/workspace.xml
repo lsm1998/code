@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="" />
+    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/demo/net/nio/BufferDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qq/src/main/java/com/lsm1998/qq/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/demo/net/echoes/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/demo/net/echoes/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/demo/net/echoes/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/demo/net/echoes/ClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/ClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibatis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ibatis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/most/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/most/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/demo/net/bio/ClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/NetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/demo/net/bio/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bean/MsgData.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bean/MsgData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bio/ServerHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bio/ServerHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bio/TcpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bio/TcpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bio/TcpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/com/lsm1998/util/net/bio/TcpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/ClientTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/NetTest$Accept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/NetTest$Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/NetTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/ServerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bean/MsgData.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bean/MsgData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/ServerHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/ServerHandle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient$TcpClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient$TcpClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpServer$TcpServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpServer$TcpServerThread.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,8 +95,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="E:\jar-libs" />
-        <option name="userSettingsFile" value="E:\maven-3.6.1\conf\settings.xml" />
+        <option name="localRepository" value="D:\apache-maven-3.6.2\Repository" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.2\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -82,7 +113,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyTomcat/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -115,13 +146,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tomcat">
-    <configuration name="Tomcat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.nmyphp.Tomcat" />
-      <module name="MyTomcat" />
+  <component name="RunManager" selected="Application.AClient">
+    <configuration name="AClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.net.echoes_aio.AClient" />
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.nmyphp.*" />
+          <option name="PATTERN" value="demo.net.echoes_aio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,12 +160,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TomcatApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lsm1998.tomcat.TomcatApplication" />
-      <module name="MyTomcat" />
+    <configuration name="AServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.net.echoes_aio.AServer" />
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lsm1998.tomcat.*" />
+          <option name="PATTERN" value="demo.net.echoes_aio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.net.echoes.Client" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.net.echoes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.net.bio.ClientTest" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.net.bio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.net.bio.ServerTest" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.net.bio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,8 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tomcat" />
-        <item itemvalue="Application.TomcatApplication" />
+        <item itemvalue="Application.AClient" />
+        <item itemvalue="Application.AServer" />
+        <item itemvalue="Application.ClientTest" />
+        <item itemvalue="Application.ServerTest" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -216,6 +289,7 @@
       <workItem from="1576463595746" duration="2602000" />
       <workItem from="1576491992906" duration="781000" />
       <workItem from="1576682987475" duration="27000" />
+      <workItem from="1576715962420" duration="3885000" />
     </task>
     <task id="LOCAL-00001" summary="目录调整">
       <created>1576492043171</created>
@@ -244,47 +318,49 @@
     <option name="LAST_COMMIT_MESSAGE" value="git忽略" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576463608244">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576716639816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576463608244" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576716639816" />
     <state x="-1576" y="107" key="CommitChangelistDialog2" timestamp="1576492094767">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1576" y="107" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492094767" />
-    <state x="648" y="222" key="FileChooserDialogImpl" timestamp="1576683012156">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-1110" y="280" key="FileChooserDialogImpl" timestamp="1576716757545">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="648" y="222" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576683012156" />
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1576492835434">
+    <state x="-1110" y="280" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576716757545" />
+    <state x="810" y="280" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576715984212" />
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom" timestamp="1576719849951">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835434" />
-    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1576492835433">
+    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849951" />
+    <state width="1877" height="291" key="GridCell.Tab.0.center" timestamp="1576719849950">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835433" />
-    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1576492835433">
+    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849950" />
+    <state width="1877" height="291" key="GridCell.Tab.0.left" timestamp="1576719849950">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835433" />
-    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1576492835434">
+    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849950" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right" timestamp="1576719849950">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492835434" />
-    <state x="369" y="109" key="SettingsEditor" timestamp="1576683016049">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849950" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1576715986005">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="369" y="109" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576683016049" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576463601559" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576715986005" />
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576492101872">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492101872" />
-    <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1576491992886">
+    <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1576755125583">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576491992886" />
+    <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576755125583" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
