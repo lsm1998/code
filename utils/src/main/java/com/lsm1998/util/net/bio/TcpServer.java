@@ -19,12 +19,10 @@ import java.util.List;
 public class TcpServer
 {
     private InetSocketAddress address;
-    private List<Socket> list;
 
     public TcpServer(String host, int port)
     {
         this.address = new InetSocketAddress(host, port);
-        this.list = new ArrayList<>();
     }
 
     public void start(ServerHandle handle) throws IOException
@@ -35,7 +33,6 @@ public class TcpServer
         while (true)
         {
             Socket socket = server.accept();
-            list.add(socket);
             this.new TcpServerThread(socket, handle).start();
         }
     }
@@ -69,7 +66,7 @@ public class TcpServer
                 MsgData data = readData();
                 if (data != null)
                 {
-                    handle.handle(data, oos, list, socket);
+                    handle.handle(data, oos, socket);
                 }
             }
         }
@@ -81,7 +78,7 @@ public class TcpServer
                 return (MsgData) ois.readObject();
             } catch (Exception e)
             {
-                list.remove(socket);
+                // list.remove(socket);
             }
             return null;
         }

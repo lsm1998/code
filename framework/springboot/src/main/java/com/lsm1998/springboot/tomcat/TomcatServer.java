@@ -41,7 +41,7 @@ public class TomcatServer
 
             // Servlet映射
             String[] mapping=temp.getParrern();
-            for (String url:mapping)
+            for (String url: mapping)
             {
                 context.addServletMappingDecoded(url, temp.getServletName());
             }

@@ -4,6 +4,9 @@ import com.lsm1998.util.net.bean.MsgData;
 import com.lsm1998.util.net.bio.TcpServer;
 
 import java.io.IOException;
+import java.net.Socket;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @作者：刘时明
@@ -12,11 +15,18 @@ import java.io.IOException;
  */
 public class ServerTest
 {
+    private static Set<Socket> sockets = new HashSet<>();
+
     public static void main(String[] args) throws IOException
     {
         TcpServer server = new TcpServer("127.0.0.1", 8888);
-        server.start((data, oos, list, socket) ->
+        server.start((data, oos, socket) ->
         {
+            if (!sockets.contains(socket))
+            {
+                sockets.add(socket);
+                System.out.println("一个客户端连入，当前在线=" + sockets.size());
+            }
             System.out.println("服务端接受消息：" + new String((byte[]) data.getData()));
             MsgData result = new MsgData();
             switch (data.getCode())
@@ -37,8 +47,8 @@ public class ServerTest
                 oos.writeObject(result);
             } catch (IOException e)
             {
-                list.remove(socket);
-                System.out.println("客户端已经退出");
+                sockets.remove(socket);
+                System.out.println("客户端已经退出，当前在线=" + sockets.size());
             }
         });
     }
