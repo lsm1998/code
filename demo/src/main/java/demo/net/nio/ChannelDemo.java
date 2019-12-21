@@ -88,9 +88,8 @@ public class ChannelDemo
         FileChannel readChannel = fis.getChannel();
         FileOutputStream fos = new FileOutputStream("images/1-copy.jpg");
         FileChannel writeChannel = fos.getChannel();
-        // 最多1M
-        //ByteBuffer buffer = ByteBuffer.allocate(1024 * 1024);
-        //int len = readChannel.read(buffer);
-        writeChannel.transferFrom(readChannel, 0, readChannel.size());
+        long size = readChannel.size();
+        System.out.println("拷贝数据大小=" + size);
+        writeChannel.transferFrom(readChannel, 0, size);
     }
 }

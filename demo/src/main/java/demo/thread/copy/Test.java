@@ -23,7 +23,7 @@ public class Test
         long size= source.length();
         for (int i=0;i<size-TASK_SIZE;i+=TASK_SIZE)
         {
-            CopyThread copy=new CopyThread(i,TASK_SIZE,source,target);
+            CopyThread copy=new CopyThread(i,TASK_SIZE, source,target);
             copy.start();
         }
         if(size%TASK_SIZE!=0)

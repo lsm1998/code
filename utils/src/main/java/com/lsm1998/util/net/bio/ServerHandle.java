@@ -4,7 +4,6 @@ import com.lsm1998.util.net.bean.MsgData;
 
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.List;
 
 /**
  * @作者：刘时明
