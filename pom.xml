@@ -21,6 +21,7 @@
         <module>framework/springboot</module>
         <module>framework/spring</module>
         <module>framework/tomcat</module>
+        <module>framework/echoes</module>
     </modules>
 
     <dependencies>

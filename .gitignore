@@ -6,3 +6,5 @@
 *.class
 
 */target/*
+
+/tomcat.8080
