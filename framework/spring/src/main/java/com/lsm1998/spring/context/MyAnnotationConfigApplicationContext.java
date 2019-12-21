@@ -1,5 +1,8 @@
 package com.lsm1998.spring.context;
 
+import com.lsm1998.spring.beans.MyAutoConfigure;
+
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -9,14 +12,14 @@ import java.util.Properties;
  */
 public class MyAnnotationConfigApplicationContext extends MyGenericApplicationContext
 {
-    public MyAnnotationConfigApplicationContext(Class<?> rootClazz, Properties properties)
+    public MyAnnotationConfigApplicationContext(Class<?> rootClazz, Properties properties, List<MyAutoConfigure> autoConfigureList)
     {
-        loadIOC(rootClazz, properties);
+        loadIOC(rootClazz, properties,autoConfigureList);
     }
 
-    private void loadIOC(Class<?> rootClazz, Properties properties)
+    private void loadIOC(Class<?> rootClazz, Properties properties,List<MyAutoConfigure> autoConfigureList)
     {
         MyGenericApplicationContext context = new MyGenericApplicationContext();
-        context.loadApplicationContext(rootClazz,properties);
+        context.loadApplicationContext(rootClazz,properties,autoConfigureList);
     }
 }

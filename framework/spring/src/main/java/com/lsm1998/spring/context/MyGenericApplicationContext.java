@@ -1,10 +1,13 @@
 package com.lsm1998.spring.context;
 
 import com.lsm1998.spring.aop.annotation.MyEnableAspectJAutoProxy;
+import com.lsm1998.spring.beans.MyAutoConfigure;
 import com.lsm1998.spring.beans.annotation.MyConfiguration;
 import com.lsm1998.spring.beans.annotation.MySpringBootApplication;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -13,6 +16,7 @@ import java.util.Properties;
  * @时间:2018/12/20-20:58
  * @说明：ApplicationContext实现类
  */
+@Slf4j
 public class MyGenericApplicationContext extends MyActionApplicationContext implements MyApplicationContext
 {
     protected MyGenericApplicationContext()
@@ -24,17 +28,19 @@ public class MyGenericApplicationContext extends MyActionApplicationContext impl
      *
      * @param clazz
      */
-    protected void loadApplicationContext(Class<?> clazz, Properties properties)
+    protected void loadApplicationContext(Class<?> clazz, Properties properties, List<MyAutoConfigure> autoConfigureList)
     {
         // 检验配置类
         if (!validateConfig(clazz))
         {
-            System.err.println(clazz.getName() + "不是一个Spring配置类");
+            log.error("{}不是一个Spring配置类",clazz.getName());
             return;
         }
-
         // 注册组件
         this.scanComponent(clazz, properties);
+
+        // 注册SpringBoot自动配置组件
+        this.autoScanComponent(this,autoConfigureList);
 
         // 注入组件
         super.autowiredComponent(this);
@@ -48,7 +54,7 @@ public class MyGenericApplicationContext extends MyActionApplicationContext impl
             super.autowiredProxy();
         } else
         {
-            System.out.println("AOP相关功能未开启");
+            log.info("AOP相关功能未开启");
         }
     }
 

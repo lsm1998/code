@@ -2,16 +2,19 @@ package com.lsm1998.spring.context;
 
 import com.lsm1998.spring.aop.annotation.MyAspect;
 import com.lsm1998.spring.aop.aspectj.MyAspectInstanceFactory;
+import com.lsm1998.spring.beans.MyAutoConfigure;
 import com.lsm1998.spring.beans.annotation.*;
 import com.lsm1998.spring.beans.factory.MyAbstractActionFactory;
 import com.lsm1998.spring.beans.factory.MyBeanFactory;
 import com.lsm1998.spring.web.annotation.MyController;
 import com.lsm1998.spring.web.method.MyHandlerMapping;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -20,6 +23,7 @@ import java.util.Properties;
  * @时间:2018/12/20-22:06
  * @说明：实现IOC容器初始化行为
  */
+@Slf4j
 public class MyActionApplicationContext extends MyAbstractActionFactory
 {
     // 分隔符号
@@ -105,13 +109,11 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
                     Object obj = beanFactory.getBean(f.getType());
                     if (obj == null)
                     {
-                        System.out.println("beanMap=" + beanMap);
-                        System.out.println("组件类型不存在：" + f.getType());
+                        continue;
                     } else
                     {
                         Object temp = beanFactory.getBean(f.getType());
                         f.set(bean, temp);
-                        System.out.println("依赖注入一个组件：" + beanFactory.getBean(f.getType()));
                     }
                 } catch (Exception e)
                 {
@@ -158,8 +160,6 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
             Class clazz = Class.forName(classpath);
             if (clazz.isAnnotationPresent(MyComponent.class) || clazz.isAnnotationPresent(MyController.class) || clazz.isAnnotationPresent(MyService.class) || clazz.isAnnotationPresent(MyConfiguration.class))
             {
-                System.out.println("获取一个bean组件，开始加载：" + clazz.getName());
-
                 Object bean = loadComponent(clazz);
 
                 if (clazz.isAnnotationPresent(MyController.class))
@@ -236,7 +236,6 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
                 {
                     Object result = m.invoke(bean);
                     beanMap.put(result.getClass().getName(), result);
-                    System.out.println("注入了一个方法级Bean=" + result.toString());
                 }
             }
             return bean;
@@ -250,7 +249,7 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
     @Override
     protected void loadAspect()
     {
-        System.out.println("切面组件开始加载");
+        log.info("切面组件开始加载");
         for (String key : beanMap.keySet())
         {
             Object bean = beanMap.get(key);
@@ -281,7 +280,6 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
             e.printStackTrace();
         }
         proxyMap.put(key, proxy);
-        System.out.println("一个组件的代理对象已经生成，proxy=" + proxy.getClass());
     }
 
     protected void autowiredProxy()
@@ -302,8 +300,6 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
     private void autowiredProxy(Field f, Object bean)
     {
         Class<?> clazz = f.getType();
-        System.out.println(this.proxyMap);
-
         String name = null;
         for (String key : beanMap.keySet())
         {
@@ -336,6 +332,16 @@ public class MyActionApplicationContext extends MyAbstractActionFactory
             {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Override
+    protected void autoScanComponent(MyBeanFactory beanFactory, List<MyAutoConfigure> autoConfigureList)
+    {
+        MyApplicationContext context=(MyApplicationContext)beanFactory;
+        for (MyAutoConfigure c:autoConfigureList)
+        {
+            c.auth(context);
         }
     }
 }

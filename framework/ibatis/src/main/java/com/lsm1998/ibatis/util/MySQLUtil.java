@@ -156,7 +156,7 @@ public class MySQLUtil
     {
         return sql.append(name + " " + type + ((len == -1) ? "" : "(" + len + ")") + " " +
                 (isId ? "primary key " + ((isIncrement) ? "auto_increment" : "") : "") + (isUnique ? " unique" : "") +
-                (isNullable ? " notnull" : "")).toString();
+                (isNullable ? " not null" : "")).toString();
     }
 
     public static List<String> getIndexNameList(Field[] fields)

@@ -3,6 +3,7 @@ package com.lsm1998.ibatis.builder;
 import com.lsm1998.ibatis.auto.AutoTables;
 import com.lsm1998.ibatis.session.MyConfiguration;
 import com.lsm1998.ibatis.util.MySQLUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -13,6 +14,7 @@ import java.util.Properties;
  * @时间：18-12-24-下午3:46
  * @说明：
  */
+@Slf4j
 public class MyAnnotationConfigBuilder
 {
     private Properties properties;
@@ -53,7 +55,7 @@ public class MyAnnotationConfigBuilder
                 properties.load(is);
             } catch (Exception e1)
             {
-                System.err.println("配置文件找不到");
+                log.error("配置文件找不到");
                 e1.printStackTrace();
             }
         }
@@ -67,7 +69,7 @@ public class MyAnnotationConfigBuilder
         configuration.setUpdate(update);
         MySQLUtil.setConfiguration(configuration);
         // 3.自动建表
-        System.out.println(update ? "开始自动建表" : "自动建表未开启");
+        log.info(update ? "开始自动建表" : "自动建表未开启");
         if (update)
         {
             new AutoTables();

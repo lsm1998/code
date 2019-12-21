@@ -5,8 +5,8 @@
  */
 package com.test;
 
-import com.lsm1998.springboot.MySpringApplication;
 import com.lsm1998.spring.beans.annotation.MySpringBootApplication;
+import com.lsm1998.springboot.MySpringApplication;
 
 @MySpringBootApplication
 public class WebApp

@@ -175,7 +175,7 @@ public class MyHandlerMapping
     private Object[] initParameter(HttpServletRequest req, HttpServletResponse resp, Method method)
     {
         Parameter[] parameters = method.getParameters();
-        Map<String, String[]> parameMap = req.getParameterMap();
+        Map<String, String[]> paramMap = req.getParameterMap();
 
         Object[] args = new Object[parameters.length];
         // 注入默认的参数
@@ -194,14 +194,14 @@ public class MyHandlerMapping
             {
                 MyRequestParam requestParam = parameters[i].getAnnotation(MyRequestParam.class);
                 String key = requestParam.value();
-                if (parameMap.containsKey(key))
+                if (paramMap.containsKey(key))
                 {
-                    if (parameMap.get(key).length == 1)
+                    if (paramMap.get(key).length == 1)
                     {
-                        setArgs(parameters[i], parameMap.get(key)[0], args, i);
+                        setArgs(parameters[i], paramMap.get(key)[0], args, i);
                     } else
                     {
-                        args[i] = parameMap.get(key);
+                        args[i] = paramMap.get(key);
                     }
                 }
             } else
@@ -212,12 +212,12 @@ public class MyHandlerMapping
                     Field[] fields = parameters[i].getType().getDeclaredFields();
                     for (Field f : fields)
                     {
-                        if (parameMap.containsKey(f.getName()))
+                        if (paramMap.containsKey(f.getName()))
                         {
                             f.setAccessible(true);
-                            if (parameMap.get(f.getName()) != null)
+                            if (paramMap.get(f.getName()) != null)
                             {
-                                setValue(f, obj, parameMap.get(f.getName())[0]);
+                                setValue(f, obj, paramMap.get(f.getName())[0]);
                             }
                         }
                     }

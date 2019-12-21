@@ -32,13 +32,13 @@ public class MyDefaultSqlSessionFactory implements MySqlSessionFactory
 
     private MySqlSession openSession(Connection connection, boolean autoCommit)
     {
-        return new MySqlSession(connection, autoCommit);
+        return new MyDefaultSqlSession(connection, autoCommit);
     }
 
     @Override
     public MySqlSession openSession(Connection connection)
     {
-        return new MySqlSession(connection);
+        return new MyDefaultSqlSession(connection);
     }
 
     @Override

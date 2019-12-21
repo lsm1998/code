@@ -2,6 +2,10 @@ package com.lsm1998.springboot.autoconfigure;
 
 import com.lsm1998.ibatis.session.MySqlSessionFactory;
 import com.lsm1998.ibatis.session.MySqlSessionFactoryBuilder;
+import com.lsm1998.spring.beans.MyAutoConfigure;
+import com.lsm1998.spring.beans.factory.MyBeanFactory;
+import com.lsm1998.spring.context.MyApplicationContext;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 import java.util.Properties;
@@ -11,24 +15,23 @@ import java.util.Properties;
  * @时间：19-1-11-上午9:57
  * @说明：
  */
-public class MybatisAutoConfigure
+@Slf4j
+public class MybatisAutoConfigure implements MyAutoConfigure
 {
-    private Map<String,Object> map;
     private Properties properties;
 
-    public MybatisAutoConfigure(Map<String,Object> map, Properties properties)
+    public MybatisAutoConfigure(Properties properties)
     {
-        System.out.println("mybatis自动配置开始");
-        this.map = map;
+        log.info("mybatis自动配置开始");
         this.properties = properties;
-        auto();
-        System.out.println("mybatis自动配置完成");
+        log.info("mybatis自动配置完成");
     }
 
-    private void auto()
+    @Override
+    public void auth(MyApplicationContext context)
     {
         // 初始化Mybatis
         MySqlSessionFactory sessionFactory = new MySqlSessionFactoryBuilder().build(properties, true);
-        map.put("com.lsm1998.ibatis.session.MyDefaultSqlSessionFactory", sessionFactory);
+        context.register("com.lsm1998.ibatis.session.MyDefaultSqlSessionFactory", sessionFactory);
     }
 }

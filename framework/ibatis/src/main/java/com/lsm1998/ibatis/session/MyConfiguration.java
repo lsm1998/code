@@ -13,7 +13,7 @@ public class MyConfiguration
     public String url;
     public String username;
     public String password;
-    public String drivert;
+    public String driver;
     private boolean update = false;
 
     public MyConfiguration(Properties properties)
@@ -23,7 +23,7 @@ public class MyConfiguration
         validateProperties();
 
         // 2.加载驱动
-        loadDrivert();
+        loadDriver();
     }
 
     private void validateProperties()
@@ -49,24 +49,24 @@ public class MyConfiguration
         {
             System.err.println("配置文件中找不到：password属性");
         }
-        if (properties.containsKey("drivert"))
+        if (properties.containsKey("driver"))
         {
-            drivert = properties.getProperty("drivert");
+            driver = properties.getProperty("driver");
         } else
         {
-            System.err.println("配置文件中找不到：drivert属性");
+            System.err.println("配置文件中找不到：driver属性");
         }
     }
 
-    private void loadDrivert()
+    private void loadDriver()
     {
         try
         {
-            Class.forName(drivert);
+            Class.forName(driver);
             System.out.println("驱动加载完毕");
         } catch (ClassNotFoundException e)
         {
-            System.err.println("找不到驱动类：" + drivert);
+            System.err.println("找不到驱动类：" + driver);
         }
     }
 

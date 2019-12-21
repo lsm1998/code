@@ -22,6 +22,7 @@
         <module>framework/spring</module>
         <module>framework/tomcat</module>
         <module>framework/echoes</module>
+        <module>test/web</module>
     </modules>
 
     <dependencies>

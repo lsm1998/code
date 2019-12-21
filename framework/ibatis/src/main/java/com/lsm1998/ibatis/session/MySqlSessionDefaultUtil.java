@@ -2,6 +2,7 @@ package com.lsm1998.ibatis.session;
 
 import com.lsm1998.ibatis.annotation.MyTable;
 import com.lsm1998.ibatis.util.MySQLUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
 import java.sql.Connection;
@@ -15,7 +16,8 @@ import java.util.Map;
  * @时间:2018/12/29-11:26
  * @说明：
  */
-public class MySqlSessionDefultUtil
+@Slf4j
+public class MySqlSessionDefaultUtil
 {
     protected static <T> List<T> getAll(Connection connection, Class<T> clazz)
     {
@@ -60,7 +62,7 @@ public class MySqlSessionDefultUtil
         return false;
     }
 
-    protected static boolean saveOrUpdate(Connection connection, Object object)
+    protected static boolean update(Connection connection, Object object)
     {
         Class clazz = object.getClass();
         if (!clazz.isAnnotationPresent(MyTable.class))
@@ -69,16 +71,22 @@ public class MySqlSessionDefultUtil
             return false;
         }
         Map<String, Object> map = MySQLUtil.getMapByObject(object);
-        System.out.println(map);
         String IdColumnName = MySQLUtil.getIdColumnName(clazz);
         String tableName = MySQLUtil.getTableName(clazz);
-        if (map.containsKey(IdColumnName))
+        return update(connection, tableName, map, IdColumnName);
+    }
+
+    protected static boolean insert(Connection connection, Object object)
+    {
+        Class clazz = object.getClass();
+        if (!clazz.isAnnotationPresent(MyTable.class))
         {
-            return update(connection, tableName, map, IdColumnName);
-        } else
-        {
-            return save(connection, tableName, map);
+            System.err.println("此对象不是实体类：" + clazz.getName());
+            return false;
         }
+        Map<String, Object> map = MySQLUtil.getMapByObject(object);
+        String tableName = MySQLUtil.getTableName(clazz);
+        return save(connection, tableName, map);
     }
 
     public static <T> List<T> getAllByPage(Connection connection, Class<T> clazz, int start, int end)

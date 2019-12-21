@@ -1,5 +1,8 @@
 package com.lsm1998.spring.beans.factory;
 
+import com.lsm1998.spring.beans.MyAutoConfigure;
+
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,6 +23,13 @@ public abstract class MyAbstractActionFactory
      * @param clazz
      */
     protected abstract void scanComponent(Class clazz, Properties properties);
+
+    /**
+     * 加载自动装配的组件
+     * @param beanFactory
+     * @param autoConfigureList
+     */
+    protected abstract void autoScanComponent(MyBeanFactory beanFactory, List<MyAutoConfigure> autoConfigureList);
 
     /**
      * 装配组件
