@@ -23,6 +23,13 @@
         <module>framework/tomcat</module>
         <module>framework/echoes</module>
         <module>test/web</module>
+        <module>test/echoes-api</module>
+        <module>test/echoes-server</module>
+        <module>test/echoes-client</module>
+        <module>project/snake</module>
+        <module>project/puzzle</module>
+        <module>project/contra</module>
+        <module>project/chess</module>
     </modules>
 
     <dependencies>

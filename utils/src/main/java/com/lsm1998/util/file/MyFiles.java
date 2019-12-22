@@ -114,7 +114,8 @@ public class MyFiles
                          FileChannel inChannel = fis.getChannel();
                          FileChannel outChannel = fos.getChannel())
                     {
-                        outChannel.transferFrom(inChannel, 0, inChannel.size());
+                        inChannel.transferTo(0,inChannel.size(),outChannel);
+                        // outChannel.transferFrom(inChannel, 0, inChannel.size());
 //                        ByteBuffer buffer = ByteBuffer.allocate(MAX_READ_SIZE);
 //                        while ((inChannel.read(buffer)) != -1)
 //                        {

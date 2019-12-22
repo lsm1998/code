@@ -17,12 +17,14 @@ public class TcpClient
 {
     private Socket socket;
     private ObjectOutputStream oos;
+    private boolean isClose;
 
     public TcpClient(String host, int port) throws IOException
     {
         this.socket = new Socket(host, port);
         try
         {
+            isClose=false;
             oos = new ObjectOutputStream(socket.getOutputStream());
         } catch (Exception e)
         {
@@ -49,6 +51,7 @@ public class TcpClient
     public void exit() throws IOException
     {
         this.socket.close();
+        isClose=true;
     }
 
     class TcpClientThread extends Thread
@@ -71,8 +74,12 @@ public class TcpClient
         @Override
         public void run()
         {
-            while (true && !socket.isClosed())
+            while (true)
             {
+                if(isClose)
+                {
+                    break;
+                }
                 MsgData data = readData();
                 if (data != null)
                 {
@@ -88,7 +95,8 @@ public class TcpClient
                 return (MsgData) ois.readObject();
             } catch (Exception e)
             {
-                System.out.println("socket已经关闭");
+                System.out.println("服务器socket已经关闭");
+                isClose=true;
             }
             return null;
         }

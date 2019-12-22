@@ -18,7 +18,6 @@ public class ClientTest
         TcpClient client = new TcpClient("127.0.0.1", 8888);
 
         client.start(data -> System.out.println("接受来自服务端的消息：" + new String((byte[]) data.getData())));
-        CountDownLatch downLatch = new CountDownLatch(5);
         for (int i = 0; i < 10; i++)
         {
             MsgData<byte[]> data = new MsgData<>();
