@@ -30,6 +30,7 @@
         <module>project/puzzle</module>
         <module>project/contra</module>
         <module>project/chess</module>
+        <module>project/microChat</module>
     </modules>
 
     <dependencies>
