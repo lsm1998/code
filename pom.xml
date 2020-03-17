@@ -31,6 +31,9 @@
         <module>project/contra</module>
         <module>project/chess</module>
         <module>project/microChat</module>
+        <module>framework/echoes/registry</module>
+        <module>framework/echoes/echoes-common</module>
+        <module>framework/echoes/echoes-test</module>
     </modules>
 
     <dependencies>
@@ -88,6 +91,13 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.13</version>
+        </dependency>
+
+        <!-- protobuf -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.9.1</version>
         </dependency>
     </dependencies>
 

@@ -5,12 +5,12 @@
  */
 package com.test.service;
 
-import com.lsm1998.echoes.annotaion.MyRpcServer;
+import com.lsm1998.echoes.common.annotaion.EchoesRpcServer;
 import com.test.dto.UserDto;
 
 import java.util.List;
 
-@MyRpcServer(timeout = 3000)
+@EchoesRpcServer(timeout = 10000)
 public class UserServiceImpl implements UserService
 {
     @Override

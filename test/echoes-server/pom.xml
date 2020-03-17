@@ -21,7 +21,13 @@
 
         <dependency>
             <groupId>com.lsm1998</groupId>
-            <artifactId>echoes</artifactId>
+            <artifactId>echoes-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lsm1998</groupId>
+            <artifactId>registry</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
