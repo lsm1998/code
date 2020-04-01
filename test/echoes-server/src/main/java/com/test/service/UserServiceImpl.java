@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService
     {
         return false;
     }
+
+    @Override
+    public String hello(String name)
+    {
+        return "hello :"+name;
+    }
 }

@@ -10,7 +10,13 @@ import java.util.List;
  */
 public interface MySqlSession
 {
-
+    /**
+     * 获取Mapper对象
+     *
+     * @param clazz
+     * @param <T>
+     * @return
+     */
     <T> T getMapper(Class<?> clazz);
 
     /**
@@ -64,5 +70,8 @@ public interface MySqlSession
      */
     int getCount();
 
+    /**
+     * 关闭资源
+     */
     void close();
 }

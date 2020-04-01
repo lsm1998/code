@@ -280,7 +280,7 @@ public class MySQLUtil
     }
 
     /**
-     * 获取逐渐列名
+     * 获取主键列名
      *
      * @param clazz
      * @return
@@ -325,7 +325,6 @@ public class MySQLUtil
                     {
                         continue;
                     }
-                    System.out.println("封装map集合:key=" + f.getName() + ",value=" + value);
                     if (f.isAnnotationPresent(MyColumn.class))
                     {
                         MyColumn column = f.getAnnotation(MyColumn.class);

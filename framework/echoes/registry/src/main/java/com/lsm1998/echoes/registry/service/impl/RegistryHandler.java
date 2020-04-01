@@ -9,7 +9,9 @@ import com.google.gson.Gson;
 import com.lsm1998.echoes.registry.bean.AppReport;
 import com.lsm1998.echoes.registry.bean.MethodReport;
 import com.lsm1998.echoes.registry.config.RegistryConfig;
+import com.lsm1998.echoes.registry.enums.LoadStrategy;
 import com.lsm1998.echoes.registry.serialize.ReqData;
+import com.lsm1998.echoes.registry.service.RegistryContext;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -23,17 +25,19 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class RegistryHandler
 {
-    private RegistryConfig config;
-    private static final ReadWriteLock LOCK = new ReentrantReadWriteLock();
     private static final Gson gson = new Gson();
-    private static final Map<String, List<AppReport>> serviceMap = new HashMap<>();
-    private static final Map<String, List<MethodReport>> methodMap = new HashMap<>();
+    private static final ReadWriteLock LOCK = new ReentrantReadWriteLock();
+    private final RegistryContext context;
+
     private static final byte[] SUCCESS;
     private static final byte[] ERROR;
+
+    private RegistryConfig config;
 
     public RegistryHandler(RegistryConfig config)
     {
         this.config = config;
+        this.context=RegistryContext.getInstance();
     }
 
     static
@@ -45,29 +49,32 @@ public class RegistryHandler
     public void handlerData(String jsonStr, SocketChannel dest) throws IOException
     {
         ReqData reqData = gson.fromJson(jsonStr, ReqData.class);
+        byte[] result=null;
         switch (reqData.getCode())
         {
             case 1:
-                dest.write(ByteBuffer.wrap(handler1(reqData.getData())));
+                result=handler1(reqData.getData());
                 break;
             case 2:
-                dest.write(ByteBuffer.wrap(handler2(reqData.getData())));
+                result=handler2(reqData.getData());
                 break;
             case 3:
-                dest.write(ByteBuffer.wrap(handler3(reqData.getData())));
+                result=handler3(reqData.getData());
                 break;
             case 4:
-                dest.write(ByteBuffer.wrap(handler4(reqData.getData())));
+                result=handler4(reqData.getData());
                 break;
             case 5:
-                dest.write(ByteBuffer.wrap(handler5(reqData.getData())));
+                result=handler5(reqData.getData());
                 break;
         }
+        if(result==null)result=new byte[]{};
+        dest.write(ByteBuffer.wrap(result,0,result.length));
     }
 
     private byte[] handler5(String data)
     {
-        List<AppReport> list = serviceMap.get(data);
+        List<AppReport> list = context.getServiceMap(data);
         int size = list == null ? 0 : list.size();
         if (size == 0)
         {
@@ -77,7 +84,7 @@ public class RegistryHandler
             return gson.toJson(list.get(0)).getBytes();
         } else
         {
-            if (config.getLoadStrategy() == 1)
+            if (config.getLoadStrategy() == LoadStrategy.RANDOM)
             {
 
             }
@@ -87,7 +94,7 @@ public class RegistryHandler
 
     private byte[] handler3(String data)
     {
-        List<AppReport> list = serviceMap.get(data);
+        List<AppReport> list = context.getServiceMap(data);
         if (list == null)
         {
             return new byte[]{};
@@ -99,7 +106,7 @@ public class RegistryHandler
 
     private byte[] handler4(String data)
     {
-        List<MethodReport> list = methodMap.get(data);
+        List<MethodReport> list = context.getMethodMap(data);
         if (list == null)
         {
             return new byte[]{};
@@ -117,15 +124,15 @@ public class RegistryHandler
         try
         {
             LOCK.writeLock().lock();
-            if (serviceMap.containsKey(arr[0]))
+            if (context.serviceMapContainsKey(arr[0]))
             {
-                list = serviceMap.get(arr[0]);
+                list =  context.getServiceMap(arr[0]);
             } else
             {
                 list = new ArrayList<>();
             }
             list.add(report);
-            serviceMap.put(arr[0], list);
+            context.putServiceMap(arr[0], list);
         } finally
         {
             LOCK.writeLock().unlock();
@@ -141,15 +148,15 @@ public class RegistryHandler
         try
         {
             LOCK.writeLock().lock();
-            if (methodMap.containsKey(arr[0]))
+            if (context.methodMapContainsKey(arr[0]))
             {
-                list = methodMap.get(arr[0]);
+                list = context.getMethodMap(arr[0]);
             } else
             {
                 list = new ArrayList<>();
             }
             list.add(methodReport);
-            methodMap.put(arr[0], list);
+            context.putMethodMap(arr[0], list);
         } finally
         {
             LOCK.writeLock().unlock();

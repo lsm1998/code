@@ -12,6 +12,16 @@
     <artifactId>framework</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>echoes</module>
+        <module>ibatis</module>
+        <module>spring</module>
+        <module>springboot</module>
+        <module>tomcat</module>
+        <module>echoes/echoes-config</module>
+        <module>echoes/echoes-rpc</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>com.lsm1998</groupId>

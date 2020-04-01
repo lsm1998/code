@@ -7,7 +7,7 @@ package com.lsm1998.echoes.registry;
 
 import com.lsm1998.echoes.common.net.EchoesServer;
 import com.lsm1998.echoes.common.net.nio.NIOServer;
-import com.lsm1998.echoes.registry.service.Define;
+import com.lsm1998.echoes.registry.enums.LoadStrategy;
 import com.lsm1998.echoes.registry.service.RegistryServerBuild;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class RegistryStart
     {
         EchoesServer server = new RegistryServerBuild()
                 .serverClass(NIOServer.class)
-                .loadStrategy(1)
+                .loadStrategy(LoadStrategy.RANDOM)
                 .build();
         server.start(Define.PORT);
     }

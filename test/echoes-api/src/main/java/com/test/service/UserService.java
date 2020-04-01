@@ -14,4 +14,6 @@ public interface UserService
     List<UserDto> list();
 
     boolean insertUser(UserDto user);
+
+    String hello(String name);
 }

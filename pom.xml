@@ -14,92 +14,48 @@
         <module>demo</module>
         <module>test</module>
         <module>project</module>
-        <module>project/box</module>
-        <module>project/qq</module>
         <module>framework</module>
-        <module>framework/ibatis</module>
-        <module>framework/springboot</module>
-        <module>framework/spring</module>
-        <module>framework/tomcat</module>
-        <module>framework/echoes</module>
-        <module>test/web</module>
-        <module>test/echoes-api</module>
-        <module>test/echoes-server</module>
-        <module>test/echoes-client</module>
-        <module>project/snake</module>
-        <module>project/puzzle</module>
-        <module>project/contra</module>
-        <module>project/chess</module>
-        <module>project/microChat</module>
-        <module>framework/echoes/registry</module>
-        <module>framework/echoes/echoes-common</module>
-        <module>framework/echoes/echoes-test</module>
+        <module>study</module>
     </modules>
 
-    <dependencies>
-        <!-- druid -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.21</version>
-        </dependency>
+<!--    <dependencies>-->
+<!--        &lt;!&ndash; druid &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid</artifactId>-->
+<!--            <version>1.1.21</version>-->
+<!--        </dependency>-->
 
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
-        </dependency>
 
-        <!-- gson -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.5</version>
-        </dependency>
+<!--        &lt;!&ndash; gson &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.code.gson</groupId>-->
+<!--            <artifactId>gson</artifactId>-->
+<!--            <version>2.8.5</version>-->
+<!--        </dependency>-->
 
-        <!-- cglib -->
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>3.2.5</version>
-        </dependency>
 
-        <!-- yaml解析 -->
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>1.25</version>
-        </dependency>
+<!--        &lt;!&ndash; logback &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>ch.qos.logback</groupId>-->
+<!--            <artifactId>logback-classic</artifactId>-->
+<!--            <version>1.2.3</version>-->
+<!--        </dependency>-->
 
-        <!-- slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
+<!--        &lt;!&ndash; mysql &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <version>8.0.13</version>-->
+<!--        </dependency>-->
 
-        <!-- logback -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-
-        <!-- mysql -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.13</version>
-        </dependency>
-
-        <!-- protobuf -->
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>3.9.1</version>
-        </dependency>
-    </dependencies>
+<!--        &lt;!&ndash; protobuf &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.protobuf</groupId>-->
+<!--            <artifactId>protobuf-java</artifactId>-->
+<!--            <version>3.9.1</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 
     <build>
         <plugins>

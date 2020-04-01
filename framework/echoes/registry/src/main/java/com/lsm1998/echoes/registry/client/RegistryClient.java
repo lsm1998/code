@@ -6,10 +6,11 @@
 package com.lsm1998.echoes.registry.client;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lsm1998.echoes.registry.bean.AppReport;
 import com.lsm1998.echoes.registry.bean.MethodReport;
 import com.lsm1998.echoes.registry.serialize.ReqData;
-import com.lsm1998.echoes.registry.service.Define;
+import com.lsm1998.echoes.registry.Define;
 
 import java.io.IOException;
 import java.util.List;
@@ -58,7 +59,7 @@ public class RegistryClient extends DefClient implements RegistryHandler
         req.setCode(3);
         req.setData(serviceName);
         String jsonStr = this.client2Server(gson.toJson(req));
-        return gson.fromJson(jsonStr, List.class);
+        return gson.fromJson(jsonStr, new TypeToken<List<AppReport>>() {}.getType());
     }
 
     @Override

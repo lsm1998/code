@@ -1,0 +1,13 @@
+{
+  "echoes": {
+    "rpc": {
+      "serviceName": "Demo-service",
+      "port": 1314,
+      "scanPackage": "com.test.service"
+    },
+    "registry": {
+      "adder": "127.0.0.1",
+      "port": 12222
+    }
+  }
+}

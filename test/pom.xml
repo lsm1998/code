@@ -7,7 +7,14 @@
         <groupId>com.lsm1998</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>test</artifactId>
+
+    <modules>
+        <module>echoes-client</module>
+        <module>echoes-api</module>
+        <module>echoes-server</module>
+        <module>web</module>
+    </modules>
 </project>

@@ -13,13 +13,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 
 public class DefClient implements EchoesClient
 {
     private Selector selector;
-    private Charset charset = StandardCharsets.UTF_8;
     private SocketChannel channel;
     private ByteBuffer buffer = ByteBuffer.allocate(1024);
 
@@ -67,10 +64,15 @@ public class DefClient implements EchoesClient
                 {
                     SocketChannel channel = (SocketChannel) key.channel();
                     buffer.clear();
-                    channel.read(buffer);
-                    String result = new String(buffer.array());
+                    int len;
+                    StringBuilder result=new StringBuilder();
+                    while ((len=channel.read(buffer))>0)
+                    {
+                        buffer.flip();
+                        result.append(new String(buffer.array(),0,len));
+                    }
                     buffer.clear();
-                    return result;
+                    return result.toString();
                 }
             }
         }

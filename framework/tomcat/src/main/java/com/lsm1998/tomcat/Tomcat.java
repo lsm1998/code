@@ -9,7 +9,7 @@ import java.net.Socket;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Tomcat入口.
+ * Tomcat入口
  *
  * @author nmyphp
  */

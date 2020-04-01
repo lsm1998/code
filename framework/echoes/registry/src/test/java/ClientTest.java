@@ -13,9 +13,10 @@ public class ClientTest
     public static void main(String[] args) throws IOException
     {
         RegistryClient client=new RegistryClient();
-        client.registryApp("haha","123",11);
-        client.registryApp("haha","123",22);
+        client.registryApp("user-service","127.0.0.2",9000);
+        //client.registryApp("user-service","127.0.0.2",9001);
+        //client.registryApp("order-service","127.0.0.2",8000);
 
-        System.out.println(client.queryApp("haha"));
+        System.out.println(client.queryApp("user-service"));
     }
 }
