@@ -1,6 +1,7 @@
 package com.oo.server;
 
 import com.oo.domain.User;
+import com.oo.util.PathUtil;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,7 +36,7 @@ public class ServerUI extends JFrame
 
     private void init()
     {
-        JLabel up = new JLabel("oo服务端程序", new ImageIcon("src\\main\\resources\\img\\logo.png"), JLabel.CENTER);
+        JLabel up = new JLabel("oo服务端程序", new ImageIcon(PathUtil.RESOURCES +"\\img\\logo.png"), JLabel.CENTER);
         this.add(up, BorderLayout.NORTH);
         textArea = new JTextArea();
         textArea.setEnabled(false);

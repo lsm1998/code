@@ -5,6 +5,7 @@ import com.oo.domain.User;
 import com.oo.mapper.GroupMapper;
 import com.oo.mapper.UserMapper;
 import com.oo.server.App;
+import com.oo.util.PathUtil;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,7 +25,7 @@ public class RegisterUI extends JFrame
 
     public RegisterUI()
     {
-        icon = new ImageIcon("src\\main\\resources\\img\\头像1.jpg");
+        icon = new ImageIcon(PathUtil.RESOURCES +"\\img\\头像1.jpg");
         this.setSize(560, 620);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -95,7 +96,7 @@ public class RegisterUI extends JFrame
             if (pass1.equals(pass2))
             {
                 User user = new User();
-                File file=new File("src\\main\\resources\\img\\defaultHeadimg.png");
+                File file=new File(PathUtil.RESOURCES +"\\img\\defaultHeadimg.png");
                 try(FileInputStream fis=new FileInputStream(file))
                 {
                     byte[] b=new byte[(int)file.length()];

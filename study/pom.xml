@@ -12,5 +12,11 @@
 
     <artifactId>study</artifactId>
 
+    <modules>
+        <module>redis</module>
+    </modules>
 
+    <dependencies>
+
+    </dependencies>
 </project>

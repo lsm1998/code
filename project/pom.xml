@@ -13,7 +13,6 @@
 
     <modules>
         <module>box</module>
-        <module>chess</module>
         <module>contra</module>
         <module>puzzle</module>
         <module>qq</module>

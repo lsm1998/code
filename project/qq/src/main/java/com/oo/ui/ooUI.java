@@ -1,5 +1,7 @@
 package com.oo.ui;
 
+import com.oo.util.PathUtil;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,11 +17,11 @@ public class ooUI extends JFrame
     {
         setUndecorated(true);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Image image = toolkit.getImage("static/img/tb.png");
+        Image image = toolkit.getImage(PathUtil.RESOURCES +"/img/tb.png");
         setIconImage(image);
         setSize(400, 300);
         setLocationRelativeTo(null);
-        JLabel label = new JLabel(new ImageIcon("src\\main\\resources\\img\\11.jpg"));
+        JLabel label = new JLabel(new ImageIcon(PathUtil.RESOURCES +"\\img\\11.jpg"));
         add(label);
         setVisible(true);
         try
