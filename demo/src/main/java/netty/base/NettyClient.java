@@ -6,6 +6,7 @@
 package netty.base;
 
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -33,10 +34,12 @@ public class NettyClient
                             socketChannel.pipeline().addLast(new NettyClientHandler());
                         }
                     });
-            System.out.println("客户端准备就绪。。。");
-
-            ChannelFuture future = bootstrap.connect(new InetSocketAddress("127.0.0.1", 8000)).sync();
-            future.channel().closeFuture().sync();
+            Channel channel = bootstrap.connect(new InetSocketAddress("127.0.0.1", 8000)).channel();
+            for (int i = 0; i < 10; i++)
+            {
+                channel.writeAndFlush("" + i);
+            }
+            channel.closeFuture().sync();
         } finally
         {
             eventLoopGroup.shutdownGracefully();

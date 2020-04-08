@@ -1,146 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="目录调整">
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/demo/FirstServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/demo/SecondServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/http/HttpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/http/HttpServletRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/http/HttpServletResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/servlet/ServletInputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/servlet/ServletRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/tomcat/src/main/resources/web.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/css/app.77c9db85bad2c19d567e9ed94e13c37a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/css/app.77c9db85bad2c19d567e9ed94e13c37a.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/img/loading_1.53c1ff2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/img/loading_read.f002b9e.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/img/p2.dcd1704.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/img/progress.22043e8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/img/progress2.d47900d.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/img/tongtian_book.ba2d76c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/0.3e7c70528e5a289bfe75.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/0.3e7c70528e5a289bfe75.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/1.f8adc0a72b293e593e9a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/1.f8adc0a72b293e593e9a.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/10.0e43c211d601ef9c0665.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/10.0e43c211d601ef9c0665.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/11.3ec3f426b36026fa54a2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/11.3ec3f426b36026fa54a2.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/12.ce7c198e2e6e7cf4404f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/12.ce7c198e2e6e7cf4404f.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/13.f1b72eb3dbb0e861044c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/13.f1b72eb3dbb0e861044c.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/14.f41d7a6d28a9170a20c5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/14.f41d7a6d28a9170a20c5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/15.b2743cb45111d62401a7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/15.b2743cb45111d62401a7.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/16.dec74aa2cbdbe02616d4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/16.dec74aa2cbdbe02616d4.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/17.dbbbacf13937d9b55464.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/17.dbbbacf13937d9b55464.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/18.e59b4ff569f591308ec3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/18.e59b4ff569f591308ec3.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/2.07db06640dd91ae02c30.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/2.07db06640dd91ae02c30.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/3.1f2389562b03f863db6f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/3.1f2389562b03f863db6f.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/4.d4cf59102f47141ad375.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/4.d4cf59102f47141ad375.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/5.98f84658036a917c9ee5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/5.98f84658036a917c9ee5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/6.6d5043dc4e691ae33574.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/6.6d5043dc4e691ae33574.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/7.75f262c372e7501611cd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/7.75f262c372e7501611cd.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/8.886ddff290ee4ae310b0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/8.886ddff290ee4ae310b0.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/9.1ec428741c7a9af93842.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/9.1ec428741c7a9af93842.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/app.e36a31968c5971b5dd45.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/app.e36a31968c5971b5dd45.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/manifest.f1c055a3f0b04857a992.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/manifest.f1c055a3f0b04857a992.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/vendor.1c922c59bc84378dd11c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/js/vendor.1c922c59bc84378dd11c.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/static/qr_code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/1024x1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/120x120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/167x167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/180x180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/20x20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/29x29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/58x58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/60x60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/72x72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/76x76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/80x80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/87x87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/easy/unpackage/res/icons/96x96.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/demo/net/echoes/ClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyId.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyInsert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyManyToOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyManyToOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyNotColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyNotColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyOneToMany.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyOneToMany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MySelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MySelect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/annotation/MyUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/auto/AutoFieldLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/auto/AutoFieldLength.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/auto/AutoTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/auto/AutoTables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/builder/MyAnnotationConfigBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/builder/MyAnnotationConfigBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/enums/AutoIncrement.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/enums/AutoIncrement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/reflect/MyAnalyticMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/reflect/MyAnalyticMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/reflect/MyInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/reflect/MyInvocationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/reflect/MyMapperProxyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/reflect/MyMapperProxyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/session/MyConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/session/MyConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/session/MyDefaultSqlSessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/session/MyDefaultSqlSessionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSessionDefultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSessionDefultUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSessionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSessionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSessionFactoryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/session/MySqlSessionFactoryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/util/MyFieldUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/util/MyFieldUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/util/MySQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/util/MySQLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibatis/src/main/java/com/lsm1998/ibatis/util/TypeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/ibatis/src/main/java/com/lsm1998/ibatis/util/TypeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log4j/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/most/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/most/src/main/java/com/lsm1998/call/CallApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/most/src/main/java/com/lsm1998/call/net/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/most/src/main/java/com/lsm1998/call/net/NIOServerTestV1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/most/src/main/java/com/lsm1998/call/net/NIOServerTestV2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/spring.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAfter.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAfter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAfterReturning.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAfterReturning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAfterThrowing.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAfterThrowing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyBefore.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyBefore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyEnableAspectJAutoProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/annotation/MyEnableAspectJAutoProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/aspectj/CglibInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/aspectj/CglibInvocationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/aspectj/MyAspectInstanceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/aspectj/MyAspectInstanceFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/aop/enums/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/aop/enums/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyAutowired.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyAutowired.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyComponentScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyComponentScan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyPropertySource.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyPropertySource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MySpringBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MySpringBootApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/annotation/MyValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/factory/MyAbstractActionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/factory/MyAbstractActionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/beans/factory/MyBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/beans/factory/MyBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/context/MyActionApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/context/MyActionApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/context/MyAnnotationConfigApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/context/MyAnnotationConfigApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/context/MyApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/context/MyApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/context/MyGenericApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/context/MyGenericApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/datasource/MyDataSourceTransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/datasource/MyDataSourceTransactionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/transaction/MyPlatformTransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/transaction/MyPlatformTransactionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/transaction/MyResourceTransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/transaction/MyResourceTransactionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/transaction/MyTransactionDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/transaction/MyTransactionDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/transaction/MyTransactionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/transaction/MyTransactionStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/util/FilePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/util/FilePath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/util/Lson.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/util/Lson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/BaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/BaseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/MyDispatchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/MyDispatchServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/annotation/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/annotation/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/annotation/MyJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/annotation/MyJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/annotation/MyRequestMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/annotation/MyRequestMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/annotation/MyRequestParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/annotation/MyRequestParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/enums/MyRequestMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/enums/MyRequestMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/method/MyHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/method/MyHandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/method/MyHandlerMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/method/MyHandlerMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/src/main/java/com/lsm1998/spring/web/method/MyModelAndView.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/spring/src/main/java/com/lsm1998/spring/web/method/MyModelAndView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/springboot.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/MySpringApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/MySpringApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/annotation/MyImport.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/annotation/MyImport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/autoconfigure/Log4jAutoConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/autoconfigure/Log4jAutoConfigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/autoconfigure/MybatisAutoConfigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/autoconfigure/MybatisAutoConfigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/servlet/StaticServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/servlet/StaticServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/servlet/TemplatesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/servlet/TemplatesServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/tomcat/ServletAndParrern.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/tomcat/ServletAndParrern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/tomcat/TomcatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/tomcat/TomcatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/lsm1998/springboot/util/FilePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/springboot/src/main/java/com/lsm1998/springboot/util/FilePath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/ContentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/ContentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/Dispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/HttpMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/HttpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/HttpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/ServletConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/ServletConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/ServletMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/ServletMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/Tomcat.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/Tomcat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/exception/UnknownContentTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/exception/UnknownContentTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/servlet/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/servlet/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/test/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/test/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/test/TomcatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/test/TomcatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/util/ClassUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/ClassUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/util/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/ConfigUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/util/ExceptionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/ExceptionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/java/com/lsm1998/tomcat/util/res/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/res/StringManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/resources/HTTP请求.txt" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/resources/HTTP请求.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/resources/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/resources/static/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/resources/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/resources/static/img/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/src/main/resources/tomcat.yml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/resources/tomcat.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/target/classes/HTTP请求.txt" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/target/classes/HTTP请求.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/target/classes/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/target/classes/static/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/target/classes/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/target/classes/static/img/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/file/MyFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/file/MyFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/ClientTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/NetTest$Accept.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/NetTest$Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/NetTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/ServerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bean/MsgData.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bean/MsgData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/ServerHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/ServerHandle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient$TcpClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient$TcpClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpServer$TcpServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/utils/target/classes/com/lsm1998/util/net/bio/TcpServer$TcpServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/netty/base/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/netty/base/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/netty/base/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/netty/base/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/netty/base/NettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/netty/base/NettyServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/netty/queue/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/netty/queue/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/echoes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/echoes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/ContentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/Dispatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/HttpServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/ServletConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/ServletMapping.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/StatusCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/Tomcat.java" beforeDir="false" afterPath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/Tomcat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/exception/UnknownContentTypeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/servlet/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/test/TestServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/test/TomcatTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/ClassUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/ConfigUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/ExceptionUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/tomcat/src/main/java/com/lsm1998/tomcat/util/res/StringManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/java/GameBasic/Chess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/java/GameTest/GameAPP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/兵B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/兵B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/卒A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/卒A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/士A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/士A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/士B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/士B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/将A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/将A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/帅B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/帅B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/棋盘.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/炮A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/炮A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/炮B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/炮B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/象A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/象A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/象B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/象B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/车A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/车A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/车B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/车B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/马A1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/马A2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/马B1.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/chess/src/main/resources/img/马B2.GIF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/qq/src/main/java/com/oo/server/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/qq/src/main/java/com/oo/server/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,8 +196,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Enum" />
         <option value="HTML File" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -207,8 +210,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\apache-maven-3.6.2\Repository" />
-        <option name="userSettingsFile" value="D:\apache-maven-3.6.2\conf\settings.xml" />
+        <option name="localRepository" value="E:\jar-libs" />
+        <option name="userSettingsFile" value="E:\maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -224,11 +227,16 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/framework/tomcat/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -242,18 +250,25 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\IdeaProjects\code\images" />
-      <recent name="C:\Users\Administrator\IdeaProjects\code\project\qq\src\main\java" />
-      <recent name="C:\Users\Administrator\IdeaProjects\code\project\qq\src\main\resources" />
-      <recent name="C:\Users\Admin\IdeaProjects\code\MyTomcat\src\main\java" />
-      <recent name="C:\Users\Admin\IdeaProjects\code\MyTomcat\src\main\resources\WEB-INFO" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\framework\tomcat\src\main\resources" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\framework\tomcat\src\main\java\com\lsm1998\tomcat" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\project\wechat\src\main\java\com\lsm1998\chat\netty" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\project\wechat\src\main\java\com\lsm1998\chat\client" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\project\wechat\src\main\java\com\lsm1998\chat\util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lsm1998.util.math" />
+      <recent name="com.lsm1998.chat.netty" />
+      <recent name="com.lsm1998.echoes.common.net.nio" />
+      <recent name="com.lsm1998.echoes.common.net" />
+      <recent name="com.lsm1998.echoes.common.net.bio" />
+      <recent name="com.lsm1998.chat.config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\code\project\wechat\src\main\java\com\lsm1998\chat\proto" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\project\wechat\src\main\resources\proto" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\project" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\static\iamges" />
       <recent name="C:\Users\Administrator\IdeaProjects\code\framework" />
-      <recent name="C:\Users\lsm\IdeaProjects\code\MyTomcat\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,13 +278,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WebApp">
-    <configuration name="AClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.net.echoes_aio.AClient" />
+  <component name="RunManager" selected="Application.Tomcat">
+    <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty.base.NettyClient" />
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.net.echoes_aio.*" />
+          <option name="PATTERN" value="netty.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -277,25 +292,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.oo.server.App" />
-      <module name="qq" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.oo.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BufferDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.net.nio.BufferDemo" />
+    <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty.base.NettyServer" />
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.net.nio.*" />
+          <option name="PATTERN" value="netty.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -303,12 +305,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChannelDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.net.nio.ChannelDemo" />
+    <configuration name="SocketServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty.base.SocketServer" />
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.net.nio.*" />
+          <option name="PATTERN" value="netty.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -316,12 +318,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.test.WebApp" />
-      <module name="test" />
+    <configuration name="SocketTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty.base.SocketTest" />
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.test.*" />
+          <option name="PATTERN" value="netty.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -329,13 +331,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tomcat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lsm1998.tomcat.Tomcat" />
+      <module name="tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsm1998.tomcat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Tomcat" />
+      <item itemvalue="Application.NettyServer" />
+      <item itemvalue="Application.SocketTest" />
+      <item itemvalue="Application.SocketServer" />
+      <item itemvalue="Application.NettyClient" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebApp" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.ChannelDemo" />
-        <item itemvalue="Application.BufferDemo" />
-        <item itemvalue="Application.AClient" />
+        <item itemvalue="Application.NettyClient" />
+        <item itemvalue="Application.NettyServer" />
+        <item itemvalue="Application.SocketTest" />
+        <item itemvalue="Application.SocketServer" />
       </list>
     </recent_temporary>
   </component>
@@ -343,8 +364,19 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.17008197" />
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -352,7 +384,7 @@
     </option>
   </component>
   <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES,SHOW_PROPERTIES,SHOW_FIELDS,ALPHA_COMPARATOR,VISIBILITY_SORTER,SHOW_LAMBDA,SHOW_ANONYMOUS" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES,SHOW_PROPERTIES,SHOW_FIELDS,VISIBILITY_SORTER,SHOW_LAMBDA,SHOW_ANONYMOUS" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -410,6 +442,76 @@
       <workItem from="1576491992906" duration="781000" />
       <workItem from="1576682987475" duration="27000" />
       <workItem from="1576715962420" duration="3885000" />
+      <workItem from="1576852187236" duration="1718000" />
+      <workItem from="1576854537801" duration="8920000" />
+      <workItem from="1576896512020" duration="14291000" />
+      <workItem from="1576911218041" duration="28631000" />
+      <workItem from="1576992468773" duration="1332000" />
+      <workItem from="1577004405256" duration="1570000" />
+      <workItem from="1577006756498" duration="193000" />
+      <workItem from="1577015699243" duration="1498000" />
+      <workItem from="1577019260791" duration="9332000" />
+      <workItem from="1577197681457" duration="326000" />
+      <workItem from="1577278786467" duration="17000" />
+      <workItem from="1577284289538" duration="625000" />
+      <workItem from="1577365546860" duration="7000" />
+      <workItem from="1577451936030" duration="3390000" />
+      <workItem from="1577499985705" duration="25000" />
+      <workItem from="1577507320517" duration="5720000" />
+      <workItem from="1577524570991" duration="2140000" />
+      <workItem from="1577527280609" duration="2229000" />
+      <workItem from="1577581414199" duration="337000" />
+      <workItem from="1577600849997" duration="17644000" />
+      <workItem from="1577630478809" duration="37000" />
+      <workItem from="1577632776434" duration="62000" />
+      <workItem from="1577852151029" duration="1671000" />
+      <workItem from="1577883747311" duration="12818000" />
+      <workItem from="1577930617535" duration="72000" />
+      <workItem from="1577931279960" duration="377000" />
+      <workItem from="1577970807029" duration="111000" />
+      <workItem from="1578141493451" duration="33000" />
+      <workItem from="1578143520360" duration="63000" />
+      <workItem from="1578222119571" duration="19000" />
+      <workItem from="1578224921709" duration="599000" />
+      <workItem from="1578318187937" duration="18000" />
+      <workItem from="1578323973404" duration="81000" />
+      <workItem from="1578324395318" duration="12000" />
+      <workItem from="1578325802026" duration="16000" />
+      <workItem from="1578326078610" duration="12000" />
+      <workItem from="1578357352375" duration="18000" />
+      <workItem from="1582859792563" duration="86000" />
+      <workItem from="1583649798074" duration="24352000" />
+      <workItem from="1583718930892" duration="5206000" />
+      <workItem from="1583740978096" duration="853000" />
+      <workItem from="1583847236954" duration="1510000" />
+      <workItem from="1583890532791" duration="53000" />
+      <workItem from="1583890754850" duration="1432000" />
+      <workItem from="1583915333159" duration="243000" />
+      <workItem from="1584025394694" duration="1320000" />
+      <workItem from="1584450402200" duration="2233000" />
+      <workItem from="1584452689910" duration="3046000" />
+      <workItem from="1584456543339" duration="9000" />
+      <workItem from="1584456977350" duration="4022000" />
+      <workItem from="1584626563610" duration="33000" />
+      <workItem from="1584626765303" duration="4726000" />
+      <workItem from="1584634032533" duration="99000" />
+      <workItem from="1584709699761" duration="708000" />
+      <workItem from="1584710429875" duration="145000" />
+      <workItem from="1584724519319" duration="1885000" />
+      <workItem from="1584727236291" duration="6000" />
+      <workItem from="1584858508395" duration="95000" />
+      <workItem from="1584858663893" duration="3190000" />
+      <workItem from="1584863078228" duration="433000" />
+      <workItem from="1584865447097" duration="637000" />
+      <workItem from="1584866136349" duration="157000" />
+      <workItem from="1584866637417" duration="24000" />
+      <workItem from="1584866682344" duration="64000" />
+      <workItem from="1584866905180" duration="1013000" />
+      <workItem from="1584889316378" duration="814000" />
+      <workItem from="1585752166258" duration="46000" />
+      <workItem from="1585753087243" duration="19000" />
+      <workItem from="1586351265468" duration="4615000" />
+      <workItem from="1586362755407" duration="462000" />
     </task>
     <task id="LOCAL-00001" summary="目录调整">
       <created>1576492043171</created>
@@ -432,7 +534,56 @@
       <option name="project" value="LOCAL" />
       <updated>1576769929196</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="目录调整">
+      <created>1576770532938</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576770532938</updated>
+    </task>
+    <task id="LOCAL-00005" summary="完成NIO群聊编码">
+      <created>1576904545953</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576904545953</updated>
+    </task>
+    <task id="LOCAL-00006" summary="git忽略">
+      <created>1576905205618</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576905205618</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改一处Bug；优化结构">
+      <created>1576914077780</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576914077780</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Netty学习">
+      <created>1577028184169</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1577028184169</updated>
+    </task>
+    <task id="LOCAL-00009" summary="leetcode">
+      <created>1577931579088</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1577931579088</updated>
+    </task>
+    <task id="LOCAL-00010" summary="proto">
+      <created>1584455021954</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1584455021954</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,85 +592,109 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="个人Code合集" />
-    <MESSAGE value="目录调整" />
-    <MESSAGE value="git忽略" />
     <MESSAGE value="nio学习记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="nio学习记录" />
+    <MESSAGE value="目录调整" />
+    <MESSAGE value="完成NIO群聊编码" />
+    <MESSAGE value="git忽略" />
+    <MESSAGE value="修改一处Bug；优化结构" />
+    <MESSAGE value="Netty学习" />
+    <MESSAGE value="leetcode" />
+    <MESSAGE value="proto" />
+    <option name="LAST_COMMIT_MESSAGE" value="proto" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576716639816">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576716639816" />
-    <state x="511" y="248" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576769339979">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1584627223112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="511" y="248" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1576769339979" />
-    <state x="275" y="3" key="CommitChangelistDialog2" timestamp="1576769927344">
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584627223112" />
+    <state x="331" y="135" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584628398687">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="275" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1576769927344" />
-    <state x="-1576" y="107" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492094767" />
-    <state x="-1110" y="280" key="FileChooserDialogImpl" timestamp="1576716757545">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="648" y="222" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576683012156" />
-    <state x="-1110" y="280" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576716757545" />
-    <state x="810" y="280" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576715984212" />
-    <state width="1493" height="284" key="GridCell.Tab.0.bottom" timestamp="1576770352717">
+    <state x="331" y="135" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584628398687" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1584459490933">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="284" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576770352717" />
-    <state width="1877" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849951" />
-    <state width="1493" height="284" key="GridCell.Tab.0.center" timestamp="1576770352716">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584459490933" />
+    <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584626572893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="284" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1576770352716" />
-    <state width="1877" height="291" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849950" />
-    <state width="1493" height="284" key="GridCell.Tab.0.left" timestamp="1576770352716">
+    <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1584626572893" />
+    <state x="404" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1583733112353">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="284" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1576770352716" />
-    <state width="1877" height="291" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849950" />
-    <state width="1493" height="284" key="GridCell.Tab.0.right" timestamp="1576770352717">
+    <state x="404" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1583733112353" />
+    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1577890229731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="284" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1576770352717" />
-    <state width="1877" height="291" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576719849950" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1576764891866">
+    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1577890229731" />
+    <state x="275" y="3" key="CommitChangelistDialog2" timestamp="1585753103337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1576764891866" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1576764891866">
+    <state x="275" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585753103337" />
+    <state width="1493" height="448" key="GridCell.Tab.0.bottom" timestamp="1586362740039">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1576764891866" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1576764891866">
+    <state width="1493" height="448" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586362740039" />
+    <state width="1493" height="448" key="GridCell.Tab.0.center" timestamp="1586362740039">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1576764891866" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1576764891866">
+    <state width="1493" height="448" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586362740039" />
+    <state width="1493" height="448" key="GridCell.Tab.0.left" timestamp="1586362740039">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1576764891866" />
-    <state x="369" y="109" key="SettingsEditor" timestamp="1576762754670">
+    <state width="1493" height="448" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586362740039" />
+    <state width="1493" height="448" key="GridCell.Tab.0.right" timestamp="1586362740039">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="369" y="109" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1576762754670" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576715986005" />
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1576769937122">
+    <state width="1493" height="448" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586362740039" />
+    <state width="1493" height="391" key="GridCell.Tab.1.bottom" timestamp="1584861857393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1576769937122" />
-    <state x="-1368" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576492101872" />
-    <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1576755125583">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1280" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576755125583" />
-    <state x="178" y="107" key="new project wizard" timestamp="1576770131490">
+    <state width="1493" height="391" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584861857393" />
+    <state width="1493" height="391" key="GridCell.Tab.1.center" timestamp="1584861857392">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1576770131490" />
+    <state width="1493" height="391" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584861857392" />
+    <state width="1493" height="391" key="GridCell.Tab.1.left" timestamp="1584861857392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="391" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584861857392" />
+    <state width="1493" height="391" key="GridCell.Tab.1.right" timestamp="1584861857392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="391" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584861857392" />
+    <state x="515" y="123" key="RollbackChangesDialog" timestamp="1586351369083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="515" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586351369083" />
+    <state x="369" y="0" width="1034" height="824" key="SettingsEditor" timestamp="1583649913206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="369" y="0" width="1034" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583649913206" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1584455033254">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584455033254" />
+    <state x="512" y="273" key="com.intellij.ide.util.TipDialog" timestamp="1584727236793">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="512" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584727236793" />
+    <state x="489" y="203" key="git4idea.merge.GitPullDialog" timestamp="1586351373873">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="489" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1586351373873" />
+    <state x="314" y="96" key="new project wizard" timestamp="1584629953938">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="314" y="96" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584629953938" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1577897464316">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1577897464316" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1577894514413">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1577894514413" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -531,93 +706,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>MyTomcat</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

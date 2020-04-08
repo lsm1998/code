@@ -51,7 +51,6 @@ public class NettyServer
             System.out.println("服务器准备就绪。。。");
             // 指定IP端口
             ChannelFuture future = bootstrap.bind(8000).sync();
-
             // 对关闭通道进行监听
             future.channel().closeFuture().sync();
         }finally

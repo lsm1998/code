@@ -34,8 +34,8 @@ public class NettyClient
                         }
                     });
             System.out.println("客户端准备就绪。。。");
-
             ChannelFuture future = bootstrap.connect(new InetSocketAddress("127.0.0.1", 8000)).sync();
+            future.channel().write("我来了".getBytes());
             future.channel().closeFuture().sync();
         } finally
         {

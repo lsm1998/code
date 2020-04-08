@@ -2,38 +2,55 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MyLog4j" />
+        <module name="echoes-server" />
         <module name="demo" />
+        <module name="spring" />
         <module name="qq" />
-        <module name="ibatis" />
+        <module name="snake" />
+        <module name="echoes-config" />
+        <module name="echoes-rpc" />
         <module name="Demo" />
         <module name="box" />
-        <module name="springboot" />
+        <module name="echoes-common" />
+        <module name="registry" />
+        <module name="echoes-test" />
         <module name="MyTomcat" />
-        <module name="spring" />
-        <module name="test" />
-        <module name="framework" />
+        <module name="MyLog4j" />
+        <module name="echoes-client" />
+        <module name="springboot" />
+        <module name="echoes-api" />
+        <module name="contra" />
+        <module name="ibatis" />
         <module name="utils" />
-        <module name="project" />
+        <module name="puzzle" />
+        <module name="web" />
         <module name="tomcat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="alibaba" target="1.8" />
+      <module name="chess" target="11" />
       <module name="Courage" target="11" />
       <module name="dubbo" target="1.8" />
+      <module name="hamster" target="11" />
       <module name="log4j" target="11" />
+      <module name="microChat" target="11" />
       <module name="most" target="11" />
       <module name="MyIbatis" target="11" />
       <module name="MyJVM" target="11" />
       <module name="MySpring" target="11" />
       <module name="MySpringMVC" target="11" />
+      <module name="submarine" target="11" />
+      <module name="tars" target="11" />
+      <module name="tars-server" target="11" />
       <module name="web.main" target="1.8" />
       <module name="web.test" target="1.8" />
+      <module name="wechat" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
