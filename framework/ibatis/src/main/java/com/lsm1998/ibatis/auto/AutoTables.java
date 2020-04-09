@@ -111,7 +111,7 @@ public class AutoTables
                     }
                     if (map.containsKey(fieldName))
                     {
-                        sql.append("ALTER TABLE " + tableName + " MODIFY ");
+                        sql.append("ALTER TABLE ").append(tableName).append(" MODIFY ");
                         String type = MyFieldUtil.getDefultType(f);
                         int len = MyFieldUtil.getDefultLen(f);
                         boolean isUnique = false;
@@ -151,7 +151,7 @@ public class AutoTables
                     } else
                     {
                         // ALTER TABLE [表名] ADD [字段名] NVARCHAR (50) NULL
-                        sql.append("ALTER TABLE " + tableName + " ADD ");
+                        sql.append("ALTER TABLE ").append(tableName).append(" ADD ");
                         String type;
                         boolean isUnique;
                         boolean isNullable;

@@ -21,7 +21,7 @@ public class DefaultEchoesService extends AbstractEchoesService
     public void export()
     {
         // 1.注册RPC代理类
-        classProxy(echoesConfig.getRpc());
+        classProxy(echoesConfig.getEchoes().getRpc());
     }
 
     @Override

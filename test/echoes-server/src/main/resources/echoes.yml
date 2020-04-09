@@ -1,9 +1,11 @@
 echoes:
+  # RPC配置
   rpc:
     serviceName: Demo-service
     port: 1314
     scanPackage: com.test.service
 
+  # 注册中心配置
   registry:
     adder: 127.0.0.1
     port: 12222

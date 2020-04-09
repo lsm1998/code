@@ -8,7 +8,7 @@ import com.lsm1998.tomcat.Tomcat;
  * @author: lsm
  * @create: 2020-04-09 10:19
  **/
-public class App
+public class TomcatApp
 {
     public static void main(String[] args)
     {

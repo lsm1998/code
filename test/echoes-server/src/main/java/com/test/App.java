@@ -19,7 +19,7 @@ public class App
 
         // 启动Service
         EchoesService service=new EchoesServiceBuild()
-                .echoesConfig(echoesConfig)
+                .echoesConfig(echoesConfig.config())
                 .build();
 
         // 暴露及注册服务

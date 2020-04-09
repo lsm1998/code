@@ -1,6 +1,6 @@
 package com.lsm1998.echoes.rpc.context;
 
-import com.lsm1998.echoes.config.EchoesConfigStart;
+import com.lsm1998.echoes.config.EchoesConfig;
 
 /**
  * @program: code
@@ -10,14 +10,14 @@ import com.lsm1998.echoes.config.EchoesConfigStart;
  **/
 public class EchoesServiceBuild
 {
-    private EchoesConfigStart echoesConfig;
+    private EchoesConfig echoesConfig;
 
     public DefaultEchoesService build()
     {
-        return new DefaultEchoesService(echoesConfig.config());
+        return new DefaultEchoesService(echoesConfig);
     }
 
-    public EchoesServiceBuild echoesConfig(EchoesConfigStart echoesConfig)
+    public EchoesServiceBuild echoesConfig(EchoesConfig echoesConfig)
     {
         this.echoesConfig=echoesConfig;
         return this;
