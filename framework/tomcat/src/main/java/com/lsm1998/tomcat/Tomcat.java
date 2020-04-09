@@ -1,5 +1,7 @@
 package com.lsm1998.tomcat;
 
+import com.lsm1998.tomcat.annotaion.WebServlet;
+import com.lsm1998.tomcat.exception.ConfigException;
 import com.lsm1998.tomcat.http.HttpServletRequest;
 import com.lsm1998.tomcat.http.HttpServletResponse;
 import com.lsm1998.tomcat.http.HttpServlet;
@@ -11,68 +13,63 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
+import org.yaml.snakeyaml.Yaml;
 
+import java.io.File;
 import java.io.FileInputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
-
-//Netty就是一个同时支持多协议的网络通信框架
 public class Tomcat
 {
-    //打开Tomcat源码，全局搜索ServerSocket
-    private int port = 8080;
+    private int port;
+
+    private static final String CONFIG_NAME="tomcat.yml";
 
     private Map<String, HttpServlet> servletMapping = new HashMap<>();
 
-    private Properties webxml = new Properties();
-
-    private void init()
-    {
-        //加载web.xml文件,同时初始化 ServletMapping对象
+    private void init() throws ConfigException {
         try
         {
-            String WEB_INF = this.getClass().getResource("/").getPath();
-            FileInputStream fis = new FileInputStream(WEB_INF + "web.properties");
-
-            webxml.load(fis);
-
-            for (Object k : webxml.keySet())
+            //加载配置文件,同时初始化 ServletMapping对象
+            Yaml yaml = new Yaml();
+            String configPath=this.getClass().getResource("/").getPath() + CONFIG_NAME;
+            Map<String,Object> configMap = yaml.loadAs(new FileInputStream(configPath),Map.class);
+            Map<String,Object> serverMap= (Map<String, Object>) configMap.get("server");
+            port=(Integer)serverMap.get("port");
+            Map<String,Object> servletMap= (Map<String, Object>) configMap.get("servlet");
+            String servletPath = (String) servletMap.get("path");
+            String classPath = servletPath.replace(".", "\\");
+            File file=new File(this.getClass().getResource("/").getPath()+classPath);
+            File[] files=file.listFiles();
+            List<Class<?>> classList=new ArrayList<>();
+            assert files != null;
+            for (File f:files)
             {
-
-                String key = k.toString();
-                if (key.endsWith(".url"))
-                {
-                    String servletName = key.replaceAll("\\.url$", "");
-                    String url = webxml.getProperty(key);
-                    String className = webxml.getProperty(servletName + ".className");
-                    HttpServlet obj = (HttpServlet) Class.forName(className).newInstance();
-                    servletMapping.put(url, obj);
-                }
+                int len=f.getName().length();
+                classList.add(Class.forName(servletPath +"."+f.getName().substring(0,len-6)));
+            }
+            for (Class<?> c:classList)
+            {
+                WebServlet webServlet = c.getAnnotation(WebServlet.class);
+                HttpServlet obj = (HttpServlet)c.getConstructor().newInstance();
+                servletMapping.put(webServlet.url(), obj);
             }
         } catch (Exception e)
         {
             e.printStackTrace();
+            throw new ConfigException("配置文件解析错误:"+e.getMessage());
         }
     }
 
-    public void start()
+    public void start() throws Exception
     {
         init();
-        //eventLoop-1-XXX
-        //Netty封装了NIO，Reactor模型，Boss，worker
-        // Boss线程
         EventLoopGroup bossGroup = new NioEventLoopGroup();
-        // Worker线程
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try
         {
-            //1、创建对象
-            // Netty服务
-            //ServetBootstrap   ServerSocketChannel
+
             ServerBootstrap server = new ServerBootstrap();
-            //2、配置参数
             // 链路式编程
             server.group(bossGroup, workerGroup)
                     // 主线程处理类,看到这样的写法，底层就是用反射
@@ -100,7 +97,7 @@ public class Tomcat
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
             //3、启动服务器
             ChannelFuture f = server.bind(port).sync();
-            System.out.println("GP Tomcat 已启动，监听的端口是：" + port);
+            System.out.println("Tomcat 已启动，监听的端口是：" + port);
             f.channel().closeFuture().sync();
         } catch (Exception e)
         {
@@ -120,20 +117,16 @@ public class Tomcat
         {
             if (msg instanceof HttpRequest)
             {
-                System.out.println("hello");
                 HttpRequest req = (HttpRequest) msg;
-                // 转交给我们自己的request实现
                 HttpServletRequest request = new HttpServletRequest(ctx, req);
-                // 转交给我们自己的response实现
                 HttpServletResponse response = new HttpServletResponse(ctx, req);
-                // 实际业务处理
                 String url = request.getUrl();
                 if (servletMapping.containsKey(url))
                 {
                     servletMapping.get(url).service(request, response);
                 } else
                 {
-                    response.write("404 - Not Found");
+                    response.getWrite().write("<h1>404 - Not Found</h1>");
                 }
             }
         }
@@ -141,10 +134,5 @@ public class Tomcat
         public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
         {
         }
-    }
-
-    public static void main(String[] args)
-    {
-        new Tomcat().start();
     }
 }

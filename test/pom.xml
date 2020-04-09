@@ -16,5 +16,6 @@
         <module>echoes-api</module>
         <module>echoes-server</module>
         <module>web</module>
+        <module>web-tomcat</module>
     </modules>
 </project>

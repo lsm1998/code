@@ -18,6 +18,13 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.6.Final</version>
         </dependency>
+
+        <!-- yaml解析 -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.25</version>
+        </dependency>
     </dependencies>
 
     <build>

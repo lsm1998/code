@@ -1,44 +1,45 @@
 package com.lsm1998.tomcat.http;
 
-import io.netty.buffer.Unpooled;
+import com.lsm1998.tomcat.servlet.ServletResponse;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.*;
 
-public class HttpServletResponse
+public class HttpServletResponse implements ServletResponse
 {
-    //SocketChannel的封装
-    private ChannelHandlerContext ctx;
+    // SocketChannel的封装
+    protected ChannelHandlerContext ctx;
+
+    private ServletOutputStream outputStream;
 
     private HttpRequest req;
+
+    protected String contentType;
 
     public HttpServletResponse(ChannelHandlerContext ctx, HttpRequest req)
     {
         this.ctx = ctx;
         this.req = req;
+        this.contentType="text/html;";
+        this.outputStream=new ServletOutputStream(this);
     }
 
-    public void write(String out) throws Exception
+    public void setContentType(String contentType)
     {
-        try
-        {
-            if (out == null || out.length() == 0)
-            {
-                return;
-            }
-            // 设置 http协议及请求头信息
-            FullHttpResponse response = new DefaultFullHttpResponse(
-                    // 设置http版本为1.1
-                    HttpVersion.HTTP_1_1,
-                    // 设置响应状态码
-                    HttpResponseStatus.OK,
-                    // 将输出值写出 编码为UTF-8
-                    Unpooled.wrappedBuffer(out.getBytes("UTF-8")));
-            response.headers().set("Content-Type", "text/html;");
-            ctx.write(response);
-        } finally
-        {
-            ctx.flush();
-            ctx.close();
-        }
+        this.contentType=contentType;
     }
+
+    public String getContentType()
+    {
+        return this.contentType;
+    }
+
+    public ServletOutputStream getWrite()
+    {
+        return outputStream;
+    }
+
+//    public void write(String out) throws Exception
+//    {
+//
+//    }
 }

@@ -5,8 +5,6 @@
  */
 package com.lsm1998.tomcat.servlet;
 
-import java.io.IOException;
-
 /**
  * ServletRequest顶层接口
  */
@@ -19,8 +17,6 @@ public interface ServletRequest
     int getContentLength();
 
     String getContentType();
-
-    ServletInputStream getInputStream() throws IOException;
 
     String getParameter(String var1);
 }

@@ -1,0 +1,8 @@
+# 端口
+server:
+  port: 8080
+  static: /static
+
+# 知道servlet包路径
+servlet:
+  path: com.lsm1998.servlet

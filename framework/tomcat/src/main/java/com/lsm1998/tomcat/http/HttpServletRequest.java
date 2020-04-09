@@ -1,5 +1,6 @@
 package com.lsm1998.tomcat.http;
 
+import com.lsm1998.tomcat.servlet.ServletRequest;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.QueryStringDecoder;
@@ -7,9 +8,13 @@ import io.netty.handler.codec.http.QueryStringDecoder;
 import java.util.List;
 import java.util.Map;
 
-public class HttpServletRequest
+public class HttpServletRequest implements ServletRequest
 {
     private ChannelHandlerContext ctx;
+
+    private Map<String, List<String>> parameters;
+
+    private String url;
 
     private HttpRequest req;
 
@@ -17,11 +22,14 @@ public class HttpServletRequest
     {
         this.ctx = ctx;
         this.req = req;
+        QueryStringDecoder decoder = new QueryStringDecoder(req.uri());
+        this.parameters=decoder.parameters();
+        this.url=decoder.path();
     }
 
     public String getUrl()
     {
-        return req.uri();
+        return url;
     }
 
     public String getMethod()
@@ -31,8 +39,7 @@ public class HttpServletRequest
 
     public Map<String, List<String>> getParameters()
     {
-        QueryStringDecoder decoder = new QueryStringDecoder(req.uri());
-        return decoder.parameters();
+        return parameters;
     }
 
     public String getParameter(String name)
@@ -46,5 +53,25 @@ public class HttpServletRequest
         {
             return param.get(0);
         }
+    }
+
+    @Override
+    public Object getAttribute(String var1) {
+        return null;
+    }
+
+    @Override
+    public String getCharacterEncoding() {
+        return null;
+    }
+
+    @Override
+    public int getContentLength() {
+        return 0;
+    }
+
+    @Override
+    public String getContentType() {
+        return null;
     }
 }

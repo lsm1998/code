@@ -187,7 +187,7 @@ public class MyArrays
 
 
     /**
-     * 交换集合元素，针对与MySimpleList
+     * 交换集合元素，针对与MyList
      *
      * @param i
      * @param j
