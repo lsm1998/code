@@ -1,5 +1,6 @@
 package com.oo.server;
 
+import com.oo.bean.Sound;
 import com.oo.config.Application;
 import com.oo.ui.LoginUI;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,8 +23,8 @@ public class App
     public static void main(String[] args)
     {
         new LoginUI().setVisible(true);
-        //Sound sound=context.getBean(Sound.class);
-        //sound.play("语音");
+        Sound sound=context.getBean(Sound.class);
+        sound.play("语音");
         //sound.play("鸽子");
     }
 }

@@ -18,8 +18,6 @@
         <module>spring</module>
         <module>springboot</module>
         <module>tomcat</module>
-        <module>echoes/echoes-config</module>
-        <module>echoes/echoes-rpc</module>
     </modules>
 
     <dependencies>

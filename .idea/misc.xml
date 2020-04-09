@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <type id="Spring" />
+  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
@@ -22,8 +25,16 @@
         <option value="$PROJECT_DIR$/MySpring/pom.xml" />
         <option value="$PROJECT_DIR$/MySpringMVC/pom.xml" />
         <option value="$PROJECT_DIR$/box/pom.xml" />
+        <option value="$PROJECT_DIR$/echoes-test/pom.xml" />
         <option value="$PROJECT_DIR$/log4j/pom.xml" />
         <option value="$PROJECT_DIR$/most/pom.xml" />
+        <option value="$PROJECT_DIR$/project/chess/pom.xml" />
+        <option value="$PROJECT_DIR$/project/hamster/pom.xml" />
+        <option value="$PROJECT_DIR$/project/microChat/pom.xml" />
+        <option value="$PROJECT_DIR$/project/submarine/pom.xml" />
+        <option value="$PROJECT_DIR$/project/wechat/pom.xml" />
+        <option value="$PROJECT_DIR$/tars/pom.xml" />
+        <option value="$PROJECT_DIR$/wechat/pom.xml" />
       </set>
     </option>
   </component>
@@ -50,7 +61,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="13" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
