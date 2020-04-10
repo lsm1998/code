@@ -3,34 +3,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>code</artifactId>
+        <artifactId>study</artifactId>
         <groupId>com.lsm1998</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>study</artifactId>
-
-    <modules>
-        <module>redis</module>
-        <module>base</module>
-        <module>elasticsearch</module>
-    </modules>
+    <artifactId>base</artifactId>
 
     <dependencies>
-        <!-- junit -->
+        <!-- 阿里云短信-->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13</version>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>3.3.1</version>
         </dependency>
-
-        <!-- lombok -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 </project>

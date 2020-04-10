@@ -8,8 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="echoes-server" />
+        <module name="echoes-client" />
+        <module name="MyLog4j" />
+        <module name="redis" />
         <module name="demo" />
-        <module name="spring" />
         <module name="qq" />
         <module name="snake" />
         <module name="echoes-config" />
@@ -20,15 +22,17 @@
         <module name="registry" />
         <module name="echoes-test" />
         <module name="MyTomcat" />
-        <module name="MyLog4j" />
-        <module name="echoes-client" />
+        <module name="spring" />
+        <module name="base" />
         <module name="springboot" />
         <module name="echoes-api" />
+        <module name="web-tomcat" />
         <module name="contra" />
         <module name="ibatis" />
         <module name="utils" />
         <module name="puzzle" />
         <module name="web" />
+        <module name="elasticsearch" />
         <module name="tomcat" />
       </profile>
     </annotationProcessing>
