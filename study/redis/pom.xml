@@ -24,7 +24,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13</version>
-            <scope>java</scope>
         </dependency>
     </dependencies>
 </project>
