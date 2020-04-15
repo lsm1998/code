@@ -17,9 +17,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -31,6 +29,7 @@ public class RegistryHandler
 
     private static final byte[] SUCCESS;
     private static final byte[] ERROR;
+    private static final byte[] EMPTY;
 
     private RegistryConfig config;
 
@@ -44,6 +43,7 @@ public class RegistryHandler
     {
         SUCCESS = "{\"code\":1}".getBytes();
         ERROR = "{\"code\":0}".getBytes();
+        EMPTY= new byte[0];
     }
 
     public void handlerData(String jsonStr, SocketChannel dest) throws IOException
@@ -78,7 +78,7 @@ public class RegistryHandler
         int size = list == null ? 0 : list.size();
         if (size == 0)
         {
-            return new byte[]{};
+            return EMPTY;
         } else if (list.size() == 1)
         {
             return gson.toJson(list.get(0)).getBytes();
@@ -88,7 +88,7 @@ public class RegistryHandler
             {
 
             }
-            return null;
+            return EMPTY;
         }
     }
 
@@ -97,7 +97,7 @@ public class RegistryHandler
         List<AppReport> list = context.getServiceMap(data);
         if (list == null)
         {
-            return new byte[]{};
+            return EMPTY;
         } else
         {
             return gson.toJson(list).getBytes();
@@ -109,7 +109,7 @@ public class RegistryHandler
         List<MethodReport> list = context.getMethodMap(data);
         if (list == null)
         {
-            return new byte[]{};
+            return EMPTY;
         } else
         {
             return gson.toJson(list).getBytes();

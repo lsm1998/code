@@ -49,6 +49,10 @@ public class EchoesConfigStart
         {
             FileInputStream inputStream = new FileInputStream(filePath);
             this.config= EchoesConfig.parse(yaml.loadAs(inputStream, Map.class));
+            if(this.config==null)
+            {
+                throw new RuntimeException("配置文件解析错误");
+            }
         }catch (IOException e)
         {
             e.printStackTrace();

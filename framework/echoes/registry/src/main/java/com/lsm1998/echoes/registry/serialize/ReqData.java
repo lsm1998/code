@@ -12,6 +12,11 @@ import java.io.Serializable;
 @Data
 public class ReqData implements Serializable
 {
+    // 1
+    // 2
+    // 3
+    // 4
+    // 5
     private int code;
 
     private String data;

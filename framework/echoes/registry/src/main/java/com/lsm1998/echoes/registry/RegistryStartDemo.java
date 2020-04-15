@@ -12,7 +12,7 @@ import com.lsm1998.echoes.registry.service.RegistryServerBuild;
 
 import java.io.IOException;
 
-public class RegistryStart
+public class RegistryStartDemo
 {
     public static void main(String[] args) throws IOException
     {

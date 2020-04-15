@@ -31,4 +31,19 @@ public class AppReport extends AbstractReport
     {
         return RegistryType.APPLICATION;
     }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AppReport appReport = (AppReport) o;
+        return port == appReport.port && Objects.equals(address, appReport.address);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(address, port);
+    }
 }

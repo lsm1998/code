@@ -11,5 +11,9 @@ import com.lsm1998.echoes.rpc.EchoesService;
  **/
 public abstract class AbstractEchoesService implements EchoesService
 {
+    // 注册RPC代理类
     abstract void classProxy(EchoesConfig.Rpc rpc);
+
+    // 连接配置中心
+    abstract void connectRegistry(String serviceName,EchoesConfig.Registry registry);
 }

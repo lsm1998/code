@@ -8,6 +8,7 @@ package com.lsm1998.echoes.registry.bean;
 import com.lsm1998.echoes.registry.client.RegistryType;
 import lombok.Getter;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -39,5 +40,21 @@ public class MethodReport extends AbstractReport
     public int getPort()
     {
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MethodReport that = (MethodReport) o;
+        return Objects.equals(generic, that.generic) &&
+                Objects.equals(clazz, that.clazz);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(generic, clazz);
     }
 }

@@ -3,33 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>echoes</artifactId>
+        <artifactId>test</artifactId>
         <groupId>com.lsm1998</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>echoes-rpc</artifactId>
+    <artifactId>echoes-registry</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.lsm1998</groupId>
-            <artifactId>echoes-config</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.lsm1998</groupId>
             <artifactId>registry</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- cglib -->
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>3.3.0</version>
         </dependency>
     </dependencies>
 </project>
