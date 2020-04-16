@@ -7,17 +7,19 @@ import java.nio.channels.AsynchronousChannelGroup;
 import java.nio.channels.AsynchronousServerSocketChannel;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
  * AIO服务端
+ * https://www.cnblogs.com/lgrsolider1234/p/12452664.html
  */
 public class AIOServer
 {
     private final int port;
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         int port = 8000;
         new AIOServer(port);
@@ -84,7 +86,8 @@ public class AIOServer
 
             try
             {
-                Thread.sleep(Integer.MAX_VALUE);
+                CountDownLatch latch=new CountDownLatch(1);
+                latch.await();
             } catch (InterruptedException ex)
             {
                 System.out.println(ex);

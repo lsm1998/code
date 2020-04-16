@@ -21,7 +21,7 @@ public class Test
 
         // 使用线程池并行求和
         // 指定并行数量为4
-        ForkJoinPool pool=new ForkJoinPool(3);
+        ForkJoinPool pool=new ForkJoinPool(4);
         Future<Integer> future=pool.submit(new SumThread(0,arr.length,arr,100));
         System.out.println(future.get());
         pool.shutdown();

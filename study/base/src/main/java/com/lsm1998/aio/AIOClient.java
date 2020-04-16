@@ -4,6 +4,8 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.util.Scanner;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * AIO客户端
@@ -22,10 +24,19 @@ public class AIOClient
         client.connect(new InetSocketAddress(host,port),null,new CompletionHandler<Void,Void>()
         {
             @Override
-            public void completed(Void result, Void attachment) {
-                try {
-                    client.write(ByteBuffer.wrap("这是一条测试数据".getBytes())).get();
-                    System.out.println("已发送至服务器");
+            public void completed(Void result, Void attachment)
+            {
+                Scanner scanner=new Scanner(System.in);
+
+                try
+                {
+                    while (true)
+                    {
+                        System.out.println("输入发送信息:");
+                        String msg=scanner.nextLine();
+                        client.write(ByteBuffer.wrap(msg.getBytes())).get();
+                        System.out.println("已发送至服务器");
+                    }
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -51,16 +62,11 @@ public class AIOClient
                     }
                 }
         );
-        try
-        {
-            Thread.sleep(Integer.MAX_VALUE);
-        } catch (InterruptedException ex)
-        {
-            System.out.println(ex);
-        }
+        CountDownLatch latch=new CountDownLatch(1);
+        latch.await();
     }
 
-    public static void main(String args[])throws Exception
+    public static void main(String[] args)throws Exception
     {
         new AIOClient().connect("localhost",8000);
     }

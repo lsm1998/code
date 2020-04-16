@@ -1,114 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="pom依赖调整">
-      <change afterPath="$PROJECT_DIR$/study/base/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/files/CopyBigFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/list/RemoveList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/sms/SendDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/udp/UDPReceive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/udp/UDPSend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/udp/group/GroupSend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/elasticsearch/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/elasticsearch/src/main/java/com/lsm1998/es/EsApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/elasticsearch/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="study">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/chat_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/css/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/css/mui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/css/mui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/find.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/fonts/mui.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/js/mui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/js/mui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/chat/me.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/css/app.77c9db85bad2c19d567e9ed94e13c37a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/css/app.77c9db85bad2c19d567e9ed94e13c37a.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/img/loading_1.53c1ff2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/img/loading_read.f002b9e.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/img/p2.dcd1704.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/img/progress.22043e8.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/img/progress2.d47900d.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/img/tongtian_book.ba2d76c.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/0.3e7c70528e5a289bfe75.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/0.3e7c70528e5a289bfe75.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/1.f8adc0a72b293e593e9a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/1.f8adc0a72b293e593e9a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/10.0e43c211d601ef9c0665.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/10.0e43c211d601ef9c0665.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/11.3ec3f426b36026fa54a2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/11.3ec3f426b36026fa54a2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/12.ce7c198e2e6e7cf4404f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/12.ce7c198e2e6e7cf4404f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/13.f1b72eb3dbb0e861044c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/13.f1b72eb3dbb0e861044c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/14.f41d7a6d28a9170a20c5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/14.f41d7a6d28a9170a20c5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/15.b2743cb45111d62401a7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/15.b2743cb45111d62401a7.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/16.dec74aa2cbdbe02616d4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/16.dec74aa2cbdbe02616d4.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/17.dbbbacf13937d9b55464.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/17.dbbbacf13937d9b55464.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/18.e59b4ff569f591308ec3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/18.e59b4ff569f591308ec3.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/2.07db06640dd91ae02c30.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/2.07db06640dd91ae02c30.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/3.1f2389562b03f863db6f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/3.1f2389562b03f863db6f.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/4.d4cf59102f47141ad375.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/4.d4cf59102f47141ad375.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/5.98f84658036a917c9ee5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/5.98f84658036a917c9ee5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/6.6d5043dc4e691ae33574.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/6.6d5043dc4e691ae33574.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/7.75f262c372e7501611cd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/7.75f262c372e7501611cd.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/8.886ddff290ee4ae310b0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/8.886ddff290ee4ae310b0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/9.1ec428741c7a9af93842.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/9.1ec428741c7a9af93842.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/app.e36a31968c5971b5dd45.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/app.e36a31968c5971b5dd45.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/manifest.f1c055a3f0b04857a992.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/manifest.f1c055a3f0b04857a992.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/vendor.1c922c59bc84378dd11c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/js/vendor.1c922c59bc84378dd11c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/static/qr_code.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/1024x1024.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/120x120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/152x152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/167x167.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/180x180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/192x192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/20x20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/29x29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/40x40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/58x58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/60x60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/72x72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/76x76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/80x80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/87x87.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/easy/unpackage/res/icons/96x96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/iamges/bz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/iamges/xhjy/bz.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/ws/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/study/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/study/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,12 +90,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="GO_FMT" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/web-tomcat/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -215,11 +116,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\test\code\study\base\src\main\java\com\lsm1998\aio" />
+      <recent name="E:\test\code\study\chat\src\main\java\com\lsm1998\chat" />
       <recent name="E:\test\code\test\web-tomcat\src\main\resources" />
       <recent name="C:\Users\Administrator\IdeaProjects\code\images" />
       <recent name="C:\Users\Administrator\IdeaProjects\code\project\qq\src\main\java" />
-      <recent name="C:\Users\Administrator\IdeaProjects\code\project\qq\src\main\resources" />
-      <recent name="C:\Users\Admin\IdeaProjects\code\MyTomcat\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lsm1998.util.math" />
@@ -237,13 +138,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UDPSend">
-    <configuration name="UDPReceive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lsm1998.udp.UDPReceive" />
-      <module name="base" />
+  <component name="RunManager" selected="Application.Test (1)">
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.thread.comsumer_queue.Test" />
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lsm1998.udp.*" />
+          <option name="PATTERN" value="demo.thread.comsumer_queue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -251,74 +152,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UDPSend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lsm1998.udp.UDPSend" />
-      <module name="base" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.thread.parallel_sum.Test" />
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lsm1998.udp.*" />
+          <option name="PATTERN" value="demo.thread.parallel_sum.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RemoveList.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="base" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lsm1998.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lsm1998.list" />
-      <option name="MAIN_CLASS_NAME" value="com.lsm1998.list.RemoveList" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RemoveList.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="base" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lsm1998.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lsm1998.list" />
-      <option name="MAIN_CLASS_NAME" value="com.lsm1998.list.RemoveList" />
-      <option name="METHOD_NAME" value="test5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RemoveList.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="base" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lsm1998.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lsm1998.list" />
-      <option name="MAIN_CLASS_NAME" value="com.lsm1998.list.RemoveList" />
-      <option name="METHOD_NAME" value="test6" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UDPSend" />
-        <item itemvalue="Application.UDPReceive" />
-        <item itemvalue="JUnit.RemoveList.test1" />
-        <item itemvalue="JUnit.RemoveList.test6" />
-        <item itemvalue="JUnit.RemoveList.test5" />
+        <item itemvalue="Application.Test (1)" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -326,8 +176,19 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.19859308" />
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -404,6 +265,16 @@
       <workItem from="1586503784383" duration="992000" />
       <workItem from="1586509464383" duration="2723000" />
       <workItem from="1586513296900" duration="99000" />
+      <workItem from="1586519305347" duration="195000" />
+      <workItem from="1586738982445" duration="1955000" />
+      <workItem from="1586743337801" duration="567000" />
+      <workItem from="1586744482203" duration="237000" />
+      <workItem from="1586744773506" duration="6567000" />
+      <workItem from="1586937215067" duration="459000" />
+      <workItem from="1586942000004" duration="482000" />
+      <workItem from="1586944001389" duration="1128000" />
+      <workItem from="1587010581206" duration="1401000" />
+      <workItem from="1587024476271" duration="115000" />
     </task>
     <task id="LOCAL-00001" summary="目录调整">
       <created>1576492043171</created>
@@ -440,7 +311,35 @@
       <option name="project" value="LOCAL" />
       <updated>1586426898922</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="study">
+      <created>1586519359739</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586519359739</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chat">
+      <created>1586937261822</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586937261822</updated>
+    </task>
+    <task id="LOCAL-00008" summary="aio">
+      <created>1586942113457</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586942113457</updated>
+    </task>
+    <task id="LOCAL-00009" summary="删除demo">
+      <created>1586942457300</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586942457300</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,45 +353,81 @@
     <MESSAGE value="nio学习记录" />
     <MESSAGE value="tomcat demo" />
     <MESSAGE value="部分进度" />
-    <option name="LAST_COMMIT_MESSAGE" value="部分进度" />
+    <MESSAGE value="study" />
+    <MESSAGE value="chat" />
+    <MESSAGE value="aio" />
+    <MESSAGE value="删除demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除demo" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586423933854">
+    <state x="552" y="178" key="#Project_Structure" timestamp="1586739368290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586423933854" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586423979658">
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1586739368290" />
+    <state x="552" y="179" key="#Updates" timestamp="1586744714084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586423979658" />
+    <state x="552" y="179" key="#Updates/0.0.1920.1040@0.0.1920.1040" timestamp="1586744714084" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587024590261">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587024590261" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586748770956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586748770956" />
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586397983800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586397983800" />
-    <state x="560" y="109" key="CommitChangelistDialog2" timestamp="1586426896737">
+    <state x="514" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586746190060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="109" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586426896737" />
+    <state x="514" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586746190060" />
+    <state x="560" y="109" key="CommitChangelistDialog2" timestamp="1586942456084">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="560" y="109" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586942456084" />
+    <state x="202" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1586739057811">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="202" y="86" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586739057811" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586509683794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586509683794" />
-    <state width="1877" height="296" key="GridCell.Tab.0.bottom" timestamp="1586513261292">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1587024662977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586513261292" />
-    <state width="1877" height="296" key="GridCell.Tab.0.center" timestamp="1586513261292">
+    <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
+    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1587024662977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="296" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586513261292" />
-    <state width="1877" height="296" key="GridCell.Tab.0.left" timestamp="1586513261292">
+    <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
+    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1587024662977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="296" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586513261292" />
-    <state width="1877" height="296" key="GridCell.Tab.0.right" timestamp="1586513261292">
+    <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1587024662977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="296" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586513261292" />
+    <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1586750285078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1586750285078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1586750285078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1586750285078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
     <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1586501704226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -509,18 +444,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586509684352" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586426903120">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586942462521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586426903120" />
-    <state x="682" y="311" key="git4idea.merge.GitPullDialog" timestamp="1586397886018">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586942462521" />
+    <state x="682" y="311" key="git4idea.merge.GitPullDialog" timestamp="1586738997265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586397886018" />
-    <state x="334" y="129" key="new project wizard" timestamp="1586510349449">
+    <state x="682" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586738997265" />
+    <state x="334" y="129" key="new project wizard" timestamp="1586748481616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="334" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1586510349449" />
+    <state x="334" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1586748481616" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586425962311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -540,89 +475,5 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>MyTomcat</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
