@@ -38,9 +38,9 @@ public class AServer {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception
+    {
         new AServer().init();
-        System.out.println("NIO Server Started");
         CountDownLatch latch=new CountDownLatch(1);
         latch.await();
     }

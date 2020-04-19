@@ -17,7 +17,8 @@ public class MsgHandler implements CompletionHandler<Integer, Object> {
     private AsynchronousSocketChannel channel;
     private List<AsynchronousSocketChannel> channelList;
 
-    public MsgHandler(ByteBuffer buffer, AsynchronousSocketChannel channel, List<AsynchronousSocketChannel> channelList) {
+    public MsgHandler(ByteBuffer buffer, AsynchronousSocketChannel channel, List<AsynchronousSocketChannel> channelList)
+    {
         System.out.println("new");
         this.buffer = buffer;
         this.channel=channel;
@@ -31,8 +32,10 @@ public class MsgHandler implements CompletionHandler<Integer, Object> {
         String content = StandardCharsets.UTF_8.decode(buffer).toString();
         System.out.println("内容="+content);
         //遍历每个Channel, 将收到的信息写入各Channel中
-        channelList.forEach(e -> {
-            try {
+        channelList.forEach(e ->
+        {
+            try
+            {
                 e.write(ByteBuffer.wrap(content.getBytes("UTF-8"))).get();
             } catch (Exception ex) {
                 ex.printStackTrace();
