@@ -5,6 +5,7 @@
  */
 package com.lsm1998.echoes;
 
+import com.lsm1998.echoes.aio.AIOServer;
 import com.lsm1998.echoes.bio.BIOClient;
 import com.lsm1998.echoes.bio.BIOServer;
 import com.lsm1998.echoes.nio.NIOClient;
@@ -25,11 +26,11 @@ public class PressureTest
     @Test
     public void bioClient() throws Exception
     {
-        for (int i = 0; i < 1450; i++)
+        for (int i = 0; i < 2000; i++)
         {
             new Thread(()->
             {
-                BIOClient client=new BIOClient(9999);
+                BIOClient client=new BIOClient(8848);
                 client.connect();
                 for (int j = 0; j < 100; j++)
                 {
@@ -57,13 +58,20 @@ public class PressureTest
     }
 
     @Test
+    public void aioServer()
+    {
+        AIOServer server=new AIOServer(8848);
+        server.start();
+    }
+
+    @Test
     public void nioClient() throws Exception
     {
         for (int i = 0; i < 1200; i++)
         {
             new Thread(()->
             {
-                NIOClient client=new NIOClient(9999);
+                NIOClient client=new NIOClient(8848);
                 client.connect();
                 for (int j = 0; j < 10; j++)
                 {

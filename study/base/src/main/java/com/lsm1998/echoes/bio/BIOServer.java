@@ -5,10 +5,12 @@
  */
 package com.lsm1998.echoes.bio;
 
+import com.lsm1998.echoes.Server;
+
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class BIOServer
+public class BIOServer implements Server
 {
     private int port;
 
@@ -17,6 +19,7 @@ public class BIOServer
         this.port=port;
     }
 
+    @Override
     public void start()
     {
         try

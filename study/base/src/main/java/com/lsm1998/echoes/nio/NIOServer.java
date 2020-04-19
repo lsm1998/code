@@ -5,6 +5,8 @@
  */
 package com.lsm1998.echoes.nio;
 
+import com.lsm1998.echoes.Server;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -14,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Set;
 
-public class NIOServer
+public class NIOServer implements Server
 {
     private int port;
     private Selector selector;
@@ -25,6 +27,7 @@ public class NIOServer
         this.port = port;
     }
 
+    @Override
     public void start()
     {
         try
