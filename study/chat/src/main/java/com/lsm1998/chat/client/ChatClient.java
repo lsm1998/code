@@ -14,11 +14,6 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.io.IOException;
 
-/**
- * 客户端
- *
- * @author Tom
- */
 public class ChatClient {
     private ChatClientHandler clientHandler;
     private String host;

@@ -14,7 +14,8 @@ import org.msgpack.MessageTypeException;
 /**
  * 自定义IM协议的编码器
  */
-public class IMDecoder extends ByteToMessageDecoder {
+public class IMDecoder extends ByteToMessageDecoder
+{
 
 	//解析IM写一下请求内容的正则
 	private Pattern pattern = Pattern.compile("^\\[(.*)\\](\\s\\-\\s(.*))?");

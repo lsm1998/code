@@ -18,45 +18,6 @@
         <module>study</module>
     </modules>
 
-<!--    <dependencies>-->
-<!--        &lt;!&ndash; druid &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba</groupId>-->
-<!--            <artifactId>druid</artifactId>-->
-<!--            <version>1.1.21</version>-->
-<!--        </dependency>-->
-
-
-<!--        &lt;!&ndash; gson &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.code.gson</groupId>-->
-<!--            <artifactId>gson</artifactId>-->
-<!--            <version>2.8.5</version>-->
-<!--        </dependency>-->
-
-
-<!--        &lt;!&ndash; logback &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>ch.qos.logback</groupId>-->
-<!--            <artifactId>logback-classic</artifactId>-->
-<!--            <version>1.2.3</version>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; mysql &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--            <version>8.0.13</version>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; protobuf &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.google.protobuf</groupId>-->
-<!--            <artifactId>protobuf-java</artifactId>-->
-<!--            <version>3.9.1</version>-->
-<!--        </dependency>-->
-<!--    </dependencies>-->
-
     <build>
         <plugins>
             <plugin>

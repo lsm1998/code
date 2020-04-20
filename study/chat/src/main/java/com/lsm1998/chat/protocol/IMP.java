@@ -4,7 +4,8 @@ package com.lsm1998.chat.protocol;
 /**
  * 自定义IM协议，Instant Messaging Protocol即时通信协议
  */
-public enum IMP {
+public enum IMP
+{
     /**
      * 系统消息
      */
@@ -43,5 +44,4 @@ public enum IMP {
     public String toString() {
         return this.name;
     }
-
 }

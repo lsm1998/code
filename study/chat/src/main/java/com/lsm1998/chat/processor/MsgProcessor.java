@@ -17,7 +17,6 @@ import io.netty.util.concurrent.GlobalEventExecutor;
  * 主要用于自定义协议内容的逻辑处理
  */
 public class MsgProcessor {
-
     //记录在线用户
     private static ChannelGroup onlineUsers = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
@@ -58,7 +57,8 @@ public class MsgProcessor {
      * @param client
      * @return
      */
-    public JSONObject getAttrs(Channel client) {
+    public JSONObject getAttrs(Channel client)
+    {
         try {
             return client.attr(ATTRS).get();
         } catch (Exception e) {
