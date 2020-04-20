@@ -1,20 +1,18 @@
-package com.test;
+/*
+ * 作者：刘时明
+ * 时间：2020/3/8-15:52
+ * 作用：
+ */
+package com.lsm1998.net.echoes.registry;
 
 import com.lsm1998.net.echoes.common.net.EchoesServer;
 import com.lsm1998.net.echoes.common.net.nio.NIOServer;
-import com.lsm1998.net.echoes.registry.Define;
 import com.lsm1998.net.echoes.registry.enums.LoadStrategy;
 import com.lsm1998.net.echoes.registry.service.RegistryServerBuild;
 
 import java.io.IOException;
 
-/**
- * @program: code
- * @description:
- * @author: lsm
- * @create: 2020-04-13 11:30
- **/
-public class Registry
+public class RegistryStartDemo
 {
     public static void main(String[] args) throws IOException
     {

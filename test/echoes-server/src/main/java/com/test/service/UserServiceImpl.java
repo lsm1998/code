@@ -5,7 +5,7 @@
  */
 package com.test.service;
 
-import com.lsm1998.echoes.common.annotaion.EchoesRpcServer;
+import com.lsm1998.net.echoes.common.annotaion.EchoesRpcServer;
 import com.test.dto.UserDto;
 
 import java.util.List;

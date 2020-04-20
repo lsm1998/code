@@ -4,6 +4,7 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @作者：刘时明
@@ -15,7 +16,7 @@ public class AClient
     public static void main(String[] args)
     {
         ByteBuffer buffer=ByteBuffer.allocate(1024);
-        Charset charset=Charset.forName("utf-8");
+        Charset charset= StandardCharsets.UTF_8;
         try(AsynchronousSocketChannel socketChannel=AsynchronousSocketChannel.open())
         {
             socketChannel.connect(new InetSocketAddress("127.0.0.1",8888)).get();

@@ -4,7 +4,7 @@
  * 作用：
  */
 
-import com.lsm1998.echoes.registry.client.RegistryClient;
+import com.lsm1998.net.echoes.registry.client.RegistryClient;
 
 import java.io.IOException;
 

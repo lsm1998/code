@@ -5,9 +5,9 @@
  */
 package com.test;
 
-import com.lsm1998.echoes.config.EchoesConfigStart;
-import com.lsm1998.echoes.rpc.EchoesService;
-import com.lsm1998.echoes.rpc.context.EchoesServiceBuild;
+import com.lsm1998.net.echoes.config.EchoesConfigStart;
+import com.lsm1998.net.echoes.rpc.EchoesService;
+import com.lsm1998.net.echoes.rpc.context.EchoesServiceBuild;
 
 public class App
 {
