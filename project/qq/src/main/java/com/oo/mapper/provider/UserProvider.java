@@ -12,7 +12,7 @@ public class UserProvider
 {
     public String selectByMap(Map<String, String> map)
     {
-        String sql = "select head_img,accNumber,nickname,age,sex,flag,autoGraph from user where 1=1 ";
+        StringBuilder sql = new StringBuilder("select head_img,accNumber,nickname,age,sex,flag,autoGraph from user where 1=1 ");
         for (String key : map.keySet())
         {
             String value = map.get(key);
@@ -22,26 +22,25 @@ public class UserProvider
                 {
                     case "nikename":
                     case "accNumber":
-                        sql += " and nikename like '%" + value + "'% and accNumber like '%" + value + "'% ";
+                        sql.append(" and nikename like '%").append(value).append("'% and accNumber like '%").append(value).append("'% ");
                         break;
                     case "age":
                         int min = Integer.parseInt(value.split("-")[0]);
                         int max = Integer.parseInt(value.split("-")[1]);
-                        sql += " and age>" + min + " and age<" + max;
+                        sql.append(" and age>").append(min).append(" and age<").append(max);
                         break;
                     case "sex":
-                        sql += " and sex='" + value+"'";
+                        sql.append(" and sex='").append(value).append("'");
                         break;
                     case "flag":
-                        sql += " and flag=" + Integer.parseInt(value);
+                        sql.append(" and flag=").append(Integer.parseInt(value));
                         break;
                     default:
                         break;
                 }
             }
         }
-        sql += " order by age";
-        System.out.println("sql=" + sql);
-        return sql;
+        sql.append(" order by age");
+        return sql.toString();
     }
 }
