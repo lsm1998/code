@@ -11,12 +11,17 @@ import java.util.function.BiConsumer;
 public class BinarySearchTree<K extends Comparable<K>,V>
 {
     private Node<K,V> root;
+    private int size;
 
     public BinarySearchTree()
-    {}
+    {
+        root=null;
+        size=0;
+    }
 
     public boolean add(K key,V value)
     {
+        size++;
         if(root==null)
         {
             root=new Node<>(null,null,null,key,value);
@@ -29,7 +34,7 @@ public class BinarySearchTree<K extends Comparable<K>,V>
             {
                 if(temp.left==null)
                 {
-                    temp.left=new Node<>(null,null,null,key,value);
+                    temp.left=new Node<>(temp,null,null,key,value);
                     break;
                 }else
                 {
@@ -39,7 +44,7 @@ public class BinarySearchTree<K extends Comparable<K>,V>
             {
                 if(temp.right==null)
                 {
-                    temp.right=new Node<>(null,null,null,key,value);
+                    temp.right=new Node<>(temp,null,null,key,value);
                     break;
                 }else
                 {
@@ -47,9 +52,82 @@ public class BinarySearchTree<K extends Comparable<K>,V>
                 }
             }else
             {
+                size--;
                 temp.value=value;
                 break;
             }
+        }
+        return false;
+    }
+
+    public boolean find(K key)
+    {
+        return getNode(key)!=null;
+    }
+
+    public V get(K key)
+    {
+        Node<K,V> temp=getNode(key);
+        return temp==null?null:temp.value;
+    }
+
+    private Node<K,V> getNode(K key)
+    {
+        if(root==null)return null;
+        Node<K,V> temp=root;
+        while (true)
+        {
+            if(temp.key.compareTo(key)>0)
+            {
+                if(temp.left==null)
+                {
+                    break;
+                }else
+                {
+                    temp=temp.left;
+                }
+            }else if(temp.key.compareTo(key)<0)
+            {
+                if(temp.right==null)
+                {
+                    break;
+                }else
+                {
+                    temp=temp.right;
+                }
+            }else
+            {
+                return temp;
+            }
+        }
+        return null;
+    }
+
+    public boolean remove(K key)
+    {
+        Node<K,V> target=getNode(key);
+        if(target==null) return false;
+        if(target.parent==null)
+        {
+            if(target.left!=null&&target.right!=null)
+            {
+                Node<K,V> temp=target.left;
+                root.key=temp.key;
+                root.value=temp.value;
+                return remove(temp.key);
+            } else
+            {
+                if(root.left!=null)
+                {
+                    root=root.left;
+                }else
+                {
+                    root=root.right;
+                }
+            }
+        }else
+        {
+
         }
         return false;
     }
@@ -58,6 +136,11 @@ public class BinarySearchTree<K extends Comparable<K>,V>
     {
         if(root==null)return;
         forEach(consumer,root);
+    }
+
+    public int size()
+    {
+        return size;
     }
 
     private void forEach(BiConsumer<K,V> consumer,Node<K,V> node)

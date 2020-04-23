@@ -21,5 +21,8 @@ public class StructureTest
         tree.add(2,"2");
         tree.add(9,"9");
         tree.forEach((k,v)-> System.out.println("key="+k));
+
+        System.out.println(tree.find(3));
+        System.out.println(tree.get(3));
     }
 }
