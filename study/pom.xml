@@ -18,7 +18,7 @@
         <module>elasticsearch</module>
         <module>jvm</module>
         <module>chat</module>
-        <module>auto-code</module>
+        <module>shardingjdbc</module>
     </modules>
 
     <dependencies>
