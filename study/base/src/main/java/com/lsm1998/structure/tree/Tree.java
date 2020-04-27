@@ -24,4 +24,12 @@ public interface Tree<K extends Comparable<K>,V>
     boolean remove(K key);
 
     void clear();
+
+    class Node<K,V>
+    {
+        K key;
+        V value;
+        Node<K,V> left;
+        Node<K,V> right;
+    }
 }

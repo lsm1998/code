@@ -1,6 +1,5 @@
 package com.lsm1998.structure.tree;
 
-import java.util.List;
 import java.util.function.BiConsumer;
 
 /**
@@ -18,6 +17,12 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
     {
         root=null;
         size=0;
+    }
+
+    @Override
+    protected Tree.Node<K, V> getRoot()
+    {
+        return root;
     }
 
     @Override
@@ -40,7 +45,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
                     break;
                 }else
                 {
-                    temp=temp.left;
+                    temp=(Node<K,V>)temp.left;
                 }
             }else if(temp.key.compareTo(key)<0)
             {
@@ -50,7 +55,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
                     break;
                 }else
                 {
-                    temp=temp.right;
+                    temp=(Node<K,V>)temp.right;
                 }
             }else
             {
@@ -71,46 +76,15 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
     @Override
     public V get(K key)
     {
-        Node<K,V> temp=getNode(key);
+        Node<K,V> temp=(Node<K,V>)this.getNode(key);
         return temp==null?null:temp.value;
     }
 
-    private Node<K,V> getNode(K key)
-    {
-        if(root==null)return null;
-        Node<K,V> temp=root;
-        while (true)
-        {
-            if(temp.key.compareTo(key)>0)
-            {
-                if(temp.left==null)
-                {
-                    break;
-                }else
-                {
-                    temp=temp.left;
-                }
-            }else if(temp.key.compareTo(key)<0)
-            {
-                if(temp.right==null)
-                {
-                    break;
-                }else
-                {
-                    temp=temp.right;
-                }
-            }else
-            {
-                return temp;
-            }
-        }
-        return null;
-    }
 
     @Override
     public boolean remove(K key)
     {
-        Node<K,V> target=getNode(key);
+        Node<K,V> target=(Node<K,V>)getNode(key);
         if(target==null) return false;
         size--;
         return remove(target.parent,target);
@@ -120,14 +94,14 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
     {
         if(node.left!=null&&node.right!=null)
         {
-            Node<K,V> temp=node.left;
+            Node<K,V> temp=(Node<K,V>)node.left;
             node.key=temp.key;
             node.value=temp.value;
             return remove(node,temp);
         } else {
             if(parent==null)
             {
-                root=root.left==null?root.right:root.left;
+                root=root.left==null?(Node<K,V>)root.right:(Node<K,V>)root.left;
                 if(root!=null)
                 {
                     root.parent=null;
@@ -168,22 +142,18 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
     {
         if(node.left!=null)
         {
-            forEach(consumer,node.left);
+            forEach(consumer,(Node<K,V>)node.left);
         }
         consumer.accept(node.key,node.value);
         if(node.right!=null)
         {
-            forEach(consumer,node.right);
+            forEach(consumer,(Node<K,V>)node.right);
         }
     }
 
-    static class Node<K,V>
+    static class Node<K,V> extends Tree.Node<K,V>
     {
         private Node<K,V> parent;
-        private Node<K,V> left;
-        private Node<K,V> right;
-        private K key;
-        private V value;
 
         public Node(Node<K, V> parent, Node<K, V> left, Node<K, V> right, K key, V value)
         {
