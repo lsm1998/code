@@ -6,7 +6,7 @@ package com.lsm1998.structure.tree;
  * @author: lsm
  * @create: 2020-04-22 08:52
  **/
-public class BTree<K extends Comparable<K>,V>
+public abstract class BTree<K extends Comparable<K>,V>
 {
     /**
      * B树中的节点。

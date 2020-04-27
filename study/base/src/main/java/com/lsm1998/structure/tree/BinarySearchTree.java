@@ -1,14 +1,15 @@
 package com.lsm1998.structure.tree;
 
+import java.util.List;
 import java.util.function.BiConsumer;
 
 /**
  * @program: code
- * @description:
+ * @description: 二分搜索树
  * @author: lsm
  * @create: 2020-04-20 18:59
  **/
-public class BinarySearchTree<K extends Comparable<K>,V>
+public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,V>
 {
     private Node<K,V> root;
     private int size;
@@ -19,7 +20,8 @@ public class BinarySearchTree<K extends Comparable<K>,V>
         size=0;
     }
 
-    public boolean add(K key,V value)
+    @Override
+    public boolean put(K key, V value)
     {
         size++;
         if(root==null)
@@ -60,11 +62,13 @@ public class BinarySearchTree<K extends Comparable<K>,V>
         return false;
     }
 
+    @Override
     public boolean find(K key)
     {
         return getNode(key)!=null;
     }
 
+    @Override
     public V get(K key)
     {
         Node<K,V> temp=getNode(key);
@@ -103,33 +107,50 @@ public class BinarySearchTree<K extends Comparable<K>,V>
         return null;
     }
 
+    @Override
     public boolean remove(K key)
     {
         Node<K,V> target=getNode(key);
         if(target==null) return false;
-        if(target.parent==null)
-        {
-            if(target.left!=null&&target.right!=null)
-            {
-                Node<K,V> temp=target.left;
-                root.key=temp.key;
-                root.value=temp.value;
-                return remove(temp.key);
-            } else
-            {
-                if(root.left!=null)
-                {
-                    root=root.left;
-                }else
-                {
-                    root=root.right;
-                }
-            }
-        }else
-        {
+        size--;
+        return remove(target.parent,target);
+    }
 
+    private boolean remove(Node<K,V> parent,Node<K,V> node)
+    {
+        if(node.left!=null&&node.right!=null)
+        {
+            Node<K,V> temp=node.left;
+            node.key=temp.key;
+            node.value=temp.value;
+            return remove(node,temp);
+        } else {
+            if(parent==null)
+            {
+                root=root.left==null?root.right:root.left;
+                if(root!=null)
+                {
+                    root.parent=null;
+                }
+                return true;
+            }
+            if(parent.left==node)
+            {
+                parent.left=node.left;
+            }else
+            {
+                parent.right=node.right;
+            }
+            deleteQuote(node);
         }
         return false;
+    }
+
+    private void deleteQuote(Node<K,V> node)
+    {
+        node.left=null;
+        node.right=null;
+        node.parent=null;
     }
 
     public void forEach(BiConsumer<K,V> consumer)
