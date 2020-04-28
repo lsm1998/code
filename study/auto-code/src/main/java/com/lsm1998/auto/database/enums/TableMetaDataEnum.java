@@ -6,7 +6,8 @@ import lombok.Getter;
  * 数据表元数据枚举
  */
 @Getter
-public enum TableMetaDataEnum {
+public enum TableMetaDataEnum
+{
     /**
      * 表类别(可为null)
      */

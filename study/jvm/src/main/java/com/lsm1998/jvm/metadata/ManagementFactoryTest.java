@@ -76,7 +76,7 @@ public class ManagementFactoryTest
         for(MemoryPoolMXBean mpm:mpmList)
         {
             System.out.println("getUsage "+mpm.getUsage());
-            System.out.println("getMemoryManagerNames "+mpm.getMemoryManagerNames().toString());
+            System.out.println("getMemoryManagerNames "+ Arrays.toString(mpm.getMemoryManagerNames()));
         }
     }
 
