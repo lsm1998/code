@@ -14,7 +14,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.io.IOException;
 
-public class ChatClient {
+public class ChatClient
+{
     private ChatClientHandler clientHandler;
     private String host;
     private int port;
