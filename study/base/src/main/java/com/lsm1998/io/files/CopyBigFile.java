@@ -22,7 +22,6 @@ public class CopyBigFile
      *
      * HBuilderX.rar 343MB
      */
-
     String newFileName="C:\\Users\\Administrator\\Desktop\\HBuilderX-copy.rar";
 
     /**
