@@ -80,7 +80,7 @@ public class AVLTree<K extends Comparable<K>,V> extends AbstractTree<K,V>
         return false;
     }
 
-    static class AVLNode<K,V> extends Tree.Node<K,V>
+    private static class AVLNode<K,V> extends Tree.Node<K,V>
     {
         private AVLNode<K,V> parent;
         private int height;

@@ -151,7 +151,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
         }
     }
 
-    static class Node<K,V> extends Tree.Node<K,V>
+    private static class Node<K,V> extends Tree.Node<K,V>
     {
         private Node<K,V> parent;
 

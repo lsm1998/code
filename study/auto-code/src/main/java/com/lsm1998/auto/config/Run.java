@@ -6,6 +6,7 @@ import com.lsm1998.auto.engine.CodeBuilderProperties;
 import com.lsm1998.auto.engine.EngineTemplate;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Run {
 
@@ -23,7 +24,7 @@ public class Run {
                 .dbConfig(db)
                 .projectCode("demo")
                 // .generatorByPattern("ips%")
-                .tables(Arrays.asList("t_user"))
+                .tables(Collections.singletonList("t_user"))
                 //.ignoreClassPrefix("aitcp_")
                 //.ignoreClassSuffix("_t")
                 .packageName("com.lsm1998.demo")

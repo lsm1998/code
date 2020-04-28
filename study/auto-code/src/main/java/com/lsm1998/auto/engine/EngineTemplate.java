@@ -8,7 +8,6 @@ import com.lsm1998.auto.database.util.StringUtil;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import java.io.*;
-import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 
@@ -94,8 +93,10 @@ public class EngineTemplate {
      *
      * @param table 数据表对象
      */
-    public void process(Table table,EngineTypeEnum engineTypeEnum){
-        try {
+    public void process(Table table,EngineTypeEnum engineTypeEnum)
+    {
+        try
+        {
             String entityName = getEntityName(table.getTableName());
             String fileName = engineTypeEnum.getFileName(entityName);
 
@@ -119,7 +120,8 @@ public class EngineTemplate {
         }
     }
 
-    private List<String> getTables(){
+    private List<String> getTables()
+    {
         List<String> tables = codeBuilderProperties.getTables();
         String generatorByPattern = codeBuilderProperties.getGeneratorByPattern();
         /*
@@ -159,7 +161,7 @@ public class EngineTemplate {
         File file = new File(this.getClass().getName());
         String absolutePath = file.getAbsolutePath();
         StringBuffer baseTagerDir = new StringBuffer();
-        baseTagerDir.append(absolutePath.substring(0, absolutePath.lastIndexOf(File.separator)));
+        baseTagerDir.append(absolutePath, 0, absolutePath.lastIndexOf(File.separator));
         baseTagerDir.append(File.separator);
         baseTagerDir.append("src");
         baseTagerDir.append(File.separator);
