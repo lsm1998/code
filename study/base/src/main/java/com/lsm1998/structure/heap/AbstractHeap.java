@@ -5,7 +5,7 @@
  */
 package com.lsm1998.structure.heap;
 
-public abstract class AbstractHeap<E extends Comparable<? extends E>> implements Heap<E>
+public abstract class AbstractHeap<E extends Comparable<? super E>> implements Heap<E>
 {
     @Override
     public boolean isEmpty()
