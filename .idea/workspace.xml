@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="study">
+    <list default="true" id="a031d283-ba19-472c-b196-5177d5f040d8" name="Default Changelist" comment="部分structure">
+      <change afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/algorithm/base/Knapsack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio/AIOServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/algorithm/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/algorithm/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/algorithm/base/DivideAndConquer.java" beforeDir="false" afterPath="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/algorithm/base/Hanoi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,29 +72,31 @@
       </state>
     </system>
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="code" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="jvm" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\apache-maven-3.6.2\Repository" />
-        <option name="userSettingsFile" value="D:\apache-maven-3.6.2\conf\settings.xml" />
+        <option name="localRepository" value="E:\jar-libs" />
+        <option name="userSettingsFile" value="E:\maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -83,7 +106,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -94,12 +116,14 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/study/base/src/main/java/com/lsm1998/aio" />
+    <property name="jdk.selected.JAVA_MODULE" value="13" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EasyBook" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -112,88 +136,124 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\test\code\study\base\src\main\java\com\lsm1998\aio" />
-      <recent name="E:\test\code\study\chat\src\main\java\com\lsm1998\chat" />
-      <recent name="E:\test\code\test\web-tomcat\src\main\resources" />
-      <recent name="C:\Users\Administrator\IdeaProjects\code\images" />
-      <recent name="C:\Users\Administrator\IdeaProjects\code\project\qq\src\main\java" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lsm1998.util.math" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\test\code\static\iamges\xhjy" />
       <recent name="C:\Users\Administrator\IdeaProjects\code\framework" />
       <recent name="C:\Users\lsm\IdeaProjects\code\MyTomcat\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lsm1998.echoes.aio" />
+      <recent name="com.lsm1998.echoes.nio" />
+      <recent name="com.lsm1998.util.math" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\code\study\shardingjdbc\src\main\java\com\lsm1998\sharding\entity" />
+      <recent name="C:\Users\Administrator\IdeaProjects\code\study\shardingjdbc\src\main\resources" />
+      <recent name="E:\test\code\study\base\src\main\java\com\lsm1998\aio" />
+      <recent name="E:\test\code\study\chat\src\main\java\com\lsm1998\chat" />
+      <recent name="E:\test\code\test\web-tomcat\src\main\resources" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Test (1)">
-    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.thread.comsumer_queue.Test" />
-      <module name="demo" />
+  <component name="RunManager" selected="JUnit.BaseTest.test2">
+    <configuration name="BaseTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.thread.comsumer_queue.*" />
+          <option name="PATTERN" value="com.lsm1998.algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.lsm1998.algorithm" />
+      <option name="MAIN_CLASS_NAME" value="com.lsm1998.algorithm.BaseTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.thread.parallel_sum.Test" />
-      <module name="demo" />
+    <configuration name="BaseTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="demo.thread.parallel_sum.*" />
+          <option name="PATTERN" value="com.lsm1998.algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.lsm1998.algorithm" />
+      <option name="MAIN_CLASS_NAME" value="com.lsm1998.algorithm.BaseTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StructureTest.testCityGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsm1998.structure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsm1998.structure" />
+      <option name="MAIN_CLASS_NAME" value="com.lsm1998.structure.StructureTest" />
+      <option name="METHOD_NAME" value="testCityGraph" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.testLatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsm1998.concurrent.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsm1998.concurrent" />
+      <option name="MAIN_CLASS_NAME" value="com.lsm1998.concurrent.Test" />
+      <option name="METHOD_NAME" value="testLatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.testSemaphore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsm1998.concurrent.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsm1998.concurrent" />
+      <option name="MAIN_CLASS_NAME" value="com.lsm1998.concurrent.Test" />
+      <option name="METHOD_NAME" value="testSemaphore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.StructureTest.testCityGraph" />
+      <item itemvalue="JUnit.Test.testLatch" />
+      <item itemvalue="JUnit.Test.testSemaphore" />
+      <item itemvalue="JUnit.BaseTest.test1" />
+      <item itemvalue="JUnit.BaseTest.test2" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test (1)" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.BaseTest.test2" />
+        <item itemvalue="JUnit.BaseTest.test1" />
+        <item itemvalue="JUnit.Test.testSemaphore" />
+        <item itemvalue="JUnit.Test.testLatch" />
+        <item itemvalue="JUnit.StructureTest.testCityGraph" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.19859308" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES,SHOW_PROPERTIES,SHOW_FIELDS,ALPHA_COMPARATOR,VISIBILITY_SORTER,SHOW_LAMBDA,SHOW_ANONYMOUS" />
@@ -275,6 +335,19 @@
       <workItem from="1586944001389" duration="1128000" />
       <workItem from="1587010581206" duration="1401000" />
       <workItem from="1587024476271" duration="115000" />
+      <workItem from="1587223387190" duration="1017000" />
+      <workItem from="1587224435914" duration="600000" />
+      <workItem from="1587262060994" duration="3803000" />
+      <workItem from="1587293753210" duration="2074000" />
+      <workItem from="1587480228997" duration="3325000" />
+      <workItem from="1587563361574" duration="750000" />
+      <workItem from="1587738812949" duration="326000" />
+      <workItem from="1587741368017" duration="674000" />
+      <workItem from="1587814264332" duration="32000" />
+      <workItem from="1587825041207" duration="84000" />
+      <workItem from="1587997952672" duration="8000" />
+      <workItem from="1588252963474" duration="12000" />
+      <workItem from="1588258663610" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="目录调整">
       <created>1576492043171</created>
@@ -339,11 +412,44 @@
       <option name="project" value="LOCAL" />
       <updated>1586942457300</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="echoes">
+      <created>1587308379313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587308379313</updated>
+    </task>
+    <task id="LOCAL-00011" summary="二分搜索树">
+      <created>1588003107275</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1588003107275</updated>
+    </task>
+    <task id="LOCAL-00012" summary="部分structure">
+      <created>1588525437194</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588525437195</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -357,7 +463,10 @@
     <MESSAGE value="chat" />
     <MESSAGE value="aio" />
     <MESSAGE value="删除demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除demo" />
+    <MESSAGE value="echoes" />
+    <MESSAGE value="二分搜索树" />
+    <MESSAGE value="部分structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="部分structure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Project_Structure" timestamp="1586739368290">
@@ -368,13 +477,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Updates/0.0.1920.1040@0.0.1920.1040" timestamp="1586744714084" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587024590261">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587831645092">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="331" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587831645092" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587024590261" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586748770956">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="612" y="181" key="#com.intellij.ide.util.MemberChooser" timestamp="1588391795493">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="612" y="181" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588391795493" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586748770956" />
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586397983800">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -384,49 +495,63 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586746190060" />
-    <state x="560" y="109" key="CommitChangelistDialog2" timestamp="1586942456084">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587830658830">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587830658830" />
+    <state x="448" y="3" key="CommitChangelistDialog2" timestamp="1587309311299">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="448" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587309311299" />
     <state x="560" y="109" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586942456084" />
     <state x="202" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1586739057811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="202" y="86" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586739057811" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586509683794">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="592" y="218" key="FileChooserDialogImpl" timestamp="1588256534081">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588256534081" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586509683794" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1587024662977">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="420" key="GridCell.Tab.0.bottom" timestamp="1588525879429">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="420" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588525879429" />
     <state width="1877" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1587024662977">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="420" key="GridCell.Tab.0.center" timestamp="1588525879429">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="420" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588525879429" />
     <state width="1877" height="336" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1587024662977">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="420" key="GridCell.Tab.0.left" timestamp="1588525879429">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="420" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588525879429" />
     <state width="1877" height="336" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1587024662977">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="420" key="GridCell.Tab.0.right" timestamp="1588525879429">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="420" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588525879429" />
     <state width="1877" height="336" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587024662977" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1586750285078">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="321" key="GridCell.Tab.1.bottom" timestamp="1588524278462">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="321" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588524278462" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1586750285078">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="321" key="GridCell.Tab.1.center" timestamp="1588524278462">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="321" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588524278462" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1586750285078">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="321" key="GridCell.Tab.1.left" timestamp="1588524278462">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="321" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588524278462" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1586750285078">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="321" key="GridCell.Tab.1.right" timestamp="1588524278462">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="321" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588524278462" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586750285078" />
     <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1586501704226">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -440,22 +565,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586397924932" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1586509684352">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="369" y="109" key="SettingsEditor" timestamp="1588089102290">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="369" y="109" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588089102290" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586509684352" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1586942462521">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1588525441217">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588525441217" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586942462521" />
-    <state x="682" y="311" key="git4idea.merge.GitPullDialog" timestamp="1586738997265">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588258663709">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588258663709" />
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588082107629">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588082107629" />
+    <state x="546" y="246" key="git4idea.merge.GitPullDialog" timestamp="1588520013164">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="546" y="246" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1588520013164" />
     <state x="682" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586738997265" />
-    <state x="334" y="129" key="new project wizard" timestamp="1586748481616">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="267" y="45" key="new project wizard" timestamp="1587816505878">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="267" y="45" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1587816505878" />
     <state x="334" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1586748481616" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1587221218837">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587221218837" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586425962311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

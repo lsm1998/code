@@ -6,6 +6,7 @@
 package com.lsm1998.algorithm;
 
 import com.lsm1998.algorithm.base.BinarySearchFind;
+import com.lsm1998.algorithm.base.Hanoi;
 import com.lsm1998.utils.FileUtil;
 import org.junit.Test;
 
@@ -88,5 +89,11 @@ public class BaseTest
         System.out.println(BinarySearchFind.binarySearchFind(arr, 1));
         System.out.println(BinarySearchFind.binarySearchFind(arr, 20));
         System.out.println(BinarySearchFind.binarySearchFind(arr, 10));
+    }
+
+    @Test
+    public void test2()
+    {
+        Hanoi.hanoi(64,'A','B','C');
     }
 }

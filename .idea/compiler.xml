@@ -12,6 +12,7 @@
         <module name="echoes-server" />
         <module name="demo" />
         <module name="elasticsearch" />
+        <module name="web-tomcat" />
         <module name="qq" />
         <module name="echoes-rpc" />
         <module name="MyLog4j" />
@@ -24,18 +25,22 @@
         <module name="springboot" />
         <module name="utils" />
         <module name="contra" />
-        <module name="MyTomcat" />
+        <module name="aio-core" />
         <module name="puzzle" />
-        <module name="web-tomcat" />
+        <module name="MyTomcat" />
         <module name="web" />
+        <module name="netty" />
+        <module name="aio-pro" />
         <module name="registry" />
         <module name="snake" />
+        <module name="shardingjdbc" />
         <module name="base" />
-        <module name="jvm" />
         <module name="redis" />
         <module name="box" />
         <module name="echoes-common" />
+        <module name="jvm" />
         <module name="echoes-registry" />
+        <module name="auto-code" />
         <module name="echoes-api" />
       </profile>
     </annotationProcessing>
