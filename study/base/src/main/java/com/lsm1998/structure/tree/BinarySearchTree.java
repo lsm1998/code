@@ -117,7 +117,7 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
             }
             deleteQuote(node);
         }
-        return false;
+        return true;
     }
 
     private void deleteQuote(Node<K,V> node)

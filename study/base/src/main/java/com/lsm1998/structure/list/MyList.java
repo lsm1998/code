@@ -1,50 +1,39 @@
+/*
+ * 作者：刘时明
+ * 时间：2020/5/2-0:11
+ * 作用：
+ */
 package com.lsm1998.structure.list;
 
-import java.util.Iterator;
-
-/**
- * @program: code
- * @description:
- * @author: lsm
- * @create: 2020-04-20 18:03
- **/
 public interface MyList<E>
 {
     int size();
 
     boolean isEmpty();
 
-    boolean contains(Object var1);
+    boolean add(E element);
 
-    Iterator<E> iterator();
+    boolean add(int index, E element);
+
+    boolean remove(E element);
+
+    boolean remove(int index);
+
+    boolean contains(E element);
 
     Object[] toArray();
 
-    <T> T[] toArray(T[] var1);
-
-    boolean add(E var1);
-
-    boolean remove(Object var1);
-
     void clear();
 
-    boolean equals(Object var1);
+    boolean equals(Object o);
 
     int hashCode();
 
-    E get(int var1);
+    E get(int index);
 
-    E set(int var1, E var2);
+    E set(int index, E element);
 
-    void add(int var1, E var2);
+    int indexOf(E element);
 
-    E remove(int var1);
-
-    int indexOf(Object var1);
-
-    int lastIndexOf(Object var1);
-
-    MyListIterator<E> listIterator();
-
-    MyListIterator<E> listIterator(int var1);
+    int lastIndexOf(E element);
 }

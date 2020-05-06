@@ -8,5 +8,8 @@ package com.lsm1998.netty.server;
  **/
 public class EchoServer
 {
+    public static void main(String[] args)
+    {
 
+    }
 }

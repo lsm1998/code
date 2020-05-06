@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <type id="Spring" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/alibaba/pom.xml" />
+        <option value="$PROJECT_DIR$/MyTomcat/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Courage/pom.xml" />
+        <option value="$PROJECT_DIR$/MyIbatis/pom.xml" />
+        <option value="$PROJECT_DIR$/MyJVM/pom.xml" />
+        <option value="$PROJECT_DIR$/MySpring/pom.xml" />
+        <option value="$PROJECT_DIR$/MySpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/box/pom.xml" />
+        <option value="$PROJECT_DIR$/echoes-test/pom.xml" />
+        <option value="$PROJECT_DIR$/log4j/pom.xml" />
+        <option value="$PROJECT_DIR$/most/pom.xml" />
+        <option value="$PROJECT_DIR$/project/chess/pom.xml" />
+        <option value="$PROJECT_DIR$/project/hamster/pom.xml" />
+        <option value="$PROJECT_DIR$/project/microChat/pom.xml" />
+        <option value="$PROJECT_DIR$/project/submarine/pom.xml" />
+        <option value="$PROJECT_DIR$/project/wechat/pom.xml" />
+        <option value="$PROJECT_DIR$/tars/pom.xml" />
+        <option value="$PROJECT_DIR$/wechat/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringJavaInjectionPointsAutowiringInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="13" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
