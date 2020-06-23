@@ -77,7 +77,7 @@ public class AutoTables
         MyTable table = clazz.getAnnotation(MyTable.class);
         String tableName = table.name();
 
-        if (MySQLUtil.tableIsExis(tableName))
+        if (MySQLUtil.tableExist(tableName))
         {
             Map<String, String[]> map = MySQLUtil.getTableStructure(tableName);
             Set<String> fieldSet = new HashSet<>();

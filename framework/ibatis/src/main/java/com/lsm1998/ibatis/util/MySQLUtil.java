@@ -25,16 +25,22 @@ public class MySQLUtil
         MySQLUtil.configuration = configuration;
     }
 
-    private static Connection getConnection() throws SQLException
+    private static Connection getConnection()
     {
-        if (connection == null || connection.isClosed())
+        try
         {
-            connection = DriverManager.getConnection(configuration.url, configuration.username, configuration.password);
+            if (connection == null || connection.isClosed())
+            {
+                connection = DriverManager.getConnection(configuration.url, configuration.username, configuration.password);
+            }
+            return connection;
+        }catch (SQLException e)
+        {
+            throw new RuntimeException("获取SQL连接对象失败，请检查SQL配置，error="+e.getMessage());
         }
-        return connection;
     }
 
-    public static boolean tableIsExis(String tableName)
+    public static boolean tableExist(String tableName)
     {
         PreparedStatement statement = null;
         ResultSet rs = null;

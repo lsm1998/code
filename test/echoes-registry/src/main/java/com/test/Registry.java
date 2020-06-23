@@ -22,6 +22,6 @@ public class Registry
                 .serverClass(NIOServer.class)
                 .loadStrategy(LoadStrategy.RANDOM)
                 .build();
-        server.start(Define.PORT);
+        server.start();
     }
 }

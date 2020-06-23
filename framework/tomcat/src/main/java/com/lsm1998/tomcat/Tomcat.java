@@ -70,9 +70,7 @@ public class Tomcat
         {
 
             ServerBootstrap server = new ServerBootstrap();
-            // 链路式编程
             server.group(bossGroup, workerGroup)
-                    // 主线程处理类,看到这样的写法，底层就是用反射
                     .channel(NioServerSocketChannel.class)
                     // 子线程处理类 , Handler
                     .childHandler(new ChannelInitializer<SocketChannel>()
@@ -95,7 +93,7 @@ public class Tomcat
                     .option(ChannelOption.SO_BACKLOG, 128)
                     // 针对子线程的配置 保持长连接
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
-            //3、启动服务器
+            // 启动服务器
             ChannelFuture f = server.bind(port).sync();
             System.out.println("Tomcat 已启动，监听的端口是：" + port);
             f.channel().closeFuture().sync();

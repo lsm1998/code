@@ -3,10 +3,10 @@
  * 时间：2020/3/8-15:52
  * 作用：
  */
-package com.lsm1998.net.echoes.registry;
 
 import com.lsm1998.net.echoes.common.net.EchoesServer;
 import com.lsm1998.net.echoes.common.net.nio.NIOServer;
+import com.lsm1998.net.echoes.registry.Define;
 import com.lsm1998.net.echoes.registry.enums.LoadStrategy;
 import com.lsm1998.net.echoes.registry.service.RegistryServerBuild;
 

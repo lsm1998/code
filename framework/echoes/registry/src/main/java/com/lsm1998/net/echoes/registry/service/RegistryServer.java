@@ -6,7 +6,10 @@
 package com.lsm1998.net.echoes.registry.service;
 
 import com.lsm1998.net.echoes.common.net.EchoesServer;
+import com.lsm1998.net.echoes.common.net.WebServer;
+import com.lsm1998.net.echoes.common.net.bio.BIOServer;
 import com.lsm1998.net.echoes.common.net.nio.NIOServer;
+import com.lsm1998.net.echoes.registry.Define;
 import com.lsm1998.net.echoes.registry.config.RegistryConfig;
 import com.lsm1998.net.echoes.registry.service.impl.BIORegistryServerImpl;
 import com.lsm1998.net.echoes.registry.service.impl.NIORegistryServerImpl;
@@ -34,11 +37,23 @@ public class RegistryServer implements EchoesServer
         if (config.getServerClass() == NIOServer.class)
         {
             server = new NIORegistryServerImpl(config);
-        } else
+        } else if(config.getServerClass() == BIOServer.class)
         {
             server = new BIORegistryServerImpl(config);
+        } else if(config.getServerClass() == WebServer.class)
+        {
+            server = new BIORegistryServerImpl(config);
+        }else
+        {
+            throw new RuntimeException("不能识别的服务类型:"+config.getServerClass());
         }
         server.start(port);
+    }
+
+    @Override
+    public void start() throws IOException
+    {
+        this.start(Define.PORT);
     }
 
     @Override

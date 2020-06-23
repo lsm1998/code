@@ -44,7 +44,7 @@ public class NIORegistryServerImpl extends RegistryServer
         // 设置非阻塞
         server.configureBlocking(false);
         server.register(selector, SelectionKey.OP_ACCEPT);
-        log.info("注册中心启动完毕");
+        log.info("注册中心启动完毕,port=[{}]",port);
         while (selector.select() > 0)
         {
             for (SelectionKey key : selector.selectedKeys())

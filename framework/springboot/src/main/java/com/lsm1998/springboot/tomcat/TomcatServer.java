@@ -1,5 +1,6 @@
 package com.lsm1998.springboot.tomcat;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @时间：2019/1/10-11:20
  * @说明：tomcat服务器启动类
  */
+@Slf4j
 public class TomcatServer
 {
     public static void start(String contextPath, List<ServletAndParrern> list, int port)
@@ -53,13 +55,13 @@ public class TomcatServer
         try
         {
             server.start();
-            System.out.println("tomcat启动完成...");
+            log.info("tomcat启动完成...");
 
             // 异步接收请求
             server.getServer().await();
         }catch (Exception e)
         {
-            System.err.println("tomcat启动出现错误...");
+            log.error("tomcat启动出现错误...");
             e.printStackTrace();
         }
     }

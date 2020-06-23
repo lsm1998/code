@@ -26,11 +26,14 @@ import java.util.Properties;
 @Slf4j
 public class MySpringApplication
 {
+    private static final String DEFAULT_CONFIG="/myspringboot.properties";
+    private static final int DEFAULT_PORT = 8080;
+
     public static MyAnnotationConfigApplicationContext run(Class<?> clazz, String[] args)
     {
         // 获取配置文件
         Properties properties = new Properties();
-        String filePath= MySpringApplication.class.getResource("/myspringboot.properties").getFile();
+        String filePath= MySpringApplication.class.getResource(DEFAULT_CONFIG).getFile();
         File file = new File(filePath);
         if (!file.exists())
         {
@@ -54,12 +57,12 @@ public class MySpringApplication
     {
         log.info("MySpring开始加载");
         log.info("init初始化配置");
-        List<MyAutoConfigure> autoConfigureList=new ArrayList();
+        List<MyAutoConfigure> autoConfigureList=new ArrayList<>();
         MySpringBootApplication bootApplication = clazz.getAnnotation(MySpringBootApplication.class);
         // 是否排除Mybatis依赖
-        Class[] excludeClass = bootApplication.exclude();
+        Class<?>[] excludeClass = bootApplication.exclude();
         boolean flag = true;
-        for (Class c : excludeClass)
+        for (Class<?> c : excludeClass)
         {
             if (c == MybatisAutoConfigure.class)
             {
@@ -92,7 +95,7 @@ public class MySpringApplication
         list.add(staticServlet);
         list.add(templatesServlet);
         list.add(dispatchServlet);
-        int port = 8080;
+        int port = DEFAULT_PORT;
         if (properties.containsKey("port"))
         {
             try
