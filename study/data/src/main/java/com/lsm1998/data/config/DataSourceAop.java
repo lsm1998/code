@@ -42,12 +42,14 @@ public class DataSourceAop
     @Before("readPointcut()")
     public void read()
     {
+        System.out.println("切换至读库");
         DBContextHolder.slave();
     }
 
     @Before("writePointcut()")
     public void write()
     {
+        System.out.println("切换至写库");
         DBContextHolder.master();
     }
 }

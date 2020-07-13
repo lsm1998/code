@@ -43,10 +43,10 @@ public class DataTest {
 
     @Test
     public void read() {
-//        User user=new User();
-//        user.setId(2L);
-//        user.setName("value");
-//        userService.saveUser(user);
+        User user = new User();
+        user.setId(3L);
+        user.setName("value");
+        userService.saveUser(user);
         System.out.println(userService.getList());
     }
 }
