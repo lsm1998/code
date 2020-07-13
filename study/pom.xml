@@ -21,6 +21,7 @@
         <module>shardingjdbc</module>
         <module>auto-code</module>
         <module>netty</module>
+        <module>data</module>
     </modules>
 
     <dependencies>
