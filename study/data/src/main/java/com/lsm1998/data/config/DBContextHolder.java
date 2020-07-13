@@ -23,19 +23,15 @@ public class DBContextHolder
 
     public static void master()
     {
+        counter.addAndGet(1);
         set(DBTypeEnum.MASTER);
-        if (log.isDebugEnabled())
-        {
-            log.debug("数据源切换至master");
-        }
+        log.debug("数据源切换至master");
     }
 
     public static void slave()
     {
+        counter.addAndGet(1);
         set(DBTypeEnum.SLAVE);
-        if (log.isDebugEnabled())
-        {
-            log.debug("数据源切换至slave");
-        }
+        log.debug("数据源切换至slave");
     }
 }

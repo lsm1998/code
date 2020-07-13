@@ -44,7 +44,7 @@ public class DataSourceConfig
      * @param slaveDataSource  从数据库
      * @return DataSource
      */
-    @Bean
+    @Bean(name = "myRoutingDataSource")
     public DataSource myRoutingDataSource(@Qualifier("masterDataSource") DataSource masterDataSource,
                                           @Qualifier("slaveDataSource") DataSource slaveDataSource)
     {
