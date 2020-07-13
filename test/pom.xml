@@ -15,7 +15,6 @@
         <module>echoes-client</module>
         <module>echoes-api</module>
         <module>echoes-server</module>
-        <module>echoes-registry</module>
         <module>web</module>
         <module>web-tomcat</module>
     </modules>

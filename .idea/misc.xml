@@ -34,6 +34,7 @@
         <option value="$PROJECT_DIR$/project/submarine/pom.xml" />
         <option value="$PROJECT_DIR$/project/wechat/pom.xml" />
         <option value="$PROJECT_DIR$/tars/pom.xml" />
+        <option value="$PROJECT_DIR$/test/echoes-registry/pom.xml" />
         <option value="$PROJECT_DIR$/wechat/pom.xml" />
       </set>
     </option>
@@ -61,7 +62,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="13" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="11.0.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

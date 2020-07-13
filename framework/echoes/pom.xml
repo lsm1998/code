@@ -17,6 +17,7 @@
         <module>echoes-config</module>
         <module>echoes-rpc</module>
         <module>registry</module>
+        <module>echoes-registry</module>
     </modules>
 
     <build>
