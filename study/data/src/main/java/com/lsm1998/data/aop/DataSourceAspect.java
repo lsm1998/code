@@ -1,5 +1,6 @@
-package com.lsm1998.data.config;
+package com.lsm1998.data.aop;
 
+import com.lsm1998.data.config.DBContextHolder;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -7,12 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class DataSourceAop
+public class DataSourceAspect
 {
     /**
      * 使用从库查询
      */
-    @Pointcut("@annotation(com.lsm1998.data.config.Slave) " +
+    @Pointcut("@annotation(com.lsm1998.data.annotation.Slave) " +
             "|| execution(* com.lsm1998.data..service..*.select*(..)) " +
             "|| execution(* com.lsm1998.data..service..*.list*(..)) " +
             "|| execution(* com.lsm1998.data..service..*.query*(..)) " +
@@ -26,7 +27,7 @@ public class DataSourceAop
     /**
      * 使用主库插入更新
      */
-    @Pointcut("@annotation(com.lsm1998.data.config.Master) " +
+    @Pointcut("@annotation(com.lsm1998.data.annotation.Master) " +
             "|| execution(* com.lsm1998.data..service..*.login(..)) " +
             "|| execution(* com.lsm1998.data..service..*.insert*(..)) " +
             "|| execution(* com.lsm1998.data..service..*.add*(..)) " +

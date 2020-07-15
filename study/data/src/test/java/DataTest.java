@@ -9,9 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 /**
  * @program: code
@@ -31,22 +28,20 @@ public class DataTest {
 
     @Test
     public void test() throws Exception {
-        Connection connection = dataSource.getConnection();
-//        String sql = "show tables";
-//        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-//        ResultSet resultSet = preparedStatement.executeQuery();
-//        while (resultSet.next()) {
-//            System.out.println(resultSet.getObject(1));
-//        }
-        System.out.println(connection);
+        read();
+        write();
     }
 
     @Test
     public void read() {
-        User user = new User();
-        user.setId(3L);
-        user.setName("value");
-        userService.saveUser(user);
         System.out.println(userService.getList());
+    }
+
+    @Test
+    public void write(){
+        User user = new User();
+        user.setId(null);
+        user.setName("fuck");
+        userService.saveUser(user);
     }
 }

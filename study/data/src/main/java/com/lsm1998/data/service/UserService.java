@@ -1,7 +1,7 @@
 package com.lsm1998.data.service;
 
-import com.lsm1998.data.config.Master;
-import com.lsm1998.data.config.Slave;
+import com.lsm1998.data.annotation.Master;
+import com.lsm1998.data.annotation.Slave;
 import com.lsm1998.data.domain.User;
 
 import java.util.List;

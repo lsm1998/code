@@ -1,4 +1,4 @@
-package com.lsm1998.data.config;
+package com.lsm1998.data.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
