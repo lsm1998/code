@@ -9,6 +9,7 @@ import com.lsm1998.echoes.common.net.EchoesServer;
 import com.lsm1998.echoes.registry.enums.LoadStrategy;
 import com.lsm1998.echoes.registry.enums.SerializeStrategy;
 import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
 public class RegistryConfig

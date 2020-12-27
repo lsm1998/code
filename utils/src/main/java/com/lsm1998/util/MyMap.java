@@ -1,7 +1,4 @@
-package com.lsm1998.util.base;
-
-import com.lsm1998.util.MyCollection;
-import com.lsm1998.util.MySet;
+package com.lsm1998.util;
 
 /**
  * @作者：刘时明

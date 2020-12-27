@@ -34,9 +34,12 @@ public class MyLinkedList<E> extends MyAbstractSequentialList<E> implements MyLi
         final Node<E> newNode = new Node<>(null, e, f);
         first = newNode;
         if (f == null)
+        {
             last = newNode;
-        else
+        } else
+        {
             f.prev = newNode;
+        }
         size++;
         modCount++;
     }
@@ -207,20 +210,20 @@ public class MyLinkedList<E> extends MyAbstractSequentialList<E> implements MyLi
 
     Node<E> node(int index)
     {
+        Node<E> x;
         if (index < (size >> 1))
         {
-            Node<E> x = first;
+            x = first;
             for (int i = 0; i < index; i++)
                 x = x.next;
-            return x;
 
         } else
         {
-            Node<E> x = last;
+            x = last;
             for (int i = size - 1; i > index; i--)
                 x = x.prev;
-            return x;
         }
+        return x;
     }
 
     public int indexOf(Object o)

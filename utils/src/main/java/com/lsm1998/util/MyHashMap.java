@@ -3,11 +3,11 @@
  * 时间：2019/12/27-21:06
  * 作用：
  */
-package com.lsm1998.util.base;
+package com.lsm1998.util;
 
 public class MyHashMap<K, V>
 {
-    static class MyNode<K, V> implements MyMap.MyEntry
+    static class MyNode<K, V> implements MyMap.MyEntry<K, V>
     {
         final int hash;
         final K key;
@@ -23,19 +23,19 @@ public class MyHashMap<K, V>
         }
 
         @Override
-        public Object getKey()
+        public K getKey()
         {
             return null;
         }
 
         @Override
-        public Object getValue()
+        public V getValue()
         {
             return null;
         }
 
         @Override
-        public Object setValue(Object var1)
+        public V setValue(Object var1)
         {
             return null;
         }

@@ -4,8 +4,6 @@ import com.lsm1998.echoes.common.net.EchoesServer;
 import com.lsm1998.echoes.registry.config.RegistryConfig;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -24,7 +22,6 @@ import java.io.IOException;
 public class RegistryStart implements EchoesServer
 {
     private RegistryConfig config;
-    private ConfigurableApplicationContext applicationContext;
 
     public RegistryStart(){}
 
@@ -41,8 +38,7 @@ public class RegistryStart implements EchoesServer
     @Override
     public void start(int port) throws IOException
     {
-        applicationContext = SpringApplication.run(RegistryStart.class, String.format("--server.port=%d", port));
-        // BeanDefinitionRegistry beanDefinitionRegistry = (DefaultListableBeanFactory) applicationContext.getBeanFactory();
+        SpringApplication.run(RegistryStart.class, String.format("--server.port=%d", port));
     }
 
     @Override
