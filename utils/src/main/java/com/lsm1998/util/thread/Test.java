@@ -1,35 +1,47 @@
 package com.lsm1998.util.thread;
 
-import java.util.concurrent.*;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @作者：刘时明
  * @时间：2019/6/18-11:08
  * @作用：
  */
-public class Test implements Callable<String>
+public class Test
 {
-    @Override
-    public String call() throws Exception
-    {
-        for (int i = 0; i < 100; i++)
-        {
-            Thread.sleep(10);
-            System.out.println("调用");
-        }
-        return "Hello!";
-    }
-
     public static void main(String[] args) throws Exception
     {
-        Test t=new Test();
-        FutureTask<String> task=new FutureTask<>(t);
-        // new Thread(task).start();
-        task.run();
+        MyCyclicBarrier cyclicBarrier = new MyCyclicBarrier(10, new Done());
+
+        ReentrantLock lock = new ReentrantLock();
+
+
+        lock.lock();
         for (int i = 0; i < 100; i++)
         {
-            System.out.println("123");
+            new Thread(() ->
+            {
+                try
+                {
+                    cyclicBarrier.await();
+                } catch (InterruptedException | BrokenBarrierException e)
+                {
+                    e.printStackTrace();
+                }
+                System.out.println("线程结束");
+            }).start();
         }
-        System.out.println(task.get());
+    }
+
+    static class Done extends Thread
+    {
+        @Override
+        public void run()
+        {
+            System.out.println("ok");
+        }
     }
 }
