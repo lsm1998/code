@@ -18,7 +18,7 @@ public class DefClient implements EchoesClient
 {
     private Selector selector;
     private SocketChannel channel;
-    private ByteBuffer buffer = ByteBuffer.allocate(1024);
+    private final ByteBuffer buffer = ByteBuffer.allocate(1024);
 
     public DefClient(String address, int port) throws IOException
     {

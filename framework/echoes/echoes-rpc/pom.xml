@@ -21,7 +21,7 @@
 
         <dependency>
             <groupId>com.lsm1998</groupId>
-            <artifactId>registry</artifactId>
+            <artifactId>echoes-registry</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

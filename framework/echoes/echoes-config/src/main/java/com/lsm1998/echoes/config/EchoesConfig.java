@@ -13,27 +13,32 @@ import java.util.Map;
  **/
 @Slf4j
 @Data
-public class EchoesConfig {
+public class EchoesConfig
+{
     private Registry registry;
     private Rpc rpc;
 
     @Data
-    public static class Registry {
+    public static class Registry
+    {
         private String adder;
         private int port;
     }
 
     @Data
-    public static class Rpc {
+    public static class Rpc
+    {
         private String scanPackage;
         private String serviceName;
         private int port;
     }
 
-    public static EchoesConfig parse(Map map) {
+    public static EchoesConfig parse(Map map)
+    {
         if (map == null) return null;
         if (!map.containsKey("echoes")) return null;
-        try {
+        try
+        {
             Map<String, Object> echoesMap = (Map<String, Object>) map.get("echoes");
             if (!echoesMap.containsKey("rpc") || !echoesMap.containsKey("registry")) return null;
             EchoesConfig config = new EchoesConfig();
@@ -51,7 +56,8 @@ public class EchoesConfig {
             config.setRegistry(registry);
             config.setRpc(rpc);
             return config;
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             return null;
         }
     }

@@ -22,25 +22,26 @@ public class RpcProxy
 
     public RpcProxy(EchoesConfig.Rpc rpc)
     {
-        this.rpc=rpc;
+        this.rpc = rpc;
     }
 
     private List<Class<?>> classList()
     {
-        String packagePath=rpc.getScanPackage();
+        String packagePath = rpc.getScanPackage();
         String packageDirName = packagePath.replace('.', '/');
         System.out.println(packageDirName);
-        File file=new File(this.getClass().getResource("/").getPath()+packageDirName);
-        File[] files=file.listFiles();
+        File file = new File(this.getClass().getResource("/").getPath() + packageDirName);
+        File[] files = file.listFiles();
         assert files != null;
-        List<Class<?>> proxyClassList=new ArrayList<>();
-        try {
-            for (File f:files)
+        List<Class<?>> proxyClassList = new ArrayList<>();
+        try
+        {
+            for (File f : files)
             {
-                int len=f.getName().length();
-                proxyClassList.add(Class.forName(packagePath +"."+f.getName().substring(0,len-6)));
+                int len = f.getName().length();
+                proxyClassList.add(Class.forName(packagePath + "." + f.getName().substring(0, len - 6)));
             }
-        }catch (ClassNotFoundException e)
+        } catch (ClassNotFoundException e)
         {
             e.printStackTrace();
         }
@@ -50,19 +51,19 @@ public class RpcProxy
     public void classProxy(Map<String, ProxyBean<?>> targetObjMap)
     {
         // 获取packagePath里的类
-        List<Class<?>> classList=this.classList();
+        List<Class<?>> classList = this.classList();
         try
         {
-            for (Class<?> c:classList)
+            for (Class<?> c : classList)
             {
                 EchoesRpcServer echoesRpcServer = c.getAnnotation(EchoesRpcServer.class);
-                if(echoesRpcServer!=null)
+                if (echoesRpcServer != null)
                 {
                     Object obj = c.getConstructor().newInstance();
-                    targetObjMap.put(c.getName(),ProxyBean.of(echoesRpcServer,obj, ProxyInstanceFactory.getInstance(obj)));
+                    targetObjMap.put(c.getName(), ProxyBean.of(echoesRpcServer, obj, ProxyInstanceFactory.getInstance(obj)));
                 }
             }
-        }catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
         }

@@ -18,11 +18,11 @@ import java.util.Map;
 public class DefaultEchoesService extends AbstractEchoesService
 {
     private EchoesConfig echoesConfig;
-    private Map<String, ProxyBean<?>> targetObjMap=new HashMap<>(16);
+    private Map<String, ProxyBean<?>> targetObjMap = new HashMap<>(16);
 
     protected DefaultEchoesService(EchoesConfig echoesConfig)
     {
-        this.echoesConfig=echoesConfig;
+        this.echoesConfig = echoesConfig;
     }
 
     @Override
@@ -32,29 +32,38 @@ public class DefaultEchoesService extends AbstractEchoesService
         classProxy(echoesConfig.getRpc());
 
         // 2.连接配置中心
-        connectRegistry(echoesConfig.getRpc().getServiceName(),echoesConfig.getRegistry());
+        connectRegistry(echoesConfig.getRpc().getServiceName(), echoesConfig.getRegistry());
+
+        // 3.启动服务
+        startService(echoesConfig.getRpc());
+    }
+
+    @Override
+    void startService(EchoesConfig.Rpc rpc)
+    {
+
     }
 
     @Override
     void classProxy(EchoesConfig.Rpc rpc)
     {
-        RpcProxy rpcProxy=new RpcProxy(rpc);
+        RpcProxy rpcProxy = new RpcProxy(rpc);
         rpcProxy.classProxy(targetObjMap);
         log.info("RPC代理类注册完成");
     }
 
     @Override
-    void connectRegistry(String serviceName,EchoesConfig.Registry registry)
+    void connectRegistry(String serviceName, EchoesConfig.Registry registry)
     {
-        RegistryHandler handler=new RegistryHandler();
+        RegistryHandler handler = new RegistryHandler();
         try
         {
-            handler.connect(registry.getAdder(),registry.getPort());
-        }catch (IOException e)
+            handler.connect(registry.getAdder(), registry.getPort());
+        } catch (IOException e)
         {
             e.printStackTrace();
         }
-        handler.report(serviceName,registry.getAdder(),registry.getPort(),targetObjMap);
+        handler.report(serviceName, registry.getAdder(), registry.getPort(), targetObjMap);
         log.info("注册中心连接完毕");
     }
 }

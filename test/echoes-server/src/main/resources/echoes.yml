@@ -8,4 +8,4 @@ echoes:
   # 注册中心配置
   registry:
     adder: 127.0.0.1
-    port: 12222
+    port: 12221

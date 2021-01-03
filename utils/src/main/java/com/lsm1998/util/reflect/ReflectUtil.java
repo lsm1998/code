@@ -50,8 +50,7 @@ public class ReflectUtil
         {
             Method method = type.getMethod(name);
             method.setAccessible(true);
-            Object result = method.invoke(target, args);
-            return result;
+            return method.invoke(target, args);
         } catch (Exception e)
         {
             e.printStackTrace();

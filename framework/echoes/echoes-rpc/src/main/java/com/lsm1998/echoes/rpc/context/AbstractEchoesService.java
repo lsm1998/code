@@ -16,4 +16,7 @@ public abstract class AbstractEchoesService implements EchoesService
 
     // 连接配置中心
     abstract void connectRegistry(String serviceName,EchoesConfig.Registry registry);
+
+    // 启动服务
+    abstract void startService(EchoesConfig.Rpc rpc);
 }

@@ -37,15 +37,12 @@ public class RegistryServer implements EchoesServer
         if (config.getServerClass() == NIOServer.class)
         {
             server = new NIORegistryServerImpl(config);
-        } else if(config.getServerClass() == BIOServer.class)
+        } else if (config.getServerClass() == BIOServer.class)
         {
             server = new BIORegistryServerImpl(config);
-        } else if(config.getServerClass() == WebServer.class)
+        } else
         {
-            server = new BIORegistryServerImpl(config);
-        }else
-        {
-            throw new RuntimeException("不能识别的服务类型:"+config.getServerClass());
+            throw new RuntimeException("不能识别的服务类型:" + config.getServerClass());
         }
         server.start(port);
     }

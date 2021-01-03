@@ -28,6 +28,7 @@ public class RegistryStart implements EchoesServer
     public RegistryStart(RegistryConfig config)
     {
         this.config = config;
+        RegistryConfig.defaultConfig = config;
     }
 
     public void start() throws IOException

@@ -1,4 +1,4 @@
-import com.lsm1998.echoes.common.net.EchoesServer;
+import com.lsm1998.echoes.registry.RegistryStart;
 import com.lsm1998.echoes.registry.RegistryStartBuild;
 
 /**
@@ -7,11 +7,11 @@ import com.lsm1998.echoes.registry.RegistryStartBuild;
  * @author: lsm
  * @create: 2020-06-24 10:05
  **/
-public class Test
+public class RegistryTest
 {
     public static void main(String[] args) throws Exception
     {
-        EchoesServer start = new RegistryStartBuild().port(12200).build();
+        RegistryStart start = new RegistryStartBuild().port(12221).build();
         start.start();
     }
 }

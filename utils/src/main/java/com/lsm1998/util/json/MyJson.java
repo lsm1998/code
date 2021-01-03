@@ -11,7 +11,7 @@ public class MyJson
 
     private MyJson()
     {
-
+        
     }
 
     public static MyJson getInstance()
