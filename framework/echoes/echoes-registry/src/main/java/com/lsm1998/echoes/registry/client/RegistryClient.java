@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import com.lsm1998.echoes.common.domain.AjaxData;
 import com.lsm1998.echoes.common.utils.HttpClientUtil;
 import com.lsm1998.echoes.registry.bean.RegistryNodeBean;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
@@ -13,6 +14,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
+@Slf4j
 public class RegistryClient
 {
     private final Set<String> registrySet = new CopyOnWriteArraySet<>();
@@ -60,9 +62,9 @@ public class RegistryClient
         } catch (IOException | InterruptedException e)
         {
             e.printStackTrace();
+            registrySet.remove(key);
+            throw new RuntimeException("连接注册中心失败");
         }
-        System.out.println("注册失败");
-        registrySet.remove(key);
     }
 
     /**
@@ -83,7 +85,7 @@ public class RegistryClient
                 int code = jsonObject.get("code").getAsInt();
                 if (code == AjaxData.ECHOES_CODE_OK)
                 {
-                    System.out.println("pong成功");
+                    log.info("pong成功");
                     return;
                 }
             }
@@ -91,7 +93,7 @@ public class RegistryClient
         {
             e.printStackTrace();
         }
-        System.out.println("pong失败");
+        log.error("pong失败");
     }
 
     public RegistryNodeBean get(String serviceName)

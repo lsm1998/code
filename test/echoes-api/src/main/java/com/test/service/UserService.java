@@ -16,4 +16,6 @@ public interface UserService
     boolean insertUser(UserDto user);
 
     String hello(String name);
+
+    void sayHello();
 }

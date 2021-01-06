@@ -1,7 +1,7 @@
 echoes:
   # RPC配置
   rpc:
-    serviceName: Demo-service
+    serviceName: DemoService
     port: 1314
     scanPackage: com.test.service
 

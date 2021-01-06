@@ -16,12 +16,12 @@ public class ProxyBean<T>
     private T source;
     private T target;
 
-    public static <T> ProxyBean<T> of(EchoesRpcServer echoesRpcServer,T source,T target)
+    public static <T> ProxyBean<T> of(EchoesRpcServer echoesRpcServer, T source, T target)
     {
-        ProxyBean<T> bean=new ProxyBean<>();
-        bean.source=source;
-        bean.target=target;
-        bean.echoesRpcServer=echoesRpcServer;
+        ProxyBean<T> bean = new ProxyBean<>();
+        bean.source = source;
+        bean.target = target;
+        bean.echoesRpcServer = echoesRpcServer;
         return bean;
     }
 }

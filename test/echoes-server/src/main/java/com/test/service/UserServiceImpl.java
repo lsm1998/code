@@ -30,4 +30,10 @@ public class UserServiceImpl implements UserService
     {
         return "hello :"+name;
     }
+
+    @Override
+    public void sayHello()
+    {
+        System.out.println("hello");
+    }
 }

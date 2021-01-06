@@ -27,13 +27,15 @@ public class DataTest {
     private DataSource dataSource;
 
     @Test
-    public void test() throws Exception {
+    public void test() throws Exception
+    {
         read();
         write();
     }
 
     @Test
-    public void read() {
+    public void read()
+    {
         System.out.println(userService.getList());
     }
 

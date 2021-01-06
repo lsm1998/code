@@ -1,5 +1,7 @@
 package com.lsm1998.echoes.rpc;
 
+import java.io.IOException;
+
 /**
  * @program: code
  * @description:
@@ -9,5 +11,5 @@ package com.lsm1998.echoes.rpc;
 public interface EchoesService
 {
     // 暴露及注册服务
-    void export();
+    void export() throws IOException;
 }

@@ -14,7 +14,6 @@ public class MyInvocationHandler<T> implements InvocationHandler
     private T target;
     private Connection connection;
 
-
     protected MyInvocationHandler(T target, Connection connection)
     {
         this.target = target;

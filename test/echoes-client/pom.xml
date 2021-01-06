@@ -12,6 +12,15 @@
     <artifactId>echoes-client</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.lsm1998</groupId>
+            <artifactId>echoes-rpc</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lsm1998</groupId>
+            <artifactId>echoes-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

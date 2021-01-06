@@ -59,8 +59,16 @@ public class RpcProxy
                 EchoesRpcServer echoesRpcServer = c.getAnnotation(EchoesRpcServer.class);
                 if (echoesRpcServer != null)
                 {
+                    c.getInterfaces()[0].getName();
                     Object obj = c.getConstructor().newInstance();
-                    targetObjMap.put(c.getName(), ProxyBean.of(echoesRpcServer, obj, ProxyInstanceFactory.getInstance(obj)));
+                    if (c.getInterfaces().length == 0)
+                    {
+                        throw new RuntimeException("RPC实现类必须依赖于接口");
+                    }
+                    for (Class<?> t : c.getInterfaces())
+                    {
+                        targetObjMap.put(t.getName(), ProxyBean.of(echoesRpcServer, obj, ProxyInstanceFactory.getInstance(obj)));
+                    }
                 }
             }
         } catch (Exception e)

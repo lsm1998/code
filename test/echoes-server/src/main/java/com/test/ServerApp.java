@@ -9,9 +9,11 @@ import com.lsm1998.echoes.config.EchoesConfigStart;
 import com.lsm1998.echoes.rpc.EchoesService;
 import com.lsm1998.echoes.rpc.context.EchoesServiceBuild;
 
-public class App
+import java.io.IOException;
+
+public class ServerApp
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         EchoesConfigStart echoesConfig=new EchoesConfigStart();
         // 使用默认的方式加载配置文件

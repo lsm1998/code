@@ -10,7 +10,7 @@ import java.sql.Connection;
  */
 public class MyMapperProxyFactory
 {
-    public static <T> T getProxy(Class clazz, Connection connection)
+    public static <T> T getProxy(Class<?> clazz, Connection connection)
     {
         MyInvocationHandler handler = new MyInvocationHandler(clazz, connection);
         return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, handler);
