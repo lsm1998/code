@@ -7,15 +7,31 @@ import com.lsm1998.tomcat.http.HttpServlet;
 import com.lsm1998.tomcat.http.HttpServletRequest;
 import com.lsm1998.tomcat.http.HttpServletResponse;
 
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * @program: code
- * @description:
+ * @description: Servlet
  * @author: lsm
  * @create: 2020-04-09 10:21
  **/
 @WebServlet(url = "/hello")
 public class HelloServlet extends HttpServlet
 {
+    private static final Map<String, Object> cacheMap = new ConcurrentHashMap<>();
+
+    static
+    {
+        /**
+         * 模拟查询数据
+         */
+        cacheMap.put("1", Hello.builder().id(1L).name("lsm").build());
+        cacheMap.put("2", Hello.builder().id(2L).name("lw").build());
+        cacheMap.put("3", Hello.builder().id(3L).name("most").build());
+    }
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
@@ -25,12 +41,9 @@ public class HelloServlet extends HttpServlet
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
-        String name = request.getParameter("name");
         response.setContentType("application/json");
-        Gson gson=new Gson();
-        Hello hello=new Hello();
-        hello.setId(1L);
-        hello.setName(name);
-        response.getWrite().write(gson.toJson(hello));
+        Object result = cacheMap.get(request.getParameter("id"));
+        Gson gson = new Gson();
+        response.getWrite().write(gson.toJson(Objects.requireNonNullElse(result, "记录找不到！")));
     }
 }

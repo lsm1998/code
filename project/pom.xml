@@ -16,7 +16,6 @@
         <module>contra</module>
         <module>puzzle</module>
         <module>qq</module>
-        <module>smart</module>
         <module>snake</module>
     </modules>
 

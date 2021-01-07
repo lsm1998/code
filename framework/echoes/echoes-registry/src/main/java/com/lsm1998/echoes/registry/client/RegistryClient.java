@@ -47,16 +47,15 @@ public class RegistryClient
         {
             HttpResponse<String> response = HttpClientUtil.post(this.registryUrl + "/echoes", Map.of("serviceName", serviceName, "port", port + ""), null);
             String body = response.body();
-            System.out.println(body);
+            log.info(body);
             JsonObject jsonObject = JsonParser.parseString(body).getAsJsonObject();
             if (jsonObject.has("code"))
             {
                 int code = jsonObject.get("code").getAsInt();
                 if (code == AjaxData.ECHOES_CODE_OK)
                 {
-                    System.out.println("注册成功");
+                    log.info("注册成功");
                     registrySet.add(key);
-                    return;
                 }
             }
         } catch (IOException | InterruptedException e)

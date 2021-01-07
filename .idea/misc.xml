@@ -26,11 +26,13 @@
         <option value="$PROJECT_DIR$/MySpringMVC/pom.xml" />
         <option value="$PROJECT_DIR$/box/pom.xml" />
         <option value="$PROJECT_DIR$/echoes-test/pom.xml" />
+        <option value="$PROJECT_DIR$/framework/echoes/registry/pom.xml" />
         <option value="$PROJECT_DIR$/log4j/pom.xml" />
         <option value="$PROJECT_DIR$/most/pom.xml" />
         <option value="$PROJECT_DIR$/project/chess/pom.xml" />
         <option value="$PROJECT_DIR$/project/hamster/pom.xml" />
         <option value="$PROJECT_DIR$/project/microChat/pom.xml" />
+        <option value="$PROJECT_DIR$/project/smart/pom.xml" />
         <option value="$PROJECT_DIR$/project/submarine/pom.xml" />
         <option value="$PROJECT_DIR$/project/wechat/pom.xml" />
         <option value="$PROJECT_DIR$/read-write/pom.xml" />

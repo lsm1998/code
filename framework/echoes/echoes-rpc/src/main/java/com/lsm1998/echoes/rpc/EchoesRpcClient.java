@@ -7,5 +7,5 @@ import java.io.IOException;
 
 public interface EchoesRpcClient extends EchoesClient
 {
-    RpcCallResponse rpcCall(String className,String methodName, Object[] args) throws IOException;
+    RpcCallResponse rpcCall(String className, String methodName, Object[] args, Class<?>[] types) throws IOException;
 }

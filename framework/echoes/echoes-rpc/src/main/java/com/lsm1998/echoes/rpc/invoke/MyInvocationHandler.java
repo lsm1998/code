@@ -30,8 +30,7 @@ public class MyInvocationHandler<T> implements InvocationHandler
     {
         try
         {
-            System.out.println(((Class<?>) target).getName());
-            RpcCallResponse response = client.rpcCall(((Class<?>) target).getName(), method.getName(), args);
+            RpcCallResponse response = client.rpcCall(((Class<?>) target).getName(), method.getName(), args, method.getParameterTypes());
             Object data = response.getData();
             return data == NullVal.Instance ? null : data;
         } catch (IOException e)

@@ -23,41 +23,43 @@ public class Tomcat
 {
     private int port;
 
-    private static final String CONFIG_NAME="tomcat.yml";
+    private static final String CONFIG_NAME = "tomcat.yml";
 
-    private Map<String, HttpServlet> servletMapping = new HashMap<>();
+    private final Map<String, HttpServlet> servletMapping = new HashMap<>();
 
-    private void init() throws ConfigException {
+    private void init() throws ConfigException
+    {
         try
         {
-            //加载配置文件,同时初始化 ServletMapping对象
+            // 加载配置文件,同时初始化 ServletMapping对象
             Yaml yaml = new Yaml();
-            String configPath=this.getClass().getResource("/").getPath() + CONFIG_NAME;
-            Map<String,Object> configMap = yaml.loadAs(new FileInputStream(configPath),Map.class);
-            Map<String,Object> serverMap= (Map<String, Object>) configMap.get("server");
-            port=(Integer)serverMap.get("port");
-            Map<String,Object> servletMap= (Map<String, Object>) configMap.get("servlet");
+            String configPath = this.getClass().getResource("/").getPath() + CONFIG_NAME;
+            Map<String, Object> configMap = yaml.loadAs(new FileInputStream(configPath), Map.class);
+            Map<String, Object> serverMap = (Map<String, Object>) configMap.get("server");
+            port = (Integer) serverMap.get("port");
+            Map<String, Object> servletMap = (Map<String, Object>) configMap.get("servlet");
             String servletPath = (String) servletMap.get("path");
-            String classPath = servletPath.replace(".", "\\");
-            File file=new File(this.getClass().getResource("/").getPath()+classPath);
-            File[] files=file.listFiles();
-            List<Class<?>> classList=new ArrayList<>();
+            String classPath = servletPath.replace(".", File.separator);
+            File file = new File(this.getClass().getResource("/").getPath() + classPath);
+            File[] files = file.listFiles();
+            List<Class<?>> classList = new ArrayList<>();
             assert files != null;
-            for (File f:files)
+            for (File f : files)
             {
-                int len=f.getName().length();
-                classList.add(Class.forName(servletPath +"."+f.getName().substring(0,len-6)));
+                int len = f.getName().length();
+                // 获取全限定名称，用于反射创建对象
+                classList.add(Class.forName(servletPath + "." + f.getName().substring(0, len - 6)));
             }
-            for (Class<?> c:classList)
+            for (Class<?> c : classList)
             {
                 WebServlet webServlet = c.getAnnotation(WebServlet.class);
-                HttpServlet obj = (HttpServlet)c.getConstructor().newInstance();
+                HttpServlet obj = (HttpServlet) c.getConstructor().newInstance();
                 servletMapping.put(webServlet.url(), obj);
             }
         } catch (Exception e)
         {
             e.printStackTrace();
-            throw new ConfigException("配置文件解析错误:"+e.getMessage());
+            throw new ConfigException("配置文件解析错误:" + e.getMessage());
         }
     }
 
@@ -79,7 +81,7 @@ public class Tomcat
                         protected void initChannel(SocketChannel client) throws Exception
                         {
                             // 无锁化串行编程
-                            //Netty对HTTP协议的封装，顺序有要求
+                            // Netty对HTTP协议的封装，顺序有要求
                             // HttpResponseEncoder 编码器
                             // 责任链模式，双向链表Inbound OutBound
                             client.pipeline().addLast(new HttpResponseEncoder());
@@ -128,6 +130,7 @@ public class Tomcat
                 }
             }
         }
+
         @Override
         public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
         {

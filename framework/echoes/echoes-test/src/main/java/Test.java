@@ -10,7 +10,7 @@ public class Test
 {
     public static void main(String[] args)
     {
-        Class c=Test.class;
+        Class<?> c=Test.class;
         for (Method m:c.getMethods())
         {
             if(m.getName().equals("test"))

@@ -10,6 +10,7 @@ import com.test.dto.UserDto;
 
 import java.util.List;
 
+// 通过注解注册rpc服务类
 @EchoesRpcServer(timeout = 10000)
 public class UserServiceImpl implements UserService
 {

@@ -16,7 +16,8 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 /**
  * 主要用于自定义协议内容的逻辑处理
  */
-public class MsgProcessor {
+public class MsgProcessor
+{
     //记录在线用户
     private static ChannelGroup onlineUsers = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
@@ -37,7 +38,8 @@ public class MsgProcessor {
      * @param client
      * @return
      */
-    public String getNickName(Channel client) {
+    public String getNickName(Channel client)
+    {
         return client.attr(NICK_NAME).get();
     }
 
@@ -47,7 +49,8 @@ public class MsgProcessor {
      * @param client
      * @return
      */
-    public String getAddress(Channel client) {
+    public String getAddress(Channel client)
+    {
         return client.remoteAddress().toString().replaceFirst("/", "");
     }
 
@@ -59,9 +62,11 @@ public class MsgProcessor {
      */
     public JSONObject getAttrs(Channel client)
     {
-        try {
+        try
+        {
             return client.attr(ATTRS).get();
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             return null;
         }
     }
@@ -72,12 +77,15 @@ public class MsgProcessor {
      * @param client
      * @return
      */
-    private void setAttrs(Channel client, String key, Object value) {
-        try {
+    private void setAttrs(Channel client, String key, Object value)
+    {
+        try
+        {
             JSONObject json = client.attr(ATTRS).get();
             json.put(key, value);
             client.attr(ATTRS).set(json);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             JSONObject json = new JSONObject();
             json.put(key, value);
             client.attr(ATTRS).set(json);
@@ -89,12 +97,15 @@ public class MsgProcessor {
      *
      * @param client
      */
-    public void logout(Channel client) {
+    public void logout(Channel client)
+    {
         //如果nickName为null，没有遵从聊天协议的连接，表示未非法登录
-        if (getNickName(client) == null) {
+        if (getNickName(client) == null)
+        {
             return;
         }
-        for (Channel channel : onlineUsers) {
+        for (Channel channel : onlineUsers)
+        {
             IMMessage request = new IMMessage(IMP.SYSTEM.getName(), sysTime(), onlineUsers.size(), getNickName(client) + "离开");
             String content = encoder.encode(request);
             channel.writeAndFlush(new TextWebSocketFrame(content));
@@ -108,7 +119,8 @@ public class MsgProcessor {
      * @param client
      * @param msg
      */
-    public void sendMsg(Channel client, IMMessage msg) {
+    public void sendMsg(Channel client, IMMessage msg)
+    {
         sendMsg(client, encoder.encode(msg));
     }
 
@@ -118,62 +130,77 @@ public class MsgProcessor {
      * @param client
      * @param msg
      */
-    public void sendMsg(Channel client, String msg) {
+    public void sendMsg(Channel client, String msg)
+    {
         IMMessage request = decoder.decode(msg);
-        if (null == request) {
+        if (null == request)
+        {
             return;
         }
 
         String addr = getAddress(client);
 
-        if (request.getCmd().equals(IMP.LOGIN.getName())) {
+        if (request.getCmd().equals(IMP.LOGIN.getName()))
+        {
             client.attr(NICK_NAME).getAndSet(request.getSender());
             client.attr(IP_ADDR).getAndSet(addr);
             client.attr(FROM).getAndSet(request.getTerminal());
 //			System.out.println(client.attr(FROM).get());
             onlineUsers.add(client);
 
-            for (Channel channel : onlineUsers) {
+            for (Channel channel : onlineUsers)
+            {
                 boolean isself = (channel == client);
-                if (!isself) {
+                if (!isself)
+                {
                     request = new IMMessage(IMP.SYSTEM.getName(), sysTime(), onlineUsers.size(), getNickName(client) + "加入");
-                } else {
+                } else
+                {
                     request = new IMMessage(IMP.SYSTEM.getName(), sysTime(), onlineUsers.size(), "已与服务器建立连接！");
                 }
 
-                if ("Console".equals(channel.attr(FROM).get())) {
+                if ("Console".equals(channel.attr(FROM).get()))
+                {
                     channel.writeAndFlush(request);
                     continue;
                 }
                 String content = encoder.encode(request);
                 channel.writeAndFlush(new TextWebSocketFrame(content));
             }
-        } else if (request.getCmd().equals(IMP.CHAT.getName())) {
-            for (Channel channel : onlineUsers) {
+        } else if (request.getCmd().equals(IMP.CHAT.getName()))
+        {
+            for (Channel channel : onlineUsers)
+            {
                 boolean isself = (channel == client);
-                if (isself) {
+                if (isself)
+                {
                     request.setSender("you");
-                } else {
+                } else
+                {
                     request.setSender(getNickName(client));
                 }
                 request.setTime(sysTime());
 
-                if ("Console".equals(channel.attr(FROM).get()) & !isself) {
+                if ("Console".equals(channel.attr(FROM).get()) & !isself)
+                {
                     channel.writeAndFlush(request);
                     continue;
                 }
                 String content = encoder.encode(request);
                 channel.writeAndFlush(new TextWebSocketFrame(content));
             }
-        } else if (request.getCmd().equals(IMP.FLOWER.getName())) {
+        } else if (request.getCmd().equals(IMP.FLOWER.getName()))
+        {
             JSONObject attrs = getAttrs(client);
             long currTime = sysTime();
-            if (null != attrs) {
+            if (null != attrs)
+            {
                 long lastTime = attrs.getLongValue("lastFlowerTime");
                 //60秒之内不允许重复刷鲜花
                 int secends = 10;
                 long sub = currTime - lastTime;
-                if (sub < 1000 * secends) {
+                if (sub < 1000 * secends)
+                {
                     request.setSender("you");
                     request.setCmd(IMP.SYSTEM.getName());
                     request.setContent("您送鲜花太频繁," + (secends - Math.round(sub / 1000)) + "秒后再试");
@@ -185,12 +212,15 @@ public class MsgProcessor {
             }
 
             //正常送花
-            for (Channel channel : onlineUsers) {
-                if (channel == client) {
+            for (Channel channel : onlineUsers)
+            {
+                if (channel == client)
+                {
                     request.setSender("you");
                     request.setContent("你给大家送了一波鲜花雨");
                     setAttrs(client, "lastFlowerTime", currTime);
-                } else {
+                } else
+                {
                     request.setSender(getNickName(client));
                     request.setContent(getNickName(client) + "送来一波鲜花雨");
                 }
@@ -207,7 +237,8 @@ public class MsgProcessor {
      *
      * @return
      */
-    private Long sysTime() {
+    private Long sysTime()
+    {
         return System.currentTimeMillis();
     }
 

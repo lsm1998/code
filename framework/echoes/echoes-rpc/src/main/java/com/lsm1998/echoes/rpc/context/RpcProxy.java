@@ -29,7 +29,6 @@ public class RpcProxy
     {
         String packagePath = rpc.getScanPackage();
         String packageDirName = packagePath.replace('.', '/');
-        System.out.println(packageDirName);
         File file = new File(this.getClass().getResource("/").getPath() + packageDirName);
         File[] files = file.listFiles();
         assert files != null;

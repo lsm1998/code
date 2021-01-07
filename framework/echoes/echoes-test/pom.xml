@@ -13,10 +13,6 @@
     <artifactId>echoes-test</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.lsm1998</groupId>
-            <artifactId>registry</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 </project>

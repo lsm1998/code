@@ -84,6 +84,7 @@ public class DefaultEchoesHandler
         if (optional.isPresent())
         {
             RpcCallRequest request = optional.get();
+            checkRequest(request);
             ProxyBean<?> proxyBean = this.targetObjMap.get(request.getClassName());
             if (proxyBean == null)
             {
@@ -92,19 +93,7 @@ public class DefaultEchoesHandler
             Object target = proxyBean.getTarget();
             try
             {
-                Class<?>[] types = null;
-                if (request.getArgs() != null && request.getArgs().length > 0)
-                {
-                    types = new Class[request.getArgs().length];
-                    for (int i = 0; i < types.length; i++)
-                    {
-                        types[i] = request.getArgs()[i].getClass();
-                    }
-                } else
-                {
-                    types = new Class[0];
-                }
-                Method method = target.getClass().getMethod(request.getMethodName(), types);
+                Method method = target.getClass().getMethod(request.getMethodName(), request.getTypes());
                 Object obj = method.invoke(target, request.getArgs());
                 result = RpcCallResponse.of(obj == null ? NullVal.Instance : obj);
             } catch (Exception e)
@@ -114,6 +103,18 @@ public class DefaultEchoesHandler
         }
         Optional<byte[]> bytes = BitObjectUtil.objectToBytes(result);
         channel.write(ByteBuffer.wrap(bytes.orElse(new byte[]{})));
+    }
+
+    private void checkRequest(RpcCallRequest request)
+    {
+        if (request == null)
+        {
+            throw new RuntimeException("RpcCallRequest对象不可以为空！");
+        }
+        if (request.getMethodName() == null || request.getClassName() == null)
+        {
+            throw new RuntimeException("RpcCallRequest对象关键属性不可以为空！");
+        }
     }
 
     private void channelClose(SelectionKey key) throws IOException

@@ -84,9 +84,9 @@ public class DefaultReferenceClient implements ReferenceClient, EchoesRpcClient
     }
 
     @Override
-    public RpcCallResponse rpcCall(String className, String methodName, Object[] args) throws IOException
+    public RpcCallResponse rpcCall(String className, String methodName, Object[] args, Class<?>[] types) throws IOException
     {
-        Optional<byte[]> optional = BitObjectUtil.objectToBytes(RpcCallRequest.of(className, methodName, args));
+        Optional<byte[]> optional = BitObjectUtil.objectToBytes(RpcCallRequest.of(className, methodName, args, types));
         if (optional.isPresent())
         {
             channel.write(ByteBuffer.wrap(optional.get()));

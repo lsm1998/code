@@ -24,7 +24,6 @@ public class ClientApp
         String result = userService.hello("lsm");
         System.out.println(result);
 
-
         userService.sayHello();
     }
 }
