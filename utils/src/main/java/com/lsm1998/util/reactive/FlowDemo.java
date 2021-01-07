@@ -19,7 +19,6 @@ public class FlowDemo
         // 2. 定义订阅者
         Flow.Subscriber<Integer> subscriber = new Flow.Subscriber<>()
         {
-
             private Flow.Subscription subscription;
 
             @Override
@@ -40,7 +39,6 @@ public class FlowDemo
 
                 // 处理完调用request再请求一个数据
                 this.subscription.request(1);
-
                 // 或者已经达到了目标, 可以调用cancel告诉发布者不再接受数据了
                 // this.subscription.cancel();
             }

@@ -13,13 +13,13 @@ import java.util.List;
 public class CityGraph
 {
     // 城市集合
-    private List<String> cityList;
+    private final List<String> cityList;
     // 邻接矩阵
-    private int[][] edges;
+    private final int[][] edges;
     // 边的数量
     private int numOfEdges;
     // 记录某个节点是否被访问
-    private boolean[] visitedArray;
+    private final boolean[] visitedArray;
 
     public CityGraph(int size)
     {
@@ -71,7 +71,7 @@ public class CityGraph
             w = getNextNeighbor(i, w);
         }
     }
-    
+
     /**
      * 深度优先
      */
