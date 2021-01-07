@@ -1,8 +1,6 @@
 package com.lsm1998.tomcat.http;
 
-import com.lsm1998.tomcat.http.HttpServletResponse;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.DefaultFullHttpResponse;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpResponseStatus;
