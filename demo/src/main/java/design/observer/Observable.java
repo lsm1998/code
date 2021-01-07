@@ -3,7 +3,7 @@
  * 时间：2019/12/21-23:49
  * 作用：
  */
-package design;
+package design.observer;
 
 import java.util.ArrayList;
 import java.util.List;

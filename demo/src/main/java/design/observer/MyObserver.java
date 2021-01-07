@@ -3,7 +3,7 @@
  * 时间：2019/12/21-23:44
  * 作用：
  */
-package design;
+package design.observer;
 
 public interface MyObserver
 {
