@@ -17,5 +17,6 @@
         <module>echoes-server</module>
         <module>web</module>
         <module>web-tomcat</module>
+        <module>registry</module>
     </modules>
 </project>
