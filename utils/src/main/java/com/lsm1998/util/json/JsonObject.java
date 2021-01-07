@@ -20,7 +20,6 @@ public class JsonObject extends HashMap<String, Object>
         return sb.append('}').toString();
     }
 
-
     public static String toJsonString(Object object)
     {
         if (object == null)

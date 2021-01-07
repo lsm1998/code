@@ -45,17 +45,4 @@ public class Json
     {
         return new ObjectParser(json).nextObject();
     }
-
-    public static void main(String[] args)
-    {
-        String json = "{\n" +
-                "\"employees\": [\n" +
-                "{ \"firstName\":\"Bill\" , \"lastName\":\"Gates\" },\n" +
-                "{ \"firstName\":\"George\" , \"lastName\":\"Bush\" },\n" +
-                "{ \"firstName\":\"Thomas\" , \"lastName\":\"Carter\" }\n" +
-                "],\"id\":-10.5,\"success\":true\n" +
-                "}";
-        JsonObject jsonObject = Json.parseJsonObject(json);
-        System.out.println(jsonObject);
-    }
 }

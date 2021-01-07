@@ -84,7 +84,6 @@ public class ObjectParser
         }
     }
 
-
     public static boolean isSpace(char c)
     {
         return c == ' ' || c == '\r' || c == '\n';
@@ -102,14 +101,14 @@ public class ObjectParser
         return c;
     }
 
-    //得到当前字符，包括空格、换行符
+    // 得到当前字符，包括空格、换行符
     private char getCurrentChar()
     {
         checkPos();
         return json.charAt(pos);
     }
 
-    //得到当前字符，包括空格、换行符。将指针指向下一个字符
+    // 得到当前字符，包括空格、换行符。将指针指向下一个字符
     private char getCurrentCharNext()
     {
         char c = getCurrentChar();
@@ -119,7 +118,7 @@ public class ObjectParser
     }
 
 
-    //得到当前字符，忽略空格、换行符。将指针指向下一个字符
+    // 得到当前字符，忽略空格、换行符。将指针指向下一个字符
     private char getCharNext()
     {
         char c = getChar();
@@ -128,17 +127,16 @@ public class ObjectParser
         return c;
     }
 
-
     private String parseString(char c)
     {
-        //字符串
+        // 字符串
         pos++;
         StringBuilder sb = new StringBuilder();
         while (true)
         {
             c = getCurrentCharNext();
             if (c == '\\')
-            {   //处理转义字符
+            {   // 处理转义字符
                 char next = getCurrentChar();
                 switch (next)
                 {
@@ -207,13 +205,12 @@ public class ObjectParser
         return null;
     }
 
-
     private JsonArray parseArray()
     {
         pos++;
         checkPos();
         JsonArray jsonArray = new JsonArray();
-        boolean flag = false;       //是否需要用逗号分割
+        boolean flag = false;       // 是否需要用逗号分割
         char c = getChar();
         while (c != ']')
         {

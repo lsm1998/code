@@ -7,20 +7,8 @@ package com.lsm1998.util.json;
  */
 public class MyJson
 {
-    private static final MyJson json =new MyJson();
-
-    private MyJson()
-    {
-        
-    }
-
-    public static MyJson getInstance()
-    {
-        return json;
-    }
-
     public String toJson(Object object)
     {
-        return null;
+        return JsonObject.toJsonString(object);
     }
 }
