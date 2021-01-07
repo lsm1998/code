@@ -41,13 +41,7 @@ public class TypeUtil
         } else if (c == float.class || c == Float.class)
         {
             return true;
-        } else if (c == double.class || c == Double.class)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
+        } else return c == double.class || c == Double.class;
     }
 
     /**
