@@ -1,9 +1,12 @@
-package com.lsm1998.util.thread;
+package com.lsm1998.util.concurrent;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 实现栅栏
+ */
 public class MyCyclicBarrier
 {
     private final Runnable runnable;

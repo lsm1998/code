@@ -14,4 +14,12 @@ public class MsgData<E> implements Serializable
 {
     private int code;
     private E data;
+
+    public static <E> MsgData<E> of(int code,E data)
+    {
+        MsgData<E> msgData = new MsgData<>();
+        msgData.setData(data);
+        msgData.setCode(code);
+        return msgData;
+    }
 }

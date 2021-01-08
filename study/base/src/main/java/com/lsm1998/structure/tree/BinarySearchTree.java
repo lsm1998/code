@@ -8,15 +8,15 @@ import java.util.function.BiConsumer;
  * @author: lsm
  * @create: 2020-04-20 18:59
  **/
-public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,V>
+public class BinarySearchTree<K extends Comparable<K>, V> extends AbstractTree<K, V>
 {
-    private Node<K,V> root;
+    private Node<K, V> root;
     private int size;
 
     public BinarySearchTree()
     {
-        root=null;
-        size=0;
+        root = null;
+        size = 0;
     }
 
     @Override
@@ -29,38 +29,38 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
     public boolean put(K key, V value)
     {
         size++;
-        if(root==null)
+        if (root == null)
         {
-            root=new Node<>(null,null,null,key,value);
+            root = new Node<>(null, null, null, key, value);
             return true;
         }
-        Node<K,V> temp=root;
+        Node<K, V> temp = root;
         while (true)
         {
-            if(temp.key.compareTo(key)>0)
+            if (temp.key.compareTo(key) > 0)
             {
-                if(temp.left==null)
+                if (temp.left == null)
                 {
-                    temp.left=new Node<>(temp,null,null,key,value);
+                    temp.left = new Node<>(temp, null, null, key, value);
                     break;
-                }else
+                } else
                 {
-                    temp=(Node<K,V>)temp.left;
+                    temp = (Node<K, V>) temp.left;
                 }
-            }else if(temp.key.compareTo(key)<0)
+            } else if (temp.key.compareTo(key) < 0)
             {
-                if(temp.right==null)
+                if (temp.right == null)
                 {
-                    temp.right=new Node<>(temp,null,null,key,value);
+                    temp.right = new Node<>(temp, null, null, key, value);
                     break;
-                }else
+                } else
                 {
-                    temp=(Node<K,V>)temp.right;
+                    temp = (Node<K, V>) temp.right;
                 }
-            }else
+            } else
             {
                 size--;
-                temp.value=value;
+                temp.value = value;
                 break;
             }
         }
@@ -70,67 +70,68 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
     @Override
     public boolean find(K key)
     {
-        return getNode(key)!=null;
+        return getNode(key) != null;
     }
 
     @Override
     public V get(K key)
     {
-        Node<K,V> temp=(Node<K,V>)this.getNode(key);
-        return temp==null?null:temp.value;
+        Node<K, V> temp = (Node<K, V>) this.getNode(key);
+        return temp == null ? null : temp.value;
     }
 
 
     @Override
     public boolean remove(K key)
     {
-        Node<K,V> target=(Node<K,V>)getNode(key);
-        if(target==null) return false;
+        Node<K, V> target = (Node<K, V>) getNode(key);
+        if (target == null) return false;
         size--;
-        return remove(target.parent,target);
+        return remove(target.parent, target);
     }
 
-    private boolean remove(Node<K,V> parent,Node<K,V> node)
+    private boolean remove(Node<K, V> parent, Node<K, V> node)
     {
-        if(node.left!=null&&node.right!=null)
+        if (node.left != null && node.right != null)
         {
-            Node<K,V> temp=(Node<K,V>)node.left;
-            node.key=temp.key;
-            node.value=temp.value;
-            return remove(node,temp);
-        } else {
-            if(parent==null)
+            Node<K, V> temp = (Node<K, V>) node.left;
+            node.key = temp.key;
+            node.value = temp.value;
+            return remove(node, temp);
+        } else
+        {
+            if (parent == null)
             {
-                root=root.left==null?(Node<K,V>)root.right:(Node<K,V>)root.left;
-                if(root!=null)
+                root = root.left == null ? (Node<K, V>) root.right : (Node<K, V>) root.left;
+                if (root != null)
                 {
-                    root.parent=null;
+                    root.parent = null;
                 }
                 return true;
             }
-            if(parent.left==node)
+            if (parent.left == node)
             {
-                parent.left=node.left;
-            }else
+                parent.left = node.left;
+            } else
             {
-                parent.right=node.right;
+                parent.right = node.right;
             }
             deleteQuote(node);
         }
         return true;
     }
 
-    private void deleteQuote(Node<K,V> node)
+    private void deleteQuote(Node<K, V> node)
     {
-        node.left=null;
-        node.right=null;
-        node.parent=null;
+        node.left = null;
+        node.right = null;
+        node.parent = null;
     }
 
-    public void forEach(BiConsumer<K,V> consumer)
+    public void forEach(BiConsumer<K, V> consumer)
     {
-        if(root==null)return;
-        forEach(consumer,root);
+        if (root == null) return;
+        forEach(consumer, root);
     }
 
     public int size()
@@ -138,22 +139,22 @@ public class BinarySearchTree<K extends Comparable<K>,V> extends AbstractTree<K,
         return size;
     }
 
-    private void forEach(BiConsumer<K,V> consumer,Node<K,V> node)
+    private void forEach(BiConsumer<K, V> consumer, Node<K, V> node)
     {
-        if(node.left!=null)
+        if (node.left != null)
         {
-            forEach(consumer,(Node<K,V>)node.left);
+            forEach(consumer, (Node<K, V>) node.left);
         }
-        consumer.accept(node.key,node.value);
-        if(node.right!=null)
+        consumer.accept(node.key, node.value);
+        if (node.right != null)
         {
-            forEach(consumer,(Node<K,V>)node.right);
+            forEach(consumer, (Node<K, V>) node.right);
         }
     }
 
-    private static class Node<K,V> extends Tree.Node<K,V>
+    private static class Node<K, V> extends Tree.Node<K, V>
     {
-        private Node<K,V> parent;
+        private Node<K, V> parent;
 
         public Node(Node<K, V> parent, Node<K, V> left, Node<K, V> right, K key, V value)
         {

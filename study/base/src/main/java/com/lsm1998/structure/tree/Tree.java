@@ -7,11 +7,11 @@ package com.lsm1998.structure.tree;
 
 import java.util.function.BiConsumer;
 
-public interface Tree<K extends Comparable<K>,V>
+public interface Tree<K extends Comparable<K>, V>
 {
     int size();
 
-    boolean put(K key,V value);
+    boolean put(K key, V value);
 
     boolean find(K key);
 
@@ -19,17 +19,17 @@ public interface Tree<K extends Comparable<K>,V>
 
     boolean isEmpty(K key);
 
-    void forEach(BiConsumer<K,V> consumer);
+    void forEach(BiConsumer<K, V> consumer);
 
     boolean remove(K key);
 
     void clear();
 
-    class Node<K,V>
+    class Node<K, V>
     {
         K key;
         V value;
-        Node<K,V> left;
-        Node<K,V> right;
+        Node<K, V> left;
+        Node<K, V> right;
     }
 }

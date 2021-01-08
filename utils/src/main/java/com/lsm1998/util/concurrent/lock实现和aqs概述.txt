@@ -1,0 +1,11 @@
+AbstractQueuedSynchronizer简称AQS，抽象队列同步器
+
+AbstractOwnableSynchronizer，抽象可拥有同步器，定义了当前拥有线程，提供了该线程的set/get方法
+
+AbstractQueuedSynchronizer 继承了 AbstractOwnableSynchronizer
+
+Lock实现原理，以ReentrantLock为例：
+维护了一个内部类Sync，继承自AbstractQueuedSynchronizer，实现了AQS功能；
+NonfairSync和FairSync是Sync的子类，分别实现公平锁和不公平锁；
+所有的请求线程构成一个队列，当一个线程执行完毕（lock.unlock()）时会激活自己的后继节点；
+

@@ -1,9 +1,12 @@
-package com.lsm1998.util.thread;
+package com.lsm1998.util.concurrent;
 
 import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 实现阻塞队列
+ */
 public class MyBlockingQueue<T>
 {
     private final int cap;

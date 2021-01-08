@@ -5,15 +5,40 @@
  */
 package com.lsm1998.structure.list;
 
+import java.util.Arrays;
+
 public class MyArrayList<E> extends MyAbstractList<E>
 {
     private int size;
-    private Object[] data;
+    private transient Object[] data;
+
+    private static final Object[] EMPTY = new Object[0];
+
+    private static final int DEFAULT_CAP = 10;
+
+    public MyArrayList()
+    {
+        this(DEFAULT_CAP);
+    }
+
+    public MyArrayList(int cap)
+    {
+        if (cap < 0)
+        {
+            throw new RuntimeException("cap less 0!");
+        } else if (cap == 0)
+        {
+            this.data = EMPTY;
+        } else
+        {
+            this.data = new Object[cap];
+        }
+    }
 
     @Override
     public int size()
     {
-        return 0;
+        return size;
     }
 
     @Override
@@ -43,13 +68,14 @@ public class MyArrayList<E> extends MyAbstractList<E>
     @Override
     public Object[] toArray()
     {
-        return new Object[0];
+        return Arrays.copyOf(data, size);
     }
 
     @Override
     public void clear()
     {
-
+        this.data = EMPTY;
+        this.size = 0;
     }
 
     @Override

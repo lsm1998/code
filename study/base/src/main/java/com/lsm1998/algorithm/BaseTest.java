@@ -22,7 +22,7 @@ public class BaseTest
     // 道路
     private static final int ROAD = 0;
     // 终点
-    private static final int END = 2;
+    private static final int END = 8;
     // 通过
     private static final int PASS = 3;
 

@@ -1,7 +1,10 @@
-package com.lsm1998.util.thread;
+package com.lsm1998.util.concurrent;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 实现线程池
+ */
 public class ThreadPool
 {
     private static final int DEF_CAP = 10;
