@@ -17,4 +17,18 @@ public class StringFindTest
 
         System.out.println(StringFind.indexOf("Arctic Code Vault Contributor", "fuck"));
     }
+
+    @Test
+    public void kmpStringFindTest()
+    {
+        System.out.println(StringFind.kmpIndexOf("hello", "lo"));
+
+        System.out.println(StringFind.kmpIndexOf("hello", "lw"));
+
+        System.out.println(StringFind.kmpIndexOf("hello", "h"));
+
+        System.out.println(StringFind.kmpIndexOf("Arctic Code Vault Contributor", "ibuto"));
+
+        System.out.println(StringFind.kmpIndexOf("Arctic Code Vault Contributor", "fuck"));
+    }
 }

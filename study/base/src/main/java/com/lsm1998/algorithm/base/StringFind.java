@@ -5,7 +5,14 @@ package com.lsm1998.algorithm.base;
  */
 public class StringFind
 {
-    public static boolean indexOf(String str, String find)
+    /**
+     * 暴力匹配
+     *
+     * @param str
+     * @param find
+     * @return
+     */
+    public static int indexOf(String str, String find)
     {
         if (str == null || find == null)
         {
@@ -15,10 +22,10 @@ public class StringFind
         {
             if (match(str, find, i))
             {
-                return true;
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 
     private static boolean match(String str, String find, int i)
@@ -31,5 +38,51 @@ public class StringFind
             }
         }
         return true;
+    }
+
+    public static int kmpIndexOf(String str, String find)
+    {
+        return kmpFind(str, find, kmpNext(find));
+    }
+
+    private static int kmpFind(String str, String find, int[] next)
+    {
+        for (int i = 0, j = 0; i < str.length(); i++)
+        {
+            while (j > 0 && str.charAt(i) != find.charAt(j))
+            {
+                j = next[j - 1];
+            }
+            if (str.charAt(i) == find.charAt(j))
+            {
+                j++;
+            }
+            if (j == find.length())
+            {
+                return i - j + 1;
+            }
+        }
+        return -1;
+    }
+
+    private static int[] kmpNext(String dist)
+    {
+        int[] next = new int[dist.length()];
+        next[0] = 0;
+        for (int i = 1, j = 0; i < dist.length(); i++)
+        {
+            // KMP算法核心
+            while (j > 0 && dist.charAt(i) != dist.charAt(j))
+            {
+                j = next[j - 1];
+            }
+            // 是否满足部分匹配
+            if (dist.charAt(i) == dist.charAt(j))
+            {
+                j++;
+            }
+            next[i] = j;
+        }
+        return next;
     }
 }
