@@ -539,6 +539,7 @@ public abstract class MyAQS extends MyAOS
 
     public final void acquire(int arg)
     {
+        // tryAcquire返回是否拿到锁，如果没拿到，则执行acquireQueued
         if (!tryAcquire(arg) && acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
         {
             selfInterrupt();

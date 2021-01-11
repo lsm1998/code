@@ -23,14 +23,16 @@ public class MyReentrantLock implements MyLock
         {
             final Thread current = Thread.currentThread();
             int c = getState();
+            // 判断锁是否已经被占有
             if (c == 0)
             {
+                // 通过CAS修改State
                 if (compareAndSetState(0, acquires))
                 {
                     setExclusiveOwnerThread(current);
                     return true;
                 }
-            } else if (current == getExclusiveOwnerThread())
+            } else if (current == getExclusiveOwnerThread()) // 如果占有锁的是自身，则重入
             {
                 int nextc = c + acquires;
                 if (nextc < 0) // overflow

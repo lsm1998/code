@@ -70,7 +70,6 @@ public class Tomcat
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try
         {
-
             ServerBootstrap server = new ServerBootstrap();
             server.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
