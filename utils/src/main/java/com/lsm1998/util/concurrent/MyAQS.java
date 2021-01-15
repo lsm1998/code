@@ -1,5 +1,7 @@
 package com.lsm1998.util.concurrent;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.Serializable;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
@@ -12,6 +14,7 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * 抄了一遍AbstractQueuedSynchronizer，1000+行（除去注释）实现，目前水平不允许，只能拿来主义
  */
+@Slf4j
 public abstract class MyAQS extends MyAOS
 {
     protected MyAQS()
@@ -26,15 +29,16 @@ public abstract class MyAQS extends MyAOS
         // 独占的
         static final Node EXCLUSIVE = null;
 
-        // 取消
+        // 表示该线程节点已释放（超时、中断），已取消的节点不会再阻塞
         static final int CANCELLED = 1;
 
-        // 信号
+        // 表示该线程的后续线程需要阻塞，即只要前置节点释放锁，就会通知标识为SIGNAL状态的后续节点的线程
         static final int SIGNAL = -1;
 
-        //
+        // 表示该线程在condition队列中阻塞（Condition有使用）
         static final int CONDITION = -2;
 
+        // 表示该线程以及后续线程进行无条件传播（CountDownLatch中有使用）共享模式下，PROPAGATE状态的线程处于可运行状态
         static final int PROPAGATE = -3;
 
         volatile int waitStatus;
@@ -166,16 +170,25 @@ public abstract class MyAQS extends MyAOS
         }
     }
 
-    // 当前线程加入锁的等待队列
+    /**
+     * 当前线程加入锁的等待队列
+     * 注意：如果队列为空，则会把正在占用锁的节点也加入队列
+     *
+     * @param mode
+     * @return
+     */
     private Node addWaiter(Node mode)
     {
         Node node = new Node(mode);
         for (; ; )
         {
             Node oldTail = tail;
+            // 判断队列是否为空
             if (oldTail != null)
             {
+                // 加入队列尾部
                 node.setPrevRelaxed(oldTail);
+                // 通过CAS安全的把自己设置成队列尾
                 if (compareAndSetTail(oldTail, node))
                 {
                     oldTail.next = node;
@@ -183,6 +196,7 @@ public abstract class MyAQS extends MyAOS
                 }
             } else
             {
+                // 初始化队列，自己new一个Node代表正在占用锁的节点
                 initializeSyncQueue();
             }
         }
@@ -195,21 +209,33 @@ public abstract class MyAQS extends MyAOS
         node.prev = null;
     }
 
+    /**
+     * 唤醒节点
+     *
+     * @param node
+     */
     private void unparkSuccessor(Node node)
     {
         int ws = node.waitStatus;
+        // 如果节点是阻塞状态，设置为锁占用状态
         if (ws < 0)
             node.compareAndSetWaitStatus(ws, 0);
         Node s = node.next;
+        // 如果唤醒节点下下一个节点为空，或者等待状态为已释放
         if (s == null || s.waitStatus > 0)
         {
             s = null;
+
+            // 从尾节点开始，找waitStatus<=0的节点，但是不包括唤醒节点
             for (Node p = tail; p != node && p != null; p = p.prev)
                 if (p.waitStatus <= 0)
                     s = p;
         }
         if (s != null)
+        {
+            // 唤醒节点
             LockSupport.unpark(s.thread);
+        }
     }
 
     private void doReleaseShared()
@@ -247,27 +273,34 @@ public abstract class MyAQS extends MyAOS
         }
     }
 
+    /**
+     * 取消节点
+     *
+     * @param node
+     */
     private void cancelAcquire(Node node)
     {
         if (node == null)
             return;
-
+        // 该节点对应线程置空
         node.thread = null;
 
+        // 找到一个离当前节点最近且waitStatus>0（已释放锁）的前驱节点
         Node pred = node.prev;
         while (pred.waitStatus > 0)
             node.prev = pred = pred.prev;
 
         Node predNext = pred.next;
+
+        // 取消的节点waitStatus设置成CANCELLED
         node.waitStatus = Node.CANCELLED;
 
+        // 如果当前节点是尾节点
         if (node == tail && compareAndSetTail(node, pred))
         {
             pred.compareAndSetNext(predNext, null);
         } else
         {
-            // If successor needs signal, try to set pred's next-link
-            // so it will get one. Otherwise wake it up to propagate.
             int ws;
             if (pred != head &&
                     ((ws = pred.waitStatus) == Node.SIGNAL ||
@@ -285,13 +318,23 @@ public abstract class MyAQS extends MyAOS
         }
     }
 
+    /**
+     * 把有效前驱（不是CANCELLED的node）的状态设置为SIGNAL
+     *
+     * @param pred
+     * @param node
+     * @return 是否可以立即阻塞
+     */
     private static boolean shouldParkAfterFailedAcquire(Node pred, Node node)
     {
         int ws = pred.waitStatus;
+        // 如果原本就是SIGNAL，立即阻塞
         if (ws == Node.SIGNAL)
             return true;
+        // waitStatus大于0即为CANCELLED的node
         if (ws > 0)
         {
+            // 通过do while跳过CANCELLED的node
             do
             {
                 node.prev = pred = pred.prev;
@@ -299,8 +342,10 @@ public abstract class MyAQS extends MyAOS
             pred.next = node;
         } else
         {
+            // 关键代码：有效前驱的状态设置为SIGNAL
             pred.compareAndSetWaitStatus(ws, Node.SIGNAL);
         }
+        // 只有当上一个节点原本就是SIGNAL才会立即阻塞
         return false;
     }
 
@@ -315,7 +360,13 @@ public abstract class MyAQS extends MyAOS
         return Thread.interrupted();
     }
 
-    // 通过自旋，判断当前队列节点是否可以获取锁
+    /**
+     * 通过自旋，判断当前队列节点是否可以获取锁
+     *
+     * @param node
+     * @param arg
+     * @return 返回线程是否被挂起
+     */
     final boolean acquireQueued(final Node node, int arg)
     {
         boolean interrupted = false;
@@ -323,15 +374,26 @@ public abstract class MyAQS extends MyAOS
         {
             for (; ; )
             {
+                // 获取上一个节点
                 final Node p = node.predecessor();
+                // 如果上一个节点是head，也就是正在占用锁的线程
+                // 那么再次尝试获取锁
                 if (p == head && tryAcquire(arg))
                 {
+                    // 再次尝试的结果为成功时需要把自己设置成头节点
                     setHead(node);
                     p.next = null; // help GC
+                    // 获取到锁了，所以线程没有被挂起
                     return interrupted;
                 }
+                // 上一个节点不是head，或者再次尝试获取锁失败了
+                // 通过这个函数把上一个有效节点设置成SIGNAL，返回是否立即阻塞
+                // 没有立即阻塞会继续自旋
                 if (shouldParkAfterFailedAcquire(p, node))
+                {
+                    // 设置阻塞
                     interrupted |= parkAndCheckInterrupt();
+                }
             }
         } catch (Throwable t)
         {
@@ -542,6 +604,8 @@ public abstract class MyAQS extends MyAOS
         // tryAcquire返回是否拿到锁，如果没拿到，则执行acquireQueued
         if (!tryAcquire(arg) && acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
         {
+            // 没有获取到锁&&线程被挂起
+            // 则设置中断
             selfInterrupt();
         }
     }
@@ -564,11 +628,16 @@ public abstract class MyAQS extends MyAOS
 
     public final boolean release(int arg)
     {
+        // 是否需要释放锁
         if (tryRelease(arg))
         {
             Node h = head;
+            // 如果队列不为空，且头节点waitStatus不为0
             if (h != null && h.waitStatus != 0)
+            {
+                // 唤醒节点
                 unparkSuccessor(h);
+            }
             return true;
         }
         return false;
@@ -665,20 +734,29 @@ public abstract class MyAQS extends MyAOS
                 s.thread != null;
     }
 
+    /**
+     * 是否存在等待的线程，且不是自身
+     *
+     * @return
+     */
     public final boolean hasQueuedPredecessors()
     {
         Node h, s;
+        // 队列不存在任何节点返回false
         if ((h = head) != null)
         {
+            // 如果队列只有一个头节点 或者 头节点的下一个节点waitStatus大于0（已释放锁）
             if ((s = h.next) == null || s.waitStatus > 0)
             {
-                s = null; // traverse in case of concurrent cancellation
+                s = null;
+                // 从尾节点开始，找waitStatus<=0的节点，但是不包括头节点
                 for (Node p = tail; p != h && p != null; p = p.prev)
                 {
                     if (p.waitStatus <= 0)
                         s = p;
                 }
             }
+            // 判断是否自身锁重入
             if (s != null && s.thread != Thread.currentThread())
                 return true;
         }

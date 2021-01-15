@@ -3,12 +3,16 @@ package com.lsm1998.util.concurrent;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 抄了一遍ReentrantLock，一来实力问题，二来方便加入注释
+ */
 public class MyReentrantLock implements MyLock
 {
     private final Sync sync;
 
     public MyReentrantLock()
     {
+        // 默认是不公平的同步器
         sync = new NonfairSync();
     }
 
@@ -17,13 +21,16 @@ public class MyReentrantLock implements MyLock
         sync = fair ? new FairSync() : new NonfairSync();
     }
 
+    /**
+     * 同步器，核心的AQS实现
+     */
     abstract static class Sync extends MyAQS
     {
         final boolean nonfairTryAcquire(int acquires)
         {
             final Thread current = Thread.currentThread();
             int c = getState();
-            // 判断锁是否已经被占有
+            // 判断锁是否已经被占有，0是未占用
             if (c == 0)
             {
                 // 通过CAS修改State
@@ -43,12 +50,20 @@ public class MyReentrantLock implements MyLock
             return false;
         }
 
+        /**
+         * 释放锁
+         *
+         * @param releases
+         * @return 是否需要释放锁
+         */
         protected final boolean tryRelease(int releases)
         {
             int c = getState() - releases;
+            // 校验调用线程
             if (Thread.currentThread() != getExclusiveOwnerThread())
                 throw new IllegalMonitorStateException();
             boolean free = false;
+            // state归0需要释放锁
             if (c == 0)
             {
                 free = true;
@@ -108,19 +123,28 @@ public class MyReentrantLock implements MyLock
     // 公平的同步器
     static final class FairSync extends Sync
     {
+        /**
+         * 尝试获取锁
+         * @param acquires
+         * @return 是否抢到锁
+         */
         protected final boolean tryAcquire(int acquires)
         {
             final Thread current = Thread.currentThread();
             int c = getState();
+            // 如果state为0则尝试抢锁
             if (c == 0)
             {
+                // 公平锁会判断队列是否存在等待线程
+                // 通过CAS尝试将state设置为1
                 if (!hasQueuedPredecessors() &&
                         compareAndSetState(0, acquires))
                 {
+                    // 抢锁成功，将同步的当前所有者设置为自己
                     setExclusiveOwnerThread(current);
                     return true;
                 }
-            } else if (current == getExclusiveOwnerThread())
+            } else if (current == getExclusiveOwnerThread()) // 是否重入
             {
                 int nextc = c + acquires;
                 if (nextc < 0)
