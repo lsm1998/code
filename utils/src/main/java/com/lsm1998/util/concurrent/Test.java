@@ -1,6 +1,6 @@
 package com.lsm1998.util.concurrent;
 
-import java.util.concurrent.locks.LockSupport;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @作者：刘时明
@@ -11,24 +11,13 @@ public class Test
 {
     public static void main(String[] args) throws Exception
     {
-        MyLock lock = new MyReentrantLock();
+        MyConcurrentHashMap<String, Object> map = new MyConcurrentHashMap<>();
+        map.put("1", 1);
 
-        lock.lock();
+        map.remove("1");
 
-        lock.unlock();
+        map.contains("1");
 
-        Thread thread1 = new Thread(() ->
-        {
-            System.out.println(1);
-            LockSupport.park(Thread.currentThread());
-            System.out.println(2);
-        });
-        thread1.start();
-
-        new Thread(() ->
-        {
-            System.out.println("hello");
-            LockSupport.unpark(thread1);
-        }).start();
+        System.out.println(map.size());
     }
 }

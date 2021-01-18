@@ -25,13 +25,11 @@ public class DefaultEchoesService extends AbstractEchoesService
     private final EchoesConfig echoesConfig;
     private final Map<String, ProxyBean<?>> targetObjMap;
     private Selector selector;
-    private final Charset charset;
     private final DefaultEchoesHandler handler;
 
     protected DefaultEchoesService(EchoesConfig echoesConfig)
     {
         this.echoesConfig = echoesConfig;
-        this.charset = StandardCharsets.UTF_8;
         this.targetObjMap = new HashMap<>(16);
         this.handler = new DefaultEchoesHandler(this.echoesConfig.getRpc(), this.targetObjMap);
     }

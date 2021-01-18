@@ -7,7 +7,9 @@ package com.lsm1998.test;
 
 import com.lsm1998.util.concurrent.MyReentrantLock;
 
+import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -27,9 +29,8 @@ public class Test
         ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<>();
         map.put("", 1);
 
-
-        new ReentrantLock();
-
+        CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();
+        list.add(1);
     }
 
     private void newThreadLock(final MyReentrantLock lock, long waitTime)

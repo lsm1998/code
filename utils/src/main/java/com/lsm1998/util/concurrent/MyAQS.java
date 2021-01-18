@@ -1,7 +1,5 @@
 package com.lsm1998.util.concurrent;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.Serializable;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
@@ -14,7 +12,6 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * 抄了一遍AbstractQueuedSynchronizer，1000+行（除去注释）实现，目前水平不允许，只能拿来主义
  */
-@Slf4j
 public abstract class MyAQS extends MyAOS
 {
     protected MyAQS()

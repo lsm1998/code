@@ -17,6 +17,8 @@ public class ManagementFactoryTest
     @Test
     public void test1()
     {
+        //bash configure --with-debug-level=slowdebug --with-jvm-variants=server --enable-ccache --with-freetype=bundled --disable-warnings-as-errors
+        // https://www.howieli.cn/posts/macos-clion-build-debug-openjdk12.html
         // 运行时信息
         RuntimeMXBean mxb = ManagementFactory.getRuntimeMXBean();
         System.out.println(mxb.getLibraryPath());
