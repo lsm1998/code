@@ -7,11 +7,7 @@ package com.lsm1998.test;
 
 import com.lsm1998.util.concurrent.MyReentrantLock;
 
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.TimeUnit;
 
 public class Test
 {
@@ -20,17 +16,9 @@ public class Test
     {
         MyReentrantLock lock = new MyReentrantLock();
 
-        newThreadLock(lock, 0);
-        newThreadLock(lock, 0);
-
-        CountDownLatch latch = new CountDownLatch(1);
-        latch.await();
-
-        ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<>();
-        map.put("", 1);
-
-        CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>();
-        list.add(1);
+        newThreadLock(lock,0);
+        Thread.sleep(200);
+        lock.tryLock(1, TimeUnit.HOURS);
     }
 
     private void newThreadLock(final MyReentrantLock lock, long waitTime)
@@ -47,7 +35,7 @@ public class Test
             System.out.println("开始lock");
             lock.lock();
             System.out.println("lock ok!");
-            lock.unlock();
+            // lock.unlock();
         }).start();
     }
 }

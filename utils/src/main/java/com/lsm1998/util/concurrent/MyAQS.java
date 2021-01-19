@@ -427,17 +427,20 @@ public abstract class MyAQS extends MyAOS
         }
     }
 
-    private boolean doAcquireNanos(int arg, long nanosTimeout)
-            throws InterruptedException
+    private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException
     {
         if (nanosTimeout <= 0L)
+        {
             return false;
+        }
+        // 截止抢锁的时间点
         final long deadline = System.nanoTime() + nanosTimeout;
         final Node node = addWaiter(Node.EXCLUSIVE);
         try
         {
             for (; ; )
             {
+                System.out.println("loop");
                 final Node p = node.predecessor();
                 if (p == head && tryAcquire(arg))
                 {
@@ -451,6 +454,8 @@ public abstract class MyAQS extends MyAOS
                     cancelAcquire(node);
                     return false;
                 }
+                // 1.把有效前驱（不是CANCELLED的node）的状态设置为SIGNAL
+                // 2.如果超过了自旋时间的筏值，则挂起线程，直到截止抢锁的时间点
                 if (shouldParkAfterFailedAcquire(p, node) &&
                         nanosTimeout > SPIN_FOR_TIMEOUT_THRESHOLD)
                     LockSupport.parkNanos(this, nanosTimeout);
@@ -620,6 +625,8 @@ public abstract class MyAQS extends MyAOS
     {
         if (Thread.interrupted())
             throw new InterruptedException();
+        // 先尝试获取锁，如果成功则直接返回true
+        //
         return tryAcquire(arg) || doAcquireNanos(arg, nanosTimeout);
     }
 

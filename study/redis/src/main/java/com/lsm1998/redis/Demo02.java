@@ -1,14 +1,17 @@
 package com.lsm1998.redis;
 
+import redis.clients.jedis.Jedis;
+
+import java.util.Set;
+
 public class Demo02
 {
     public static void main(String[] args)
     {
-        System.out.println(matchString("aa","a"));
-        System.out.println(matchString("aa","a*"));
-        System.out.println(matchString("ab",".*"));
-        System.out.println(matchString("aab","c*a*b"));
-        System.out.println(matchString("mississippi","mis*is*p"));
+        Jedis jedis = new Jedis();
+
+        Set<String> keys = jedis.keys("*");
+        keys.forEach(System.out::println);
     }
 
     /**

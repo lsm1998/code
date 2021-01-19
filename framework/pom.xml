@@ -18,6 +18,7 @@
         <module>spring</module>
         <module>springboot</module>
         <module>tomcat</module>
+        <module>log4j</module>
     </modules>
 
     <dependencies>
