@@ -4,6 +4,8 @@ import com.lsm1998.tomcat.servlet.ServletResponse;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.*;
 
+import java.io.IOException;
+
 public class HttpServletResponse implements ServletResponse
 {
     // SocketChannel的封装
@@ -37,9 +39,4 @@ public class HttpServletResponse implements ServletResponse
     {
         return outputStream;
     }
-
-//    public void write(String out) throws Exception
-//    {
-//
-//    }
 }

@@ -5,6 +5,7 @@ import com.lsm1998.tomcat.exception.ConfigException;
 import com.lsm1998.tomcat.http.HttpServletRequest;
 import com.lsm1998.tomcat.http.HttpServletResponse;
 import com.lsm1998.tomcat.http.HttpServlet;
+import com.lsm1998.tomcat.resources.StaticServlet;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -26,6 +27,9 @@ public class Tomcat
     private static final String CONFIG_NAME = "tomcat.yml";
 
     private final Map<String, HttpServlet> servletMapping = new HashMap<>();
+
+    // 静态资源Servlet
+    private StaticServlet staticServlet = new StaticServlet();
 
     private void init() throws ConfigException
     {
@@ -56,6 +60,7 @@ public class Tomcat
                 HttpServlet obj = (HttpServlet) c.getConstructor().newInstance();
                 servletMapping.put(webServlet.url(), obj);
             }
+            staticServlet.init();
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -79,10 +84,7 @@ public class Tomcat
                         // 客户端初始化处理
                         protected void initChannel(SocketChannel client) throws Exception
                         {
-                            // 无锁化串行编程
-                            // Netty对HTTP协议的封装，顺序有要求
                             // HttpResponseEncoder 编码器
-                            // 责任链模式，双向链表Inbound OutBound
                             client.pipeline().addLast(new HttpResponseEncoder());
                             // HttpRequestDecoder 解码器
                             client.pipeline().addLast(new HttpRequestDecoder());
@@ -120,12 +122,14 @@ public class Tomcat
                 HttpServletRequest request = new HttpServletRequest(ctx, req);
                 HttpServletResponse response = new HttpServletResponse(ctx, req);
                 String url = request.getUrl();
+                // 先看是否有对应的servlet处理
                 if (servletMapping.containsKey(url))
                 {
                     servletMapping.get(url).service(request, response);
                 } else
                 {
-                    response.getWrite().write("<h1>404 - Not Found</h1>");
+                    // 没有对应的servlet则交给静态资源处理器
+                    staticServlet.service(request, response);
                 }
             }
         }

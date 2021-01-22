@@ -21,7 +21,7 @@ public class ServletOutputStream extends OutputStream
 
     public ServletOutputStream(HttpServletResponse response)
     {
-        this.resp=response;
+        this.resp = response;
     }
 
     @Override
@@ -46,6 +46,31 @@ public class ServletOutputStream extends OutputStream
                     HttpResponseStatus.OK,
                     // 将输出值写出 编码为UTF-8
                     Unpooled.wrappedBuffer(content.getBytes("UTF-8")));
+            response.headers().set("Content-Type", resp.contentType);
+            resp.ctx.write(response);
+        } finally
+        {
+            resp.ctx.flush();
+            resp.ctx.close();
+        }
+    }
+
+    public void writeFile(byte[] bytes) throws IOException
+    {
+        try
+        {
+            if (bytes == null || bytes.length == 0)
+            {
+                return;
+            }
+            // 设置 http协议及请求头信息
+            FullHttpResponse response = new DefaultFullHttpResponse(
+                    // 设置http版本为1.1
+                    HttpVersion.HTTP_1_1,
+                    // 设置响应状态码
+                    HttpResponseStatus.OK,
+                    // 将输出值写出 编码为UTF-8
+                    Unpooled.wrappedBuffer(bytes));
             response.headers().set("Content-Type", resp.contentType);
             resp.ctx.write(response);
         } finally
