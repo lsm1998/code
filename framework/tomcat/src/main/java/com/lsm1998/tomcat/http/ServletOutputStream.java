@@ -69,7 +69,7 @@ public class ServletOutputStream extends OutputStream
                     HttpVersion.HTTP_1_1,
                     // 设置响应状态码
                     HttpResponseStatus.OK,
-                    // 将输出值写出 编码为UTF-8
+                    // 将输出值写出
                     Unpooled.wrappedBuffer(bytes));
             response.headers().set("Content-Type", resp.contentType);
             resp.ctx.write(response);
