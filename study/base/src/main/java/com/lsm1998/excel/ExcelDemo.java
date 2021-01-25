@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,17 +21,53 @@ public class ExcelDemo
 {
     public static void main(String[] args) throws Exception
     {
-        String[] titleRow = new String[]{"姓名", "年龄"};
         List<Student> contentList = new ArrayList<>();
 
-        contentList.add(Student.of("lsm", 24));
-        contentList.add(Student.of("boot", 20));
-        contentList.add(Student.of("mask", 22));
+        contentList.add(Student.of("lsm", 24, "第一列"));
+        contentList.add(Student.of("boot", 20, "第二列"));
+        contentList.add(Student.of("mask", 22, "第三列"));
 
+        String[] titleRow = new String[contentList.size()];
+        for (int i = 0; i < titleRow.length; i++)
+        {
+            titleRow[i] = contentList.get(i).getTitle();
+        }
+        List<Map<String, Object>> mapList = studentConvertMap(contentList);
         createExcel("demo.xlsx", "sheet", titleRow);
-        writeToExcel("demo.xlsx", "sheet", contentList);
+        writeToExcel("demo.xlsx", "sheet", mapList);
     }
 
+    /**
+     * 行转列
+     *
+     * @param contentList
+     * @return
+     */
+    private static List<Map<String, Object>> studentConvertMap(List<Student> contentList)
+    {
+        List<Map<String, Object>> mapList = new ArrayList<>();
+        for (int i = 0; i < 2; i++)
+        {
+            Map<String, Object> tempMap = new HashMap<>();
+            for (int j = 0; j < contentList.size(); j++)
+            {
+                Object value = i == 0 ? contentList.get(j).getName() : contentList.get(j).getAge();
+                tempMap.put(contentList.get(j).getTitle(), value);
+            }
+            mapList.add(tempMap);
+        }
+        return mapList;
+    }
+
+
+    /**
+     * 创建Excel文件
+     *
+     * @param fileDir
+     * @param sheetName
+     * @param titleRow
+     * @throws Exception
+     */
     public static void createExcel(String fileDir, String sheetName, String[] titleRow) throws Exception
     {
         HSSFWorkbook workbook = new HSSFWorkbook();
@@ -53,16 +90,22 @@ public class ExcelDemo
         }
     }
 
-    public static void writeToExcel(String fileDir, String sheetName, List<Student> contentList) throws Exception
+    /**
+     * 写入内容
+     *
+     * @param fileDir
+     * @param sheetName
+     * @param contentList
+     * @throws Exception
+     */
+    public static void writeToExcel(String fileDir, String sheetName, List<Map<String, Object>> contentList) throws Exception
     {
         //创建workbook
         File file = new File(fileDir);
         HSSFWorkbook workbook = new HSSFWorkbook(new FileInputStream(file));
         HSSFSheet sheet = workbook.getSheet(sheetName);
-        // 获取表格的总行数
-        // int rowCount = sheet.getLastRowNum() + 1; // 需要加一
         // 获取表头的列数
-        int columnCount = sheet.getRow(0).getLastCellNum() + 1;
+        int columnCount = sheet.getRow(0).getLastCellNum();
         try (FileOutputStream out = new FileOutputStream(fileDir))
         {
             // 获得表头行对象
@@ -71,14 +114,14 @@ public class ExcelDemo
             {
                 for (int rowId = 0; rowId < contentList.size(); rowId++)
                 {
-                    Student student = contentList.get(rowId);
+                    Map<String, Object> studentMap = contentList.get(rowId);
                     HSSFRow newRow = sheet.createRow(rowId + 1);
                     for (short columnIndex = 0; columnIndex < columnCount; columnIndex++)
                     {
                         // 遍历表头
-                        String mapKey = titleRow.getCell(columnIndex).toString().trim().trim();
+                        String mapKey = titleRow.getCell(columnIndex).toString().trim();
                         HSSFCell cell = newRow.createCell(columnIndex);
-                        cell.setCellValue(map.get(mapKey) == null ? null : map.get(mapKey).toString());
+                        cell.setCellValue(studentMap.get(mapKey) == null ? null : studentMap.get(mapKey).toString());
                     }
                 }
             }

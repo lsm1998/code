@@ -49,29 +49,23 @@ public class ObjectParser
                 }
                 throw new JsonException("invalid null value");
         }
-
         Object number = parseNumber(c);
         if (number != null)
         {
             return number;
         }
-
         if (c == '\"')
         {
             return parseString(c);
         }
-
         if (c == '[')
         {
             return parseArray();
         }
-
         if (c == '{')
         {
             return parseObject();
         }
-
-
         throw new JsonException("invalid value : " + c);
     }
 
@@ -116,7 +110,6 @@ public class ObjectParser
         checkPos();
         return c;
     }
-
 
     // 得到当前字符，忽略空格、换行符。将指针指向下一个字符
     private char getCharNext()
@@ -169,7 +162,6 @@ public class ObjectParser
         }
         return sb.toString();
     }
-
 
     private Object parseNumber(char c)
     {
