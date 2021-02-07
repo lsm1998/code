@@ -26,10 +26,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ChatServer
 {
+    private static final int DEF_PORT = 8080;
     private int port = 8080;
 
     public void start(int port)
     {
+        this.port = port;
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try
@@ -77,7 +79,7 @@ public class ChatServer
 
     public void start()
     {
-        start(this.port);
+        start(DEF_PORT);
     }
 
 

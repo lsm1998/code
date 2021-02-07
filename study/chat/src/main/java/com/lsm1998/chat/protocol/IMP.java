@@ -27,21 +27,25 @@ public enum IMP
      */
     FLOWER("FLOWER");
 
-    private String name;
+    private final String name;
 
-    public static boolean isIMP(String content) {
+    public static boolean isIMP(String content)
+    {
         return content.matches("^\\[(SYSTEM|LOGIN|LOGIN|CHAT)\\]");
     }
 
-    IMP(String name) {
+    IMP(String name)
+    {
         this.name = name;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return this.name;
     }
 
-    public String toString() {
+    public String toString()
+    {
         return this.name;
     }
 }

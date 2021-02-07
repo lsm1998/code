@@ -20,25 +20,31 @@ public class ChatClientHandler extends SimpleChannelInboundHandler<IMMessage>
     private ChannelHandlerContext ctx;
     private String nickName;
 
-    public ChatClientHandler(String nickName) {
+    public ChatClientHandler(String nickName)
+    {
         this.nickName = nickName;
     }
 
     /**
      * 启动客户端控制台
      */
-    private void session() {
+    private void session()
+    {
         new Thread(() ->
         {
             System.out.println(nickName + ",你好，请在控制台输入对话内容");
             IMMessage message = null;
             Scanner scanner = new Scanner(System.in);
-            do {
-                if (scanner.hasNext()) {
+            do
+            {
+                if (scanner.hasNext())
+                {
                     String input = scanner.nextLine();
-                    if ("exit".equals(input)) {
+                    if ("exit".equals(input))
+                    {
                         message = new IMMessage(IMP.LOGOUT.getName(), "Console", System.currentTimeMillis(), nickName);
-                    } else {
+                    } else
+                    {
                         message = new IMMessage(IMP.CHAT.getName(), System.currentTimeMillis(), nickName, input);
                     }
                 }

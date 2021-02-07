@@ -22,7 +22,7 @@ import io.netty.handler.codec.http.LastHttpContent;
 @Slf4j
 public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpRequest>
 {
-    //获取class路径
+    // 获取class路径
     private URL baseURL = HttpServerHandler.class.getResource("");
     private final String webroot = "webroot";
 
@@ -33,7 +33,6 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
         basePath = (basePath.substring(0, start) + "/" + "classes/").replaceAll("/+", "/");
 
         String path = basePath + webroot + "/" + fileName;
-//        log.info("BaseURL:" + basePath);
         path = !path.contains("file:") ? path : path.substring(5);
         path = path.replaceAll("//", "/");
         return new File(path);
@@ -44,7 +43,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
     {
         String uri = request.getUri();
 
-        RandomAccessFile file = null;
+        RandomAccessFile file;
         try
         {
             String page = uri.equals("/") ? "chat.html" : uri;
@@ -54,8 +53,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
             ctx.fireChannelRead(request.retain());
             return;
         }
-
-        HttpResponse response = new DefaultHttpResponse(request.getProtocolVersion(), HttpResponseStatus.OK);
+        HttpResponse response = new DefaultHttpResponse(request.protocolVersion(), HttpResponseStatus.OK);
         String contextType = "text/html;";
         if (uri.endsWith(".css"))
         {
@@ -69,7 +67,6 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
             contextType = "image/" + ext;
         }
         response.headers().set(HttpHeaders.Names.CONTENT_TYPE, contextType + "charset=utf-8;");
-
         boolean keepAlive = HttpHeaders.isKeepAlive(request);
 
         if (keepAlive)

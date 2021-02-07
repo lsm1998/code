@@ -4,6 +4,10 @@
 
 Redis3.0
 
+### 自己实现
+
+[Java语言实现的简单Redis](https://github.com/lsm1998/jedis)
+
 ### 基本
 
 + 服务端main函数入口：/src/redis.c
@@ -34,7 +38,7 @@ Redis3.0
 #endif
 ````
 
-### 命令执行流程解析
+### 1.命令执行流程解析
 
 #### 查询命令（keys）
 
@@ -44,7 +48,7 @@ Redis3.0
 
 1.
 
-### 1.数据类型实现
+### 2.数据类型实现
 
 #### 字符串类型
 
@@ -176,10 +180,11 @@ typedef struct zlentry
 } zlentry;
 ````
 
-Redis List类型编码方式有双向链表和压缩列表两种
+Redis List类型编码方式有双向链表和压缩列表两种，默认是压缩列表
 
-创建list时，编码为ziplist，每次对list添加都会检查长度，如果超过则转为双向链表
-长度筏值：可配置，默认512
++ 压缩列表转双向链表的场景
+1. list添加后检查节点个数，如果超过则转为双向链表，默认筏值512，可配置；
+2. 插入长字符串时，默认筏值64，可配置；
 
 + 代码片段
 ````
@@ -218,16 +223,20 @@ void listTypePush(robj *subject, robj *value, int where)
 ````
 
 压缩列表和双向链表区别？
-1. 压缩列表内存是连续的，目的是节约内存；
-2. 双向链表内存不是连续的；
+1. 压缩列表内存是连续的，不使用指针，节约内存；
+2. 压缩列表内存固定，每次修改大小需要重新分配内存；
 
 #### set类型
 
+使用整数集合或HT(hash table)实现
+
 #### hash类型
+
+使用压缩列表或HT(hash table)实现
 
 #### zset类型
 
-使用跳表实现
+使用压缩列表或跳表实现
 
 + 代码片段
 
@@ -253,7 +262,7 @@ typedef struct zskiplistNode
 
 #### intset
 
-当一个集合只包含整数，且数量不多，Redis会使用intset存储
+有序集合，当一个集合只包含整数，且数量不多，Redis会使用intset存储
 
 + 代码片段
 
@@ -286,7 +295,7 @@ robj *setTypeCreate(robj *value)
 intset编码升级为HT编码的2个条件（前提，当前set是intset编码）：
 
 1. 添加set时，某个add的元素不能转换为long long；
-2. 添加set时，数量超过限制；
+2. 添加set时，数量超过限制，默认筏值512，可配置；
 
 + 代码片段
 
@@ -313,4 +322,20 @@ if (isObjectRepresentableAsLongLong(value, &llval) == REDIS_OK)
     return 1;
 }
 ````
+
+#### ziplist
+
+压缩列表，当集合set/hash集合只有少量元素，且元素为整数或短字符串时Redis会使用ziplist存储
+
+
+### 3.Redis持久化
+
+#### AOF
+Append-only file，只追加操作文件，将每次执行的命令追加在AOF文件末尾，重新启动时，程序就可以通过重新执行AOF文件中的命令来达到重建数据集的目的；
+
+* 优点：相对于RDB来说，保存的数据更完整，更好的容灾性，每次追加一条命令，开销小；
+* 缺点：AOF文件体积大，加载速度慢；
+
+#### RDB
+是一个紧凑的二进制文件，保存了某个时间点的数据集
 

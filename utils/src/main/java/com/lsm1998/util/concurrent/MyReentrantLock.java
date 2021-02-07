@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 抄了一遍ReentrantLock，一来实力问题，二来方便加入注释
+ * 抄了一遍ReentrantLock，一来实力不允许，二来方便加入注释
  */
 public class MyReentrantLock implements MyLock
 {

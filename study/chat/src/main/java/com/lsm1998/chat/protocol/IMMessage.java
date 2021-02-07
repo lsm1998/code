@@ -10,14 +10,22 @@ import org.msgpack.annotation.Message;
 @Data
 public class IMMessage
 {
-    private String addr;        //IP地址及端口
-    private String cmd;        //命令类型[LOGIN]或者[SYSTEM]或者[LOGOUT]
-    private long time;        //命令发送时间
-    private int online;        //当前在线人数
-    private String sender;  //发送人
-    private String receiver;    //接收人
-    private String content;        //消息内容
-    private String terminal;    //终端
+    // IP地址及端口
+    private String addr;
+    // 命令类型[LOGIN]或者[SYSTEM]或者[LOGOUT]
+    private String cmd;
+    // 命令发送时间
+    private long time;
+    // 当前在线人数
+    private int online;
+    // 发送人
+    private String sender;
+    // 接收人
+    private String receiver;
+    // 消息内容
+    private String content;
+    // 终端
+    private String terminal;
 
     public IMMessage()
     {
