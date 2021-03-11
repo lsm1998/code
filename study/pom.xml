@@ -22,6 +22,7 @@
         <module>auto-code</module>
         <module>data</module>
         <module>mp</module>
+        <module>sqlite</module>
     </modules>
 
     <dependencies>
