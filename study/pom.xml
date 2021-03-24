@@ -23,6 +23,7 @@
         <module>data</module>
         <module>mp</module>
         <module>sqlite</module>
+        <module>mq</module>
     </modules>
 
     <dependencies>
