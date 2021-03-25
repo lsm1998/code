@@ -25,23 +25,23 @@ public class ZookeeperConfig
     public ZooKeeper zkClient()
     {
         ZooKeeper zooKeeper = null;
-        try
-        {
-            final CountDownLatch countDownLatch = new CountDownLatch(1);
-            zooKeeper = new ZooKeeper(connectString, timeout, event ->
-            {
-                if (Watcher.Event.KeeperState.SyncConnected == event.getState())
-                {
-                    // 如果收到了服务端的响应事件,连接成功
-                    countDownLatch.countDown();
-                }
-            });
-            countDownLatch.await();
-            log.info("【初始化ZooKeeper连接状态....】={}", zooKeeper.getState());
-        } catch (Exception e)
-        {
-            log.error("【初始化ZooKeeper连接异常....】={1}", e);
-        }
+//        try
+//        {
+//            final CountDownLatch countDownLatch = new CountDownLatch(1);
+//            zooKeeper = new ZooKeeper(connectString, timeout, event ->
+//            {
+//                if (Watcher.Event.KeeperState.SyncConnected == event.getState())
+//                {
+//                    // 如果收到了服务端的响应事件,连接成功
+//                    countDownLatch.countDown();
+//                }
+//            });
+//            countDownLatch.await();
+//            log.info("【初始化ZooKeeper连接状态....】={}", zooKeeper.getState());
+//        } catch (Exception e)
+//        {
+//            log.error("【初始化ZooKeeper连接异常....】={1}", e);
+//        }
         return zooKeeper;
     }
 }

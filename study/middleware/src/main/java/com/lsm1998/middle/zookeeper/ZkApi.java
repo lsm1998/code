@@ -16,7 +16,7 @@ import java.util.List;
 @Slf4j
 public class ZkApi
 {
-    @Autowired
+    @Autowired(required = false)
     private ZooKeeper zkClient;
 
     /**
