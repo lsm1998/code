@@ -21,9 +21,8 @@
         <module>shardingjdbc</module>
         <module>auto-code</module>
         <module>data</module>
-        <module>mp</module>
         <module>sqlite</module>
-        <module>mq</module>
+        <module>middleware</module>
     </modules>
 
     <dependencies>
