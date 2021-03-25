@@ -7,6 +7,7 @@ import com.lsm1998.auto.database.model.Table;
 import com.lsm1998.auto.database.util.StringUtil;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+
 import java.io.*;
 import java.util.List;
 import java.util.Locale;
@@ -15,7 +16,8 @@ import java.util.Locale;
  * 驱动模板接口
  * 目前仅实现freemarker模板
  */
-public class EngineTemplate {
+public class EngineTemplate
+{
 
     /**
      * freemarker配置对象实例化
@@ -36,11 +38,13 @@ public class EngineTemplate {
      * 设置freemarker全局配置参数
      */
     {
-        try {
+        try
+        {
             configuration.setDirectoryForTemplateLoading(new File(getEngineTemplatePath()));
             configuration.setDefaultEncoding(DEFAULT_ENCODING);
             configuration.setLocale(new Locale(DEFAULT_LOCALE));
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
@@ -49,7 +53,8 @@ public class EngineTemplate {
 
     private IDataBase dataBase;
 
-    public EngineTemplate(CodeBuilderProperties codeBuilderProperties) {
+    public EngineTemplate(CodeBuilderProperties codeBuilderProperties)
+    {
         this.codeBuilderProperties = codeBuilderProperties;
         // 获取数据库对象
         dataBase = DataBaseFactory.newInstance(codeBuilderProperties.getDbConfig());
@@ -58,7 +63,8 @@ public class EngineTemplate {
     /**
      * 开始构建
      */
-    public void builder(){
+    public void builder()
+    {
         this.loopProcess(this.getTables());
     }
 
@@ -67,22 +73,24 @@ public class EngineTemplate {
      *
      * @param tableNames 表名列表
      */
-    public void loopProcess(List<String> tableNames){
-        for (String tableName : tableNames) {
+    public void loopProcess(List<String> tableNames)
+    {
+        for (String tableName : tableNames)
+        {
             Table table = dataBase.getTable(tableName);
-            System.out.println("Auto Builder Table > 【{"+tableName+"}】");
-            process(table,EngineTypeEnum.JPA_ENTITY_JAVA);
-            process(table,EngineTypeEnum.JPA_REPOSITORY_JAVA);
-            process(table,EngineTypeEnum.JPA_CONTROLLER_JAVA);
-            process(table,EngineTypeEnum.LAYUI_LIST_HTML);
-            process(table,EngineTypeEnum.LAYUI_LIST_JS);
-            process(table,EngineTypeEnum.LAYUI_DETAIL_HTML);
-            process(table,EngineTypeEnum.LAYUI_DETAIL_JS);
+            System.out.println("Auto Builder Table > 【{" + tableName + "}】");
+            process(table, EngineTypeEnum.JPA_ENTITY_JAVA);
+            process(table, EngineTypeEnum.JPA_REPOSITORY_JAVA);
+            process(table, EngineTypeEnum.JPA_CONTROLLER_JAVA);
+            process(table, EngineTypeEnum.LAYUI_LIST_HTML);
+            process(table, EngineTypeEnum.LAYUI_LIST_JS);
+            process(table, EngineTypeEnum.LAYUI_DETAIL_HTML);
+            process(table, EngineTypeEnum.LAYUI_DETAIL_JS);
             /*process(table,EngineTypeEnum.ENTITY_JAVA);
             process(table,EngineTypeEnum.I_SERVICES_JAVA);
             process(table,EngineTypeEnum.SERVICES_JAVA);*/
-            process(table,EngineTypeEnum.I_DAO_JAVA);
-            process(table,EngineTypeEnum.I_DAO_XML);
+            process(table, EngineTypeEnum.I_DAO_JAVA);
+            process(table, EngineTypeEnum.I_DAO_XML);
             /*process(table,EngineTypeEnum.LIST_HTML);
             process(table,EngineTypeEnum.LIST_JS);*/
         }
@@ -93,7 +101,7 @@ public class EngineTemplate {
      *
      * @param table 数据表对象
      */
-    public void process(Table table,EngineTypeEnum engineTypeEnum)
+    public void process(Table table, EngineTypeEnum engineTypeEnum)
     {
         try
         {
@@ -115,7 +123,8 @@ public class EngineTemplate {
 
             // 执行生成
             template.process(dataModelEntity, out);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
@@ -128,31 +137,36 @@ public class EngineTemplate {
          * 根据配置tables参数表名进行构建生成
          * 优先级高于generatorByPattern
          */
-        if (null != tables && tables.size() > 0) {
+        if (null != tables && tables.size() > 0)
+        {
             System.out.println("Using table name to generate code automatically, please wait...");
             return tables;
         }
         /*
          * 如果配置generatorByPattern参数，优先级高于tables
          */
-        else if (StringUtil.isNotEmpty(generatorByPattern)) {
+        else if (StringUtil.isNotEmpty(generatorByPattern))
+        {
             System.out.println("Using expression method to generate code automatically, please wait...");
             return dataBase.getTableNames(generatorByPattern);
         }
         throw new RuntimeException(ErrorEnum.NO_BUILDER_TABLE.getMessage());
     }
 
-    private String getEntityName(String tableName){
+    private String getEntityName(String tableName)
+    {
         String entityName = tableName;
         String ignorePrefix = codeBuilderProperties.getIgnoreClassPrefix();
         String ignoreSuffix = codeBuilderProperties.getIgnoreClassSuffix();
-        if(StringUtil.isNotEmpty(ignorePrefix) && entityName.startsWith(ignorePrefix)){
+        if (StringUtil.isNotEmpty(ignorePrefix) && entityName.startsWith(ignorePrefix))
+        {
             entityName = entityName.replaceFirst(ignorePrefix, "");
         }
-        if(StringUtil.isNotEmpty(ignoreSuffix) && entityName.endsWith(ignoreSuffix)){
-            entityName = entityName.substring(0,entityName.lastIndexOf(ignoreSuffix));
+        if (StringUtil.isNotEmpty(ignoreSuffix) && entityName.endsWith(ignoreSuffix))
+        {
+            entityName = entityName.substring(0, entityName.lastIndexOf(ignoreSuffix));
         }
-        entityName = StringUtil.getCamelCaseString(entityName,true);
+        entityName = StringUtil.getCamelCaseString(entityName, true);
         return entityName;
     }
 

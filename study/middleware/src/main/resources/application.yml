@@ -7,7 +7,7 @@ spring:
     username: root
     password: fuck123
   kafka:
-    bootstrap-servers: 119.29.117.244:9092  #指定kafka server的地址，集群配多个，中间，逗号隔开
+    bootstrap-servers: 172.16.200.2:9092  #指定kafka server的地址，集群配多个，中间，逗号隔开
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -25,5 +25,5 @@ mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
 
 zookeeper:
-  address: 119.29.117.244:2181
+  address: 172.16.200.2:2181
   timeout: 4000

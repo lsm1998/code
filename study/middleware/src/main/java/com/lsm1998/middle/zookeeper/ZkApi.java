@@ -125,8 +125,7 @@ public class ZkApi
      */
     public List<String> getChildren(String path) throws KeeperException, InterruptedException
     {
-        List<String> list = zkClient.getChildren(path, false);
-        return list;
+        return zkClient.getChildren(path, false);
     }
 
     /**

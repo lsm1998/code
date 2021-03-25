@@ -34,7 +34,8 @@ public abstract class DataBase implements IDataBase
      *
      * @param dbConfig 生成所需参数对象
      */
-    public DataBase(DbConfig dbConfig) {
+    public DataBase(DbConfig dbConfig)
+    {
         this.dbConfig = dbConfig;
         // 获取数据库连接
         getConnection();
@@ -46,35 +47,41 @@ public abstract class DataBase implements IDataBase
      * @return 数据库连接对象
      */
     @Override
-    public Connection getConnection() {
-        try {
+    public Connection getConnection()
+    {
+        try
+        {
             /*
              * 连接不存在 || 连接失效
              * 重新获取连接
              */
-            if (connection == null || connection.isClosed()) {
-                    // 默认使用数据库驱动类型内的限定类名
-                    String driverClassName = dbConfig.getDbType().getValue();
-                    // 存在自定义的驱动限定类名时使用自定义来实例化驱动对象
-                    if (StringUtil.isNotEmpty(dbConfig.getDbDriverClassName())) {
-                        driverClassName = dbConfig.getDbDriverClassName();
-                    }
-                    //加载驱动程序
-                    Class.forName(driverClassName);
-                    // 获取数据库连接
-                    java.util.Properties info = new java.util.Properties();
-                    info.put("user", dbConfig.getDbUserName());
-                    info.put("password", dbConfig.getDbPassword());
-                    if(DbTypeEnum.Oracle.equals(dbConfig.getDbType())){
-                        //oracle获取注释用参数
-                        info.put("remarksReporting","true");
-                    }
+            if (connection == null || connection.isClosed())
+            {
+                // 默认使用数据库驱动类型内的限定类名
+                String driverClassName = dbConfig.getDbType().getValue();
+                // 存在自定义的驱动限定类名时使用自定义来实例化驱动对象
+                if (StringUtil.isNotEmpty(dbConfig.getDbDriverClassName()))
+                {
+                    driverClassName = dbConfig.getDbDriverClassName();
+                }
+                //加载驱动程序
+                Class.forName(driverClassName);
+                // 获取数据库连接
+                java.util.Properties info = new java.util.Properties();
+                info.put("user", dbConfig.getDbUserName());
+                info.put("password", dbConfig.getDbPassword());
+                if (DbTypeEnum.Oracle.equals(dbConfig.getDbType()))
+                {
+                    //oracle获取注释用参数
+                    info.put("remarksReporting", "true");
+                }
                 System.out.println(dbConfig.getDbUrl());
-                    // jdbc:mysql://47.95.239.29:3306/novel?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-                    connection = DriverManager.getConnection(dbConfig.getDbUrl(), info);
+                // jdbc:mysql://47.95.239.29:3306/novel?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+                connection = DriverManager.getConnection(dbConfig.getDbUrl(), info);
             }
             return connection;
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
         throw new RuntimeException(ErrorEnum.NOT_GET_CONNECTION.getMessage());
@@ -84,12 +91,16 @@ public abstract class DataBase implements IDataBase
      * 关闭数据库连接对象
      */
     @Override
-    public void closeConnection() {
-        try {
-            if (!connection.isClosed()) {
+    public void closeConnection()
+    {
+        try
+        {
+            if (!connection.isClosed())
+            {
                 connection.close();
             }
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
     }
@@ -101,19 +112,23 @@ public abstract class DataBase implements IDataBase
      * @return 表名列表
      */
     @Override
-    public List<String> getTableNames(String tableNamePattern) {
-        try {
+    public List<String> getTableNames(String tableNamePattern)
+    {
+        try
+        {
             // 获取该数据库内的所有表
             ResultSet resultSet = connection.getMetaData().getTables(connection.getCatalog(), dbConfig.getDbUserName(), tableNamePattern, new String[]{"TABLE"});
-            List<String> tables = new ArrayList<String>();
-            while (resultSet.next()) {
+            List<String> tables = new ArrayList<>();
+            while (resultSet.next())
+            {
                 // 获取表名
                 String tableName = resultSet.getString(TableMetaDataEnum.TABLE_NAME.getValue());
                 // 获取表格基本信息
                 tables.add(tableName);
             }
             return tables;
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
         throw new RuntimeException(ErrorEnum.NOT_GET_TABLE.getMessage());
@@ -126,19 +141,23 @@ public abstract class DataBase implements IDataBase
      * @return 数据表列表结果集
      */
     @Override
-    public List<Table> getTables(String tableNamePattern) {
-        try {
+    public List<Table> getTables(String tableNamePattern)
+    {
+        try
+        {
             // 获取该数据库内的所有表
             ResultSet resultSet = connection.getMetaData().getTables(connection.getCatalog(), dbConfig.getDbUserName(), tableNamePattern, new String[]{"TABLE"});
             List<Table> tables = new ArrayList<>();
-            while (resultSet.next()) {
+            while (resultSet.next())
+            {
                 // 获取表名
                 String tableName = resultSet.getString(TableMetaDataEnum.TABLE_NAME.getValue());
                 // 获取表格基本信息
                 tables.add(getTable(tableName));
             }
             return tables;
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
         throw new RuntimeException(ErrorEnum.NOT_GET_TABLE.getMessage());
@@ -151,19 +170,22 @@ public abstract class DataBase implements IDataBase
      * @return 数据表对象实例
      */
     @Override
-    public Table getTable(String tableName) {
+    public Table getTable(String tableName)
+    {
         // 构建数据表对象
         Table.TableBuilder tableBuilder = Table.builder();
-        try {
+        try
+        {
             ResultSet resultSet = getConnection().getMetaData().getTables(null, null, tableName, new String[]{"TABLE"});
-            if (resultSet.next()) {
+            if (resultSet.next())
+            {
                 tableBuilder
                         // 表名
                         .tableName(tableName)
                         // 表别名
                         .tableAlias(StringUtil.getTableAlias(tableName))
                         // 表的驼峰命名
-                        .tableCamelName(StringUtil.getCamelCaseString(tableName,false))
+                        .tableCamelName(StringUtil.getCamelCaseString(tableName, false))
                         // 表类别
                         .catalog(resultSet.getString(TableMetaDataEnum.TABLE_CAT.getValue()))
                         // 表模式
@@ -177,7 +199,8 @@ public abstract class DataBase implements IDataBase
                         // 主键列表
                         .primaryKeys(getPrimaryKeys(tableName));
             }
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         return tableBuilder.build().buildAfterSetting();
@@ -191,8 +214,10 @@ public abstract class DataBase implements IDataBase
      * @param isPrimaryColumn true：主键列，false：普通列
      * @return 列基本信息对象
      */
-    private Column getColumn(ResultSet resultSet, boolean isPrimaryColumn) {
-        try {
+    private Column getColumn(ResultSet resultSet, boolean isPrimaryColumn)
+    {
+        try
+        {
             // 数据库字段类型
             int jdbcType = resultSet.getInt(TableMetaDataEnum.DATA_TYPE.getValue());
             // 列名
@@ -232,7 +257,8 @@ public abstract class DataBase implements IDataBase
                     // 如果是主键获取列信息，直接返回false
                     .foreignKey(!isPrimaryColumn ? isForeignKey(tableName, columnName) : false)
                     .build();
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         return null;
@@ -245,16 +271,20 @@ public abstract class DataBase implements IDataBase
      * @return 数据列列表
      */
     @Override
-    public List<Column> getColumns(String tableName) {
+    public List<Column> getColumns(String tableName)
+    {
         List<Column> columns = new ArrayList<Column>();
-        try {
+        try
+        {
             // 获取列信息
             ResultSet resultSet = getConnection().getMetaData().getColumns(null, null, tableName, "%");
-            while (resultSet.next()) {
+            while (resultSet.next())
+            {
                 columns.add(getColumn(resultSet, false));
             }
             return columns;
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         throw new RuntimeException(String.format(ErrorEnum.NOT_GET_COLUMN.getMessage(), tableName));
@@ -268,18 +298,23 @@ public abstract class DataBase implements IDataBase
      * @return 是否为主键，true：主键，false：非主键
      */
     @Override
-    public boolean isPrimaryKey(String tableName, String columnName) {
-        try {
+    public boolean isPrimaryKey(String tableName, String columnName)
+    {
+        try
+        {
             // 获取表内的主键列表
             ResultSet resultSet = connection.getMetaData().getPrimaryKeys(null, null, tableName);
-            while (resultSet.next()) {
+            while (resultSet.next())
+            {
                 // 获取主键的列名
                 String pkColumnName = resultSet.getString(TableMetaDataEnum.COLUMN_NAME.getValue());
-                if (columnName.equals(pkColumnName)) {
+                if (columnName.equals(pkColumnName))
+                {
                     return true;
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         return false;
@@ -293,18 +328,23 @@ public abstract class DataBase implements IDataBase
      * @return 是否为外键，true：外键，false：非外键
      */
     @Override
-    public boolean isForeignKey(String tableName, String columnName) {
-        try {
+    public boolean isForeignKey(String tableName, String columnName)
+    {
+        try
+        {
             // 获取表内的外键列表
             ResultSet resultSet = connection.getMetaData().getImportedKeys(null, null, tableName);
-            while (resultSet.next()) {
+            while (resultSet.next())
+            {
                 // 获取外键的列名
                 String fkColumnName = resultSet.getString(TableMetaDataEnum.FK_COLUMN_NAME.getValue());
-                if (columnName.equals(fkColumnName)) {
+                if (columnName.equals(fkColumnName))
+                {
                     return true;
                 }
             }
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         return false;
@@ -317,23 +357,28 @@ public abstract class DataBase implements IDataBase
      * @return 主键列表
      */
     @Override
-    public List<Column> getPrimaryKeys(String tableName) {
-        try {
+    public List<Column> getPrimaryKeys(String tableName)
+    {
+        try
+        {
             // 获取表内的主键列表
             ResultSet resultSet = connection.getMetaData().getPrimaryKeys(null, null, tableName);
             List<Column> primaryKeys = new ArrayList<Column>();
-            while (resultSet.next()) {
+            while (resultSet.next())
+            {
                 // 获取主键的列名
                 String columnName = resultSet.getString(TableMetaDataEnum.COLUMN_NAME.getValue());
                 // 获取主键列的详细信息
                 ResultSet columnResultSet = connection.getMetaData().getColumns(null, null, tableName, columnName);
-                if (columnResultSet.next()) {
+                if (columnResultSet.next())
+                {
                     // 添加主键信息
                     primaryKeys.add(getColumn(columnResultSet, true));
                 }
             }
             return primaryKeys;
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         throw new RuntimeException(String.format(ErrorEnum.NOT_GET_PRIMARY_KEYS.getMessage(), tableName));
@@ -347,11 +392,14 @@ public abstract class DataBase implements IDataBase
      * @return true：存在列表，false：不存在列
      * @throws SQLException 数据库异常
      */
-    private boolean hasColumn(ResultSet rs, String columnName) throws SQLException {
+    private boolean hasColumn(ResultSet rs, String columnName) throws SQLException
+    {
         ResultSetMetaData resultSetMetaData = rs.getMetaData();
         int columns = resultSetMetaData.getColumnCount();
-        for (int x = 1; x <= columns; x++) {
-            if (columnName.equals(resultSetMetaData.getColumnName(x))) {
+        for (int x = 1; x <= columns; x++)
+        {
+            if (columnName.equals(resultSetMetaData.getColumnName(x)))
+            {
                 return true;
             }
         }
@@ -361,14 +409,17 @@ public abstract class DataBase implements IDataBase
     /**
      * 结果集内是否存在自增的列
      *
-     * @param resultSet  结果集
+     * @param resultSet 结果集
      * @return true：是自增长，false：不是自增长
      * @throws SQLException 数据库异常
      */
-    private boolean isAutoincrement(ResultSet resultSet) throws SQLException {
-        if(dbConfig.getDbType().equals(DbTypeEnum.SQLServer)){
+    private boolean isAutoincrement(ResultSet resultSet) throws SQLException
+    {
+        if (dbConfig.getDbType().equals(DbTypeEnum.SQLServer))
+        {
             return "YES".equals(resultSet.getString(TableMetaDataEnum.IS_AUTOINCREMENT.getValue()));
-        }else if(dbConfig.getDbType().equals(DbTypeEnum.MySQL)){
+        } else if (dbConfig.getDbType().equals(DbTypeEnum.MySQL))
+        {
             return resultSet.getBoolean(TableMetaDataEnum.IS_AUTOINCREMENT.getValue());
         }
         return false;

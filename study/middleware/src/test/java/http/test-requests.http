@@ -3,3 +3,10 @@ POST http://localhost:8080/register
 
 ###
 GET http://127.0.0.1:8080/test/kafka/send?msg=hello
+
+###
+GET http://127.0.0.1:8080/test/node?path=hello
+
+
+###
+POST http://127.0.0.1:8080/test/node?path=hello&value=world
