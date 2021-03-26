@@ -122,14 +122,21 @@ public class Tomcat
                 HttpServletRequest request = new HttpServletRequest(ctx, req);
                 HttpServletResponse response = new HttpServletResponse(ctx, req);
                 String url = request.getUrl();
-                // 先看是否有对应的servlet处理
-                if (servletMapping.containsKey(url))
+                try
                 {
-                    servletMapping.get(url).service(request, response);
-                } else
+                    // 先看是否有对应的servlet处理
+                    if (servletMapping.containsKey(url))
+                    {
+                        servletMapping.get(url).service(request, response);
+                    } else
+                    {
+                        // 没有对应的servlet则交给静态资源处理器
+                        staticServlet.service(request, response);
+                    }
+                } catch (Exception e)
                 {
-                    // 没有对应的servlet则交给静态资源处理器
-                    staticServlet.service(request, response);
+                    // 把service抛出的异常打印出来
+                    e.printStackTrace();
                 }
             }
         }

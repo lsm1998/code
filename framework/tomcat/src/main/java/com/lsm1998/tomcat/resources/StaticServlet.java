@@ -46,6 +46,8 @@ public class StaticServlet extends HttpServlet
         if (file.isDirectory())
         {
             File[] files = file.listFiles();
+            if (files == null)
+                return;
             for (File f : files)
             {
                 toHtmlMap(f);
@@ -77,32 +79,26 @@ public class StaticServlet extends HttpServlet
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
         String url = request.getUrl();
-        System.out.println(url);
-
         response.setContentType("text/html; charset=utf-8");
         if (htmlMap.containsKey(url))
         {
             if (url.endsWith(".html"))
             {
                 response.setContentType("text/html; charset=utf-8");
-                response.getWrite().write(new String(htmlMap.get(url)));
             } else if (url.endsWith(".json"))
             {
                 response.setContentType("text/json; charset=utf-8");
-                response.getWrite().write(new String(htmlMap.get(url)));
             } else if (url.endsWith(".js"))
             {
                 response.setContentType("text/js; charset=utf-8");
-                response.getWrite().write(new String(htmlMap.get(url)));
             } else if (url.endsWith(".css"))
             {
                 response.setContentType("text/css; charset=utf-8");
-                response.getWrite().write(new String(htmlMap.get(url)));
             } else if (url.endsWith(".jpg") || url.endsWith(".gif") || url.endsWith(".jpeg") || url.endsWith(".png"))
             {
                 response.setContentType("image/jpeg; charset=utf-8");
-                response.getWrite().writeFile(htmlMap.get(url));
             }
+            response.getWrite().writeFile(htmlMap.get(url));
         } else
         {
             response.getWrite().write("<h1>404 - Not Found</h1>");

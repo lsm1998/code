@@ -42,8 +42,9 @@ public class HelloServlet extends HttpServlet
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
         response.setContentType("application/json");
-        Object result = cacheMap.get(request.getParameter("id"));
+        String value = request.getParameter("id");
+        Object result = value == null ? "记录找不到" : cacheMap.get(request.getParameter("id"));
         Gson gson = new Gson();
-        response.getWrite().write(gson.toJson(Objects.requireNonNullElse(result, "记录找不到！")));
+        response.getWrite().write(gson.toJson(result));
     }
 }
