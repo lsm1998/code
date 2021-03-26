@@ -1,16 +1,12 @@
 package com.lsm1998.middle.controller;
 
+import com.lsm1998.middle.dao.EmployeeDao;
 import com.lsm1998.middle.domain.Employee;
-import com.lsm1998.middle.utils.ElasticsearchUtil;
 import com.lsm1998.middle.zookeeper.WatcherApi;
 import com.lsm1998.middle.zookeeper.ZkApi;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.zookeeper.Watcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("test")
@@ -21,6 +17,9 @@ public class TestController
 
     @Autowired(required = false)
     private ZkApi zkApi;
+
+    @Autowired
+    private EmployeeDao template;
 
     @RequestMapping("kafka/send")
     public String send(@RequestParam String msg)
@@ -46,18 +45,12 @@ public class TestController
     @PostMapping("es")
     public Object add(@RequestBody Employee employee)
     {
-        return ElasticsearchUtil.addData(employee, Employee.EMPLOYEE_INDEX, Employee.EMPLOYEE_TYPE);
+        return template.save(employee);
     }
 
     @GetMapping("es/{id}")
     public Object find(@PathVariable String id)
     {
-        if (StringUtils.isNotBlank(id))
-        {
-            return ElasticsearchUtil.searchDataById(Employee.EMPLOYEE_INDEX, Employee.EMPLOYEE_TYPE, id, null);
-        } else
-        {
-            return "is is null!!!";
-        }
+        return template.findById(id);
     }
 }
