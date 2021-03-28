@@ -29,7 +29,7 @@ public class Tomcat
     private final Map<String, HttpServlet> servletMapping = new HashMap<>();
 
     // 静态资源Servlet
-    private StaticServlet staticServlet = new StaticServlet();
+    private final StaticServlet staticServlet = new StaticServlet();
 
     private void init() throws ConfigException
     {
@@ -89,7 +89,7 @@ public class Tomcat
                             // HttpRequestDecoder 解码器
                             client.pipeline().addLast(new HttpRequestDecoder());
                             // 业务逻辑处理
-                            client.pipeline().addLast(new TomcatHandler());
+                            client.pipeline().addLast(new TomcatHandler(servletMapping,staticServlet));
                         }
                     })
                     // 针对主线程的配置 分配线程最大数量 128
@@ -108,42 +108,6 @@ public class Tomcat
             // 关闭线程池
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
-        }
-    }
-
-    public class TomcatHandler extends ChannelInboundHandlerAdapter
-    {
-        @Override
-        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception
-        {
-            if (msg instanceof HttpRequest)
-            {
-                HttpRequest req = (HttpRequest) msg;
-                HttpServletRequest request = new HttpServletRequest(ctx, req);
-                HttpServletResponse response = new HttpServletResponse(ctx, req);
-                String url = request.getUrl();
-                try
-                {
-                    // 先看是否有对应的servlet处理
-                    if (servletMapping.containsKey(url))
-                    {
-                        servletMapping.get(url).service(request, response);
-                    } else
-                    {
-                        // 没有对应的servlet则交给静态资源处理器
-                        staticServlet.service(request, response);
-                    }
-                } catch (Exception e)
-                {
-                    // 把service抛出的异常打印出来
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        @Override
-        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
-        {
         }
     }
 }

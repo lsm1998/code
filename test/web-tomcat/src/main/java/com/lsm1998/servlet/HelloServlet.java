@@ -22,6 +22,8 @@ public class HelloServlet extends HttpServlet
 {
     private static final Map<String, Object> cacheMap = new ConcurrentHashMap<>();
 
+    private final Gson gson = new Gson();
+
     static
     {
         /**
@@ -43,8 +45,7 @@ public class HelloServlet extends HttpServlet
     {
         response.setContentType("application/json");
         String value = request.getParameter("id");
-        Object result = value == null ? "记录找不到" : cacheMap.get(request.getParameter("id"));
-        Gson gson = new Gson();
-        response.getWrite().write(gson.toJson(result));
+        Object result = value == null ? "缺少必填参数！" : cacheMap.get(request.getParameter("id"));
+        response.getWrite().write(gson.toJson(result == null ? "记录找不到！" : result));
     }
 }

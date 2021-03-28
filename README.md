@@ -1,12 +1,19 @@
 # code
+
 个人Code合集
 
-旨在整合个人Java源码
+由于仓库较大，不建议使用git clone，直接下载压缩包即可
  
 * demo    --  基础JavaSE小案例  
 * framework  -- 自定义框架  
-* project  -- 项目
+    * echoes 注册中心+RPC
+    * ibatis Mybatis
+    * spring spring + spring mvc
+    * springboot
+    * tomcat
 * study  -- 学习用例
 * utils   -- 自定义综合工具包  
 * test   -- 测试自定义框架的demo
-* static -- 代码引用的一些资源  
+    * echoes-api、echoes-client、echoes-server、registry 一个完整的PRC使用Demo
+    * web SpringBoot使用Demo
+    * web-tomcat tomcat使用Demo
