@@ -30,7 +30,7 @@
             <version>2.4.4</version>
         </dependency>
 
-        <!--web-->
+        <!--es-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>

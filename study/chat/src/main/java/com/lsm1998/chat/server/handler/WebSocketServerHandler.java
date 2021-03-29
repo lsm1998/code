@@ -11,7 +11,7 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 @Slf4j
 public class WebSocketServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 {
-    private MsgProcessor processor = new MsgProcessor();
+    private final MsgProcessor processor = new MsgProcessor();
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception

@@ -35,7 +35,7 @@ public class BinaryHeap<E extends Comparable<? super E>> extends AbstractHeap<E>
 
     private void insert(int index, E element)
     {
-        if (size > data.length)
+        if (size >= data.length - 1)
         {
             dilatationCapacity(size * 2);
         }
@@ -104,7 +104,9 @@ public class BinaryHeap<E extends Comparable<? super E>> extends AbstractHeap<E>
 
     private void siftUp(E element, int index)
     {
+        // 获取父节点下标
         int parentIndex = index / 2;
+        // 判断是否一直比父节点大
         while (index > 1 && less(get(parentIndex), element))
         {
             this.swap(parentIndex, index);
