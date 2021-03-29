@@ -1,4 +1,4 @@
-package com.lsm1998.io;
+package com.lsm1998.io.buffer;
 
 import org.junit.Before;
 import org.junit.Test;
