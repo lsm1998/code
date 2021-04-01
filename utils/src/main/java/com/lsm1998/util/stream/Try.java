@@ -1,4 +1,4 @@
-package com.lsm1998.stream.monad;
+package com.lsm1998.util.stream;
 
 
 import java.util.NoSuchElementException;

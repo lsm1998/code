@@ -18,14 +18,14 @@ public class NIOFtpServer
         InetSocketAddress address = new InetSocketAddress(8000);
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.bind(address);
-        ByteBuffer buffer=ByteBuffer.allocate(1024);
+        ByteBuffer buffer = ByteBuffer.allocate(1024);
         while (true)
         {
             SocketChannel socketChannel = serverSocketChannel.accept();
-            int len=0;
-            while (len!=-1)
+            int len = 0;
+            while (len != -1)
             {
-                len=socketChannel.read(buffer);
+                len = socketChannel.read(buffer);
                 // position设置为0
                 buffer.rewind();
             }

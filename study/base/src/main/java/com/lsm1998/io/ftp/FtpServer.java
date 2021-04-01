@@ -19,8 +19,8 @@ public class FtpServer
 {
     // 每个包的最大限制
     public static final int MAX_LEN=1024*10;
-    private static Set<Socket> sockets = new HashSet<>();
-    private static NumberFormat percentFormat =java.text.NumberFormat.getPercentInstance();
+    private static final Set<Socket> sockets = new HashSet<>();
+    private static final NumberFormat percentFormat =java.text.NumberFormat.getPercentInstance();
 
     public static void main(String[] args) throws IOException
     {
