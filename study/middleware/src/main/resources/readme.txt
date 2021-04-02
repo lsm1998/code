@@ -10,3 +10,6 @@ https://blog.csdn.net/qq_40942490/article/details/111594267
 
 springboot整合elasticsearch
 https://blog.csdn.net/pyfysf/article/details/100810846
+
+docker安装nacos
+https://nacos.io/zh-cn/docs/quick-start-docker.html

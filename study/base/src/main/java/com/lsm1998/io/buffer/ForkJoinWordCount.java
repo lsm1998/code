@@ -11,7 +11,12 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.concurrent.*;
 
-public class WordCount
+/**
+ * 面试题：
+ * 有一个大文件，保存了大小固定的词汇，统计出出现次数最多的词汇
+ * 基于并发ForkJoinPool
+ */
+public class ForkJoinWordCount
 {
     final ForkJoinPool pool = ForkJoinPool.commonPool();
 
@@ -103,21 +108,21 @@ public class WordCount
         System.out.println("time:" + (System.currentTimeMillis() - startTime) + "ms");
         System.out.println("total:" + totalMap.size());
 
-        System.out.println(totalMap.get("ababb"));
+        System.out.println(totalMap.size());
     }
 
     @Test
     public void count() throws ExecutionException, InterruptedException
     {
-        var counter = new WordCount();
-        System.out.println("processors:" + Runtime.getRuntime().availableProcessors());
-        counter.run("word", 1024 * 1024 * 20);
+        var counter = new ForkJoinWordCount();
+        System.out.println("核心数量:" + Runtime.getRuntime().availableProcessors());
+        counter.run("红楼梦.txt", 1024 * 1024 * 20);
     }
 
     @Test
     public void compare_with_single() throws IOException
     {
-        var in = new BufferedInputStream(new FileInputStream("word"));
+        var in = new BufferedInputStream(new FileInputStream("红楼梦.txt"));
         var buf = new byte[4 * 1024];
         var len = 0;
         var total = new HashMap<String, Integer>();
@@ -133,9 +138,6 @@ public class WordCount
                 incKey(key, total, entry.getValue());
             }
         }
-        // 阿姆达定律
-        // 120s -> 16core -> 120/16 = ? 
-        //  P    NP
 
         System.out.println("time:" + (System.currentTimeMillis() - startTime) + "ms");
         System.out.println(total.get("ababb"));
