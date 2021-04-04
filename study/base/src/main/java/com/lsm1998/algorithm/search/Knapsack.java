@@ -3,7 +3,9 @@
  * 时间：2020/5/4-1:18
  * 作用：
  */
-package com.lsm1998.algorithm.base;
+package com.lsm1998.algorithm.search;
+
+import org.junit.Test;
 
 import java.util.Arrays;
 
@@ -20,7 +22,8 @@ import java.util.Arrays;
  */
 public class Knapsack
 {
-    public static void main(String[] args)
+    @Test
+    public void testKnapsack()
     {
         int[] w = {1, 4, 3};
         int[] val = {1500, 3000, 2000};
@@ -65,7 +68,7 @@ public class Knapsack
         printPath(path, w);
     }
 
-    private static void print(int[][] v)
+    private void print(int[][] v)
     {
         for (int i = 0; i < v.length; i++)
         {
@@ -77,7 +80,7 @@ public class Knapsack
         }
     }
 
-    private static void printPath(int[][] path, int[] w)
+    private void printPath(int[][] path, int[] w)
     {
         int i = path.length - 1;
         int j = path[0].length - 1;

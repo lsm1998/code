@@ -5,8 +5,18 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+/**
+ * 走迷宫算法
+ */
 public class Maze
 {
+    @Test
+    public void testMaze()
+    {
+        int[][] map = FileUtil.getIntArrayByFile("/map/1.txt", 10, 10);
+        walk(map, initX, initY);
+    }
+
     private int initX = 1;
     private int initY = 1;
 
@@ -18,13 +28,6 @@ public class Maze
     private static final int END = 2;
     // 通过
     private static final int PASS = 3;
-
-    @Test
-    public void testMaze()
-    {
-        int[][] map = FileUtil.getArrByFile("/map/1.txt", 10, 10);
-        walk(map, initX, initY);
-    }
 
     private void walk(int[][] map, int x, int y)
     {

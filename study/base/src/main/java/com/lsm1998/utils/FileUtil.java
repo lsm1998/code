@@ -14,7 +14,7 @@ import java.util.List;
 
 public class FileUtil
 {
-    public static int[][] getArrByFile(String path,int width,int height)
+    public static int[][] getIntArrayByFile(String path,int width,int height)
     {
         URL resource = FileUtil.class.getResource(path);
         File file=new File(resource.getPath());
