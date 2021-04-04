@@ -1,18 +1,11 @@
-/*
- * 作者：刘时明
- * 时间：2020/4/29-23:57
- * 作用：
- */
-package com.lsm1998.algorithm;
+package com.lsm1998.algorithm.search;
 
-import com.lsm1998.algorithm.base.BinarySearchFind;
-import com.lsm1998.algorithm.base.Hanoi;
 import com.lsm1998.utils.FileUtil;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-public class BaseTest
+public class Maze
 {
     private int initX = 1;
     private int initY = 1;
@@ -22,12 +15,12 @@ public class BaseTest
     // 道路
     private static final int ROAD = 0;
     // 终点
-    private static final int END = 8;
+    private static final int END = 2;
     // 通过
     private static final int PASS = 3;
 
     @Test
-    public void mazeTest()
+    public void testMaze()
     {
         int[][] map = FileUtil.getArrByFile("/map/1.txt", 10, 10);
         walk(map, initX, initY);
@@ -39,29 +32,41 @@ public class BaseTest
         int right = map[x + 1][y];
         int up = map[x][y - 1];
         int down = map[x][y + 1];
-
-        if (x == END || y == END)
+        map[x][y] = PASS;
+        if (left == END || right == END || up == END || down == END)  // 是否已经达到终点
         {
-            // 终点
             success(map);
-        } else if ((left == PASS || left == WALL) && (right == PASS || right == WALL)
+        } else if ((left == PASS || left == WALL) && (right == PASS || right == WALL) // 是否已经达到绝境
                 && (up == PASS || up == WALL) && (down == PASS || down == WALL))
         {
-            // 绝境
             error(map);
         } else
         {
-            if (tryWalk(map, x - 1, y))
+            if (tryWalk(map, x - 1, y)) // 尝试左边走
             {
-                map[x][y] = PASS;
                 walk(map, x - 1, y);
+            } else if (tryWalk(map, x, y + 1)) // 尝试上边走
+            {
+                walk(map, x, y + 1);
+            } else if (tryWalk(map, x + 1, y)) // 尝试右边走
+            {
+                walk(map, x + 1, y);
+            } else if (tryWalk(map, x, y - 1))// 尝试下边走
+            {
+                walk(map, x, y - 1);
             }
         }
     }
 
+    /**
+     * @param map
+     * @param x
+     * @param y
+     * @return 是否可以走
+     */
     private boolean tryWalk(int[][] map, int x, int y)
     {
-        return map[x][y] == PASS || map[x][y] == END;
+        return map[x][y] == ROAD || map[x][y] == END;
     }
 
     private void success(int[][] map)
@@ -80,20 +85,5 @@ public class BaseTest
         {
             System.out.println(Arrays.toString(map[i]));
         }
-    }
-
-    @Test
-    public void test1()
-    {
-        Integer[] arr = {1, 2, 3, 5, 7, 8, 9, 10, 18, 20};
-        System.out.println(BinarySearchFind.binarySearchFind(arr, 1));
-        System.out.println(BinarySearchFind.binarySearchFind(arr, 20));
-        System.out.println(BinarySearchFind.binarySearchFind(arr, 10));
-    }
-
-    @Test
-    public void test2()
-    {
-        Hanoi.hanoi(64,'A','B','C');
     }
 }
