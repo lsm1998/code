@@ -1,0 +1,8 @@
+如何解决ABA问题？
+  使用版本号记录变更；
+
+
+synchronized和ReentrantLock区别（synchronized缺陷）？
+   1.ReentrantLock支持tryLock逻辑；
+   2.ReentrantLock手动释放锁，灵活度高；
+   3.ReentrantLock提供中断能力；

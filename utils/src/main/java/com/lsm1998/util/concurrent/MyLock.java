@@ -15,6 +15,11 @@ public interface MyLock
 
     void unlock();
 
+    /**
+     * 如果当前线程被中断，则抛出InterruptedException
+     *
+     * @throws InterruptedException
+     */
     void lockInterruptibly() throws InterruptedException;
 
     MyCondition newCondition();
