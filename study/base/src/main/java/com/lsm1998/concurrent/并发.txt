@@ -6,3 +6,6 @@ synchronized和ReentrantLock区别（synchronized缺陷）？
    1.ReentrantLock支持tryLock逻辑；
    2.ReentrantLock手动释放锁，灵活度高；
    3.ReentrantLock提供中断能力；
+
+无锁队列LCH
+    AQS的无锁队列本质是一个单向链表，提供了线程安全的队列访问能力；
