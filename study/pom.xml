@@ -13,7 +13,6 @@
     <artifactId>study</artifactId>
 
     <modules>
-        <module>redis</module>
         <module>base</module>
         <module>jvm</module>
         <module>chat</module>
@@ -22,6 +21,7 @@
         <module>data</module>
         <module>sqlite</module>
         <module>middleware</module>
+        <module>db</module>
     </modules>
 
     <dependencies>
