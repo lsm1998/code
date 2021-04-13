@@ -65,12 +65,11 @@ public class GenExecutor
                     try
                     {
                         execute(x);
-                    } catch (SQLException throwables)
+                    } catch (SQLException e)
                     {
-                        throwables.printStackTrace();
+                        e.printStackTrace();
                     }
                 });
-
     }
 
     private static void execute(String sql) throws SQLException
@@ -100,17 +99,14 @@ public class GenExecutor
                     try
                     {
                         future.get();
-                    } catch (InterruptedException e)
-                    {
-                        e.printStackTrace();
-                    } catch (ExecutionException e)
+                    } catch (InterruptedException | ExecutionException e)
                     {
                         e.printStackTrace();
                     }
                 });
     }
 
-    static class Worker implements Callable
+    static class Worker implements Callable<Object>
     {
         static AtomicInteger counter = new AtomicInteger(0);
         private final int id;
@@ -127,7 +123,6 @@ public class GenExecutor
         @Override
         public Object call() throws IOException, ClassNotFoundException
         {
-
             System.out.format("run worker %d\n", id);
 
             // 10 threads

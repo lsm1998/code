@@ -4,12 +4,15 @@
  */
 package com.lsm1998.db;
 
+import com.lsm1998.util.file.MyFiles;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 
@@ -53,10 +56,10 @@ public class Resource<T>
         return new URI(this.uri);
     }
 
-
     public void save() throws IOException
     {
-        var file = new File("./data/novel/" + this.id + ".txt");
+        String path = MyFiles.getResourcesPath();
+        var file = new File(String.format("%s/novel/%03d.txt", path, this.id));
         try (var objectOutStream = new ObjectOutputStream(new FileOutputStream(file)))
         {
             objectOutStream.writeObject(this.data);

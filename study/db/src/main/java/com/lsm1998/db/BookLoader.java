@@ -4,9 +4,9 @@
  */
 package com.lsm1998.db;
 
+import com.lsm1998.util.file.MyFiles;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -16,6 +16,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpTimeoutException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.AbstractQueue;
 import java.util.ArrayList;
@@ -93,7 +94,7 @@ public class BookLoader
     {
         LinkedList<Resource<Chapter>> queue = IntStream.range(1, 121)
                 .mapToObj(this::getChapterResource)
-                .collect(LinkedList::new, (list, a) -> list.add(a), (l, r) -> l.addAll(r));
+                .collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
 
         var client = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofMillis(2000))
@@ -105,7 +106,7 @@ public class BookLoader
             var req = createRequest(resource);
             var resp = client.send(
                     req,
-                    HttpResponse.BodyHandlers.ofString(Charset.forName("utf-8")));
+                    HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
 
             resource.setData(Chapter.fromBodyText(resp.body()));
             resource.save();
@@ -130,13 +131,6 @@ public class BookLoader
                 x);
     }
 
-
-    @Test
-    public void testAnotherLoad() throws URISyntaxException, IOException, InterruptedException, ExecutionException
-    {
-        anotherLoad();
-    }
-
     public static class Sentence
     {
         String text;
@@ -159,7 +153,7 @@ public class BookLoader
         var arr = new ArrayList<Sentence>();
         for (int i = 1; i <= 120; i++)
         {
-            var file = new File(String.format("./data/novel/%d.txt", i));
+            var file = MyFiles.getFileByResources(String.format("novel/%03d.txt", i));
             var fin = new ObjectInputStream(new FileInputStream(file));
             var chapter = (Chapter) fin.readObject();
             var sens = chapter.content.split("。");
@@ -178,6 +172,13 @@ public class BookLoader
     @Test
     public void testLoad() throws IOException, ClassNotFoundException
     {
-        sentences();
+        ArrayList<Sentence> list = sentences();
+        list.forEach(System.out::println);
+    }
+
+    @Test
+    public void testAnotherLoad() throws URISyntaxException, IOException, InterruptedException, ExecutionException
+    {
+        anotherLoad();
     }
 }

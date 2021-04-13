@@ -114,7 +114,7 @@ public class MyFiles
                          FileChannel inChannel = fis.getChannel();
                          FileChannel outChannel = fos.getChannel())
                     {
-                        inChannel.transferTo(0,inChannel.size(),outChannel);
+                        inChannel.transferTo(0, inChannel.size(), outChannel);
                         // outChannel.transferFrom(inChannel, 0, inChannel.size());
 //                        ByteBuffer buffer = ByteBuffer.allocate(MAX_READ_SIZE);
 //                        while ((inChannel.read(buffer)) != -1)
@@ -257,6 +257,12 @@ public class MyFiles
         URL url = MyFiles.class.getClassLoader().getResource(fileName);
         File file = new File(url.getFile());
         return file;
+    }
+
+    public static String getResourcesPath()
+    {
+        URL url = MyFiles.class.getClassLoader().getResource("");
+        return url.getFile();
     }
 
     /**

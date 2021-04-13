@@ -31,7 +31,6 @@ public class RowGen
         }
     }
 
-
     private String genBatch(String table, String column, int batchSize, Supplier<String> supplier)
     {
         var batch = new LinkedList<String>();
@@ -83,7 +82,6 @@ public class RowGen
 
     public String getBatchPost(int bucketSize, int userStart, int userEnd)
     {
-
         var column = "name,user_id,title,info,approve, dislike,state";
         return this.genBatch("post", column, bucketSize, () ->
         {
@@ -94,8 +92,7 @@ public class RowGen
             var approve = Math.round(Math.random() * 10000);
             var dislike = Math.round(Math.random() * 10000);
             var state = Math.round(Math.random() * 4);
-
-            var format = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+            // var format = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
             title = title.replace("\'", "\\\'");
             if (title.length() > 12)
             {
