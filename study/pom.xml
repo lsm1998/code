@@ -22,6 +22,7 @@
         <module>sqlite</module>
         <module>middleware</module>
         <module>db</module>
+        <module>activiti</module>
     </modules>
 
     <dependencies>
