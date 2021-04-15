@@ -9,6 +9,8 @@ import java.util.concurrent.Phaser;
 
 /**
  * Phaser使用
+ * <p>
+ * Phaser可以实现类似于CyclicBarrier的屏障效果
  */
 public class PhaserTest
 {
