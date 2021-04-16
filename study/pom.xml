@@ -23,6 +23,7 @@
         <module>middleware</module>
         <module>db</module>
         <module>activiti</module>
+        <module>logs</module>
     </modules>
 
     <dependencies>
