@@ -52,24 +52,7 @@ public class GenExecutor
 
     public static Connection getConnection() throws SQLException
     {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/huge", "root", "123456");
-    }
-
-    private void createTable() throws IOException
-    {
-        var file = new File("./data/sql/post.sql");
-        var content = new String(new FileInputStream(file).readAllBytes(), StandardCharsets.UTF_8);
-        Arrays.stream(content.split(";")).filter(x -> x.length() > 0)
-                .forEach(x ->
-                {
-                    try
-                    {
-                        execute(x);
-                    } catch (SQLException e)
-                    {
-                        e.printStackTrace();
-                    }
-                });
+        return DriverManager.getConnection("jdbc:mysql://119.29.117.244:3306/some", "root", "fuck123");
     }
 
     private static void execute(String sql) throws SQLException
@@ -87,7 +70,6 @@ public class GenExecutor
 
     public void run(int num, int bucket) throws IOException, ClassNotFoundException, SQLException, ExecutionException, InterruptedException
     {
-        this.createTable();
         var pool = Executors.newFixedThreadPool(10);
         Stream.iterate(0, x -> x + 1)
                 .limit(10)
