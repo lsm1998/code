@@ -31,7 +31,7 @@ public class GenExecutor
     public void start() throws IOException, ClassNotFoundException, InterruptedException, ExecutionException, SQLException
     {
         var gen = new GenExecutor();
-        gen.run(100000000, 1000);
+        gen.run(10000000, 1000);
     }
 
     public GenExecutor() throws IOException, ClassNotFoundException
