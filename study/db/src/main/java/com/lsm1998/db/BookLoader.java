@@ -30,7 +30,7 @@ import java.util.stream.IntStream;
 
 public class BookLoader
 {
-    public void anotherLoad() throws URISyntaxException, IOException, InterruptedException, ExecutionException
+    public void anotherLoad() throws InterruptedException, ExecutionException
     {
         LinkedBlockingQueue<Resource<Chapter>> queue = IntStream.range(1, 121)
                 .mapToObj(this::getChapterResource)

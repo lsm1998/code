@@ -31,10 +31,10 @@ public class GenExecutor
     public void start() throws IOException, ClassNotFoundException, InterruptedException, ExecutionException, SQLException
     {
         var gen = new GenExecutor();
-        gen.run(100000000, 1000);
+        gen.run(20000000, 1000);
     }
 
-    public GenExecutor() throws IOException, ClassNotFoundException
+    public GenExecutor() throws ClassNotFoundException
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = ThreadLocal.withInitial(() ->
@@ -52,7 +52,7 @@ public class GenExecutor
 
     public static Connection getConnection() throws SQLException
     {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/huge", "root", "123456");
+        return DriverManager.getConnection("jdbc:mysql://119.29.117.244:3306/ceshi", "root", "fuck123");
     }
 
     private void createTable() throws IOException
@@ -85,9 +85,9 @@ public class GenExecutor
     }
 
 
-    public void run(int num, int bucket) throws IOException, ClassNotFoundException, SQLException, ExecutionException, InterruptedException
+    public void run(int num, int bucket)
     {
-        this.createTable();
+        // this.createTable();
         var pool = Executors.newFixedThreadPool(10);
         Stream.iterate(0, x -> x + 1)
                 .limit(10)
