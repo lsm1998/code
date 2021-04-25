@@ -2,7 +2,7 @@
  * 作者：刘时明
  * 时间：2021/4/13
  */
-package com.lsm1998.db;
+package com.lsm1998.db.bigData;
 
 import com.lsm1998.util.file.MyFiles;
 import org.junit.Test;

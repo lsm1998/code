@@ -2,7 +2,7 @@
  * 作者：刘时明
  * 时间：2021/4/13
  */
-package com.lsm1998.db;
+package com.lsm1998.db.bigData;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class GenExecutor
     static ThreadLocal<Connection> conn;
 
     @Test
-    public void start() throws IOException, ClassNotFoundException, InterruptedException, ExecutionException, SQLException
+    public void start() throws ClassNotFoundException
     {
         var gen = new GenExecutor();
         gen.run(20000000, 1000);
@@ -121,7 +121,7 @@ public class GenExecutor
         }
 
         @Override
-        public Object call() throws IOException, ClassNotFoundException
+        public Object call()
         {
             System.out.format("run worker %d\n", id);
 

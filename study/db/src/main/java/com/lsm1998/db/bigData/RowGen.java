@@ -2,14 +2,13 @@
  * 作者：刘时明
  * 时间：2021/4/13
  */
-package com.lsm1998.db;
+package com.lsm1998.db.bigData;
 
 import com.github.javafaker.Faker;
 import com.google.common.base.Charsets;
 import com.google.common.hash.Hashing;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Locale;
